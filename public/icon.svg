@@ -1,20 +1,137 @@
 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="headphoneGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    <!-- Premium gradient -->
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
     </linearGradient>
+    
+    <!-- Accent gradient for inner parts -->
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#818cf8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c084fc;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Soft shadow -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Highlight effect -->
+    <filter id="highlight" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+    </filter>
   </defs>
 
-  <!-- Left ear cup (part of O) -->
-  <circle cx="60" cy="100" r="30" fill="none" stroke="url(#headphoneGradient)" stroke-width="12"/>
+  <!-- Background O shape (subtle) -->
+  <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad1)" stroke-width="3" opacity="0.15"/>
+  
+  <!-- Left ear cup -->
+  <g filter="url(#softShadow)">
+    <!-- Main body with gradient fill -->
+    <circle cx="60" cy="100" r="35" fill="url(#grad1)" opacity="0.15"/>
+    
+    <!-- Outer ring -->
+    <circle cx="60" cy="100" r="35" fill="none" stroke="url(#grad1)" stroke-width="8"/>
+    
+    <!-- Inner ring (cushion) -->
+    <circle cx="60" cy="100" r="24" fill="none" stroke="url(#grad2)" stroke-width="3" opacity="0.6"/>
+    
+    <!-- Speaker grill lines -->
+    <g opacity="0.4">
+      <line x1="60" y1="90" x2="60" y2="110" stroke="url(#grad2)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="54" y1="92" x2="54" y2="108" stroke="url(#grad2)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="66" y1="92" x2="66" y2="108" stroke="url(#grad2)" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Highlight -->
+    <circle cx="55" cy="94" r="4" fill="white" opacity="0.4" filter="url(#highlight)"/>
+  </g>
 
-  <!-- Right ear cup (part of O) -->
-  <circle cx="140" cy="100" r="30" fill="none" stroke="url(#headphoneGradient)" stroke-width="12"/>
+  <!-- Right ear cup -->
+  <g filter="url(#softShadow)">
+    <!-- Main body with gradient fill -->
+    <circle cx="140" cy="100" r="35" fill="url(#grad1)" opacity="0.15"/>
+    
+    <!-- Outer ring -->
+    <circle cx="140" cy="100" r="35" fill="none" stroke="url(#grad1)" stroke-width="8"/>
+    
+    <!-- Inner ring (cushion) -->
+    <circle cx="140" cy="100" r="24" fill="none" stroke="url(#grad2)" stroke-width="3" opacity="0.6"/>
+    
+    <!-- Speaker grill lines -->
+    <g opacity="0.4">
+      <line x1="140" y1="90" x2="140" y2="110" stroke="url(#grad2)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="134" y1="92" x2="134" y2="108" stroke="url(#grad2)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="146" y1="92" x2="146" y2="108" stroke="url(#grad2)" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Highlight -->
+    <circle cx="135" cy="94" r="4" fill="white" opacity="0.4" filter="url(#highlight)"/>
+  </g>
 
-  <!-- Top band connecting the two ears -->
-  <path d="M 60 70 Q 100 50 140 70" fill="none" stroke="url(#headphoneGradient)" stroke-width="12" stroke-linecap="round"/>
+  <!-- Headband -->
+  <g filter="url(#softShadow)">
+    <!-- Main band -->
+    <path 
+      d="M 60 65 Q 100 35 140 65" 
+      fill="none" 
+      stroke="url(#grad1)" 
+      stroke-width="12" 
+      stroke-linecap="round"
+    />
+    
+    <!-- Inner padding detail -->
+    <path 
+      d="M 65 68 Q 100 42 135 68" 
+      fill="none" 
+      stroke="url(#grad2)" 
+      stroke-width="6" 
+      stroke-linecap="round"
+      opacity="0.5"
+    />
+    
+    <!-- Top highlight -->
+    <path 
+      d="M 70 60 Q 100 35 130 60" 
+      fill="none" 
+      stroke="white" 
+      stroke-width="2" 
+      stroke-linecap="round"
+      opacity="0.3"
+    />
+  </g>
 
-  <!-- Bottom band completing the O shape -->
-  <path d="M 60 130 Q 100 150 140 130" fill="none" stroke="url(#headphoneGradient)" stroke-width="12" stroke-linecap="round"/>
+  <!-- Sound waves (left) - more elegant -->
+  <g opacity="0.5">
+    <path d="M 25 90 Q 30 100 25 110" fill="none" stroke="url(#grad1)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 18 85 Q 24 100 18 115" fill="none" stroke="url(#grad1)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 12 80 Q 18 100 12 120" fill="none" stroke="url(#grad1)" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Sound waves (right) - more elegant -->
+  <g opacity="0.5">
+    <path d="M 175 90 Q 170 100 175 110" fill="none" stroke="url(#grad1)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 182 85 Q 176 100 182 115" fill="none" stroke="url(#grad1)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 188 80 Q 182 100 188 120" fill="none" stroke="url(#grad1)" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Music note accent (subtle) -->
+  <g opacity="0.2" transform="translate(100, 160)">
+    <circle cx="0" cy="0" r="4" fill="url(#grad1)"/>
+    <rect x="-1" y="-15" width="2" height="15" fill="url(#grad1)"/>
+    <path d="M 1 -15 Q 8 -12 8 -8 L 8 -3" stroke="url(#grad1)" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
 </svg>
