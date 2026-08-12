@@ -47,16 +47,16 @@ export default function ArticlesClient() {
     return (
       <div className="rounded-lg border border-border bg-card p-8 text-center">
         <Search className="mx-auto size-12 text-muted-foreground" />
-        <h3 className="mt-4 font-serif text-xl font-semibold">No results found</h3>
+        <h3 className="mt-4 font-serif text-xl font-semibold">לא נמצאו תוצאות</h3>
         <p className="mt-2 text-muted-foreground">
-          No articles match "{searchQuery}". Try a different search term.
+          אין כתבות התואמות "{searchQuery}". נסו חיפוש אחר.
         </p>
         <button
           onClick={() => setSearchQuery("")}
           className="mt-4 inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-medium hover:bg-primary/10"
         >
           <X className="size-4" />
-          Clear search
+          נקה חיפוש
         </button>
       </div>
     )
@@ -70,10 +70,10 @@ export default function ArticlesClient() {
           <div className="flex items-center justify-between">
             <div>
               <p className="font-medium">
-                Found {filteredArticles.length} article{filteredArticles.length !== 1 ? "s" : ""} for "{searchQuery}"
+                נמצאו {filteredArticles.length} כתב{filteredArticles.length !== 1 ? "ות" : "ה"} עבור "{searchQuery}"
               </p>
               <p className="text-sm text-muted-foreground">
-                Showing results from {letters.length} categor{letters.length !== 1 ? "ies" : "y"}
+                מוצגות תוצאות מ-{letters.length} קטגוריה{letters.length !== 1 ? "ות" : ""}
               </p>
             </div>
             <button
@@ -81,7 +81,7 @@ export default function ArticlesClient() {
               className="inline-flex items-center gap-1 rounded-full border border-border px-3 py-1 text-sm hover:bg-primary/10"
             >
               <X className="size-3" />
-              Clear
+              נקה
             </button>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function ArticlesClient() {
       {/* Quick navigation by letter */}
       {!searchQuery && filteredArticles.length > 20 && (
         <div className="mb-8 rounded-lg border bg-card p-4">
-          <h2 className="font-serif text-lg font-semibold mb-3">Quick Navigation</h2>
+          <h2 className="font-serif text-lg font-semibold mb-3">ניווט מהיר</h2>
           <div className="flex flex-wrap gap-2">
             {letters.map((letter) => (
               <a
@@ -105,7 +105,7 @@ export default function ArticlesClient() {
               href="/"
               className="inline-flex h-8 items-center justify-center rounded-md border border-border bg-background px-3 text-sm font-medium hover:bg-primary/10 hover:text-primary"
             >
-              Back to Home
+              חזור לבית
             </Link>
           </div>
         </div>
@@ -128,7 +128,7 @@ export default function ArticlesClient() {
                 </span>
                 {letter}
                 <span className="ml-2 text-sm font-normal text-muted-foreground">
-                  ({articlesByLetter[letter].length} article{articlesByLetter[letter].length !== 1 ? "s" : ""})
+                  ({articlesByLetter[letter].length} כתב{articlesByLetter[letter].length !== 1 ? "ות" : "ה"})
                 </span>
               </h2>
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -148,7 +148,7 @@ export default function ArticlesClient() {
             href="#"
             className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium hover:bg-primary/10 hover:text-primary"
           >
-            Back to top
+            חזור לראש
           </a>
         </div>
       )}

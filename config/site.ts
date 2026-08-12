@@ -23,10 +23,13 @@ export const siteConfig = {
    * IMPORTANT: update this to your real domain before going live — it is used
    * for canonical URLs, sitemap.xml, robots.txt and Open Graph tags.
    */
-  url: "https://music.webapp.you",
+  url: "https://moozika.webapp.you",
 
   /** Name of the artist / label behind the music (used in structured data). */
   artist: "Dmiles",
+
+  /** Contact email for inquiries, accessibility, and support. */
+  contactEmail: "dmiles.apps@gmail.com",
 
   /** Default Open Graph image (relative to /public). */
   ogImage: "/images/heroes/climbing.png",

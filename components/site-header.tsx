@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 import Link from "next/link"
-import { Disc3 } from "lucide-react"
+import Image from "next/image"
 import { siteConfig } from "@/config/site"
 import { SearchBar } from "./search-bar"
 
@@ -12,7 +12,13 @@ export function SiteHeader() {
           href="/"
           className="flex items-center gap-2 text-lg font-semibold tracking-tight"
         >
-          <Disc3 className="size-5 text-primary" />
+          <Image 
+            src="/logo.svg" 
+            alt="Moozika logo" 
+            width={32} 
+            height={32}
+            className="size-8"
+          />
           <span className="font-serif">{siteConfig.name}</span>
         </Link>
 
@@ -20,7 +26,7 @@ export function SiteHeader() {
         <div className="hidden flex-1 max-w-md md:block">
           <Suspense fallback={
             <div className="w-full rounded-lg border border-border bg-background py-2 pl-10 pr-4 text-sm">
-              Loading search...
+              טוען חיפוש...
             </div>
           }>
             <SearchBar />
@@ -53,7 +59,7 @@ export function SiteHeader() {
       <div className="border-t border-border/60 px-4 py-3 md:hidden">
         <Suspense fallback={
           <div className="w-full rounded-lg border border-border bg-background py-2 pl-10 pr-4 text-sm">
-            Loading search...
+            טוען חיפוש...
           </div>
         }>
           <SearchBar />

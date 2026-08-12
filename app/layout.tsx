@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter, Fraunces } from "next/font/google"
 import { siteConfig } from "@/config/site"
 import { CookieConsent } from "@/components/cookie-consent"
+import { AccessibilityMenu } from "@/components/accessibility-menu"
 import "./globals.css"
 
 const inter = Inter({
@@ -89,6 +90,7 @@ export default function RootLayout({
         {children}
         {process.env.NODE_ENV === "production" && <Analytics />}
         <CookieConsent />
+        <AccessibilityMenu />
       </body>
     </html>
   )

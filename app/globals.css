@@ -198,3 +198,46 @@
 [dir="rtl"] .text-center {
   text-align: center;
 }
+
+
+/* Accessibility Styles */
+.high-contrast {
+  --background: oklch(0.05 0 0);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.1 0 0);
+  --card-foreground: oklch(1 0 0);
+  --border: oklch(1 0 0 / 30%);
+}
+
+.low-contrast {
+  --background: oklch(0.25 0.005 60);
+  --foreground: oklch(0.85 0.008 80);
+  --card: oklch(0.28 0.006 60);
+  --card-foreground: oklch(0.85 0.008 80);
+  --border: oklch(1 0 0 / 8%);
+}
+
+.letter-spacing-wide * {
+  letter-spacing: 0.05em !important;
+}
+
+.letter-spacing-wider * {
+  letter-spacing: 0.1em !important;
+}
+
+.line-height-relaxed * {
+  line-height: 1.75 !important;
+}
+
+.line-height-loose * {
+  line-height: 2 !important;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+/* Ensure accessibility menu is always readable */
+.accessibility-menu {
+  filter: none !important;
+}

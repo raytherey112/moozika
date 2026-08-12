@@ -12,135 +12,134 @@ export default function TermsPage() {
   return (
     <LegalLayout>
       <div className="prose prose-lg dark:prose-invert">
-        <h1 className="font-serif text-3xl font-bold md:text-4xl">Terms of Service</h1>
+        <h1 className="font-serif text-3xl font-bold md:text-4xl">תנאי השימוש</h1>
         <p className="text-muted-foreground">
-          Last updated: {new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+          עדכון אחרון: {new Date().toLocaleDateString("he-IL", { month: "long", day: "numeric", year: "numeric" })}
         </p>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Acceptance of Terms</h2>
+          <h2 className="font-serif text-2xl font-semibold">קבלת התנאים</h2>
           <p>
-            By accessing and using {siteConfig.name} ({siteConfig.url}), you accept and agree to be bound
-            by the terms and provision of this agreement. If you do not agree to abide by these terms,
-            please do not use this Site.
+            בגישה והשימוש ב-{siteConfig.name} ({siteConfig.url}), אתה מסכים ומאשר כי אתה קשור
+            בתנאים וההקדמות של הסכם זה. אם אינך מסכים לעמוד בתנאים אלה,
+            אנא אל תשתמש באתר זה.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Description of Service</h2>
+          <h2 className="font-serif text-2xl font-semibold">תיאור השירות</h2>
           <p>
-            {siteConfig.name} is a music recommendation website that provides curated playlists and
-            album recommendations for specific activities, moods, and scenarios. The Site contains
-            links to third-party music streaming platforms where you can listen to the recommended music.
+            {siteConfig.name} היא אתר המלצות מוזיקה המספק פלייליסטים ומוזיקה
+            המלצות אלבומים עבור פעילויות, מצבי רוח ותרחישים ספציפיים. האתר כולל
+            קישורים לפלטפורמות סטרימינג מוזיקה של צד שלישי שבהן תוכל להקשיב למוזיקה המומלצת.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Intellectual Property</h2>
-          <h3 className="font-serif text-xl font-semibold mt-4">Our Content</h3>
+          <h2 className="font-serif text-2xl font-semibold">הגנת קניין רוחני</h2>
+          <h3 className="font-serif text-xl font-semibold mt-4">התוכן שלנו</h3>
           <p>
-            All content on this Site, including text, graphics, logos, images, and the compilation
-            thereof, is the property of {siteConfig.name} or its content suppliers and protected by
-            copyright and other intellectual property laws.
+            כל התוכן באתר זה, כולל טקסט, גרפיקה, לוגוים, תמונות, והרכבה
+            שלהם, הוא רכוש של {siteConfig.name} או ספקי התוכן שלה וגנוי על
+            זכויות יוצרים וחוקים נוספים להגנה על קניין רוחני.
           </p>
 
-          <h3 className="font-serif text-xl font-semibold mt-4">Third-Party Music</h3>
+          <h3 className="font-serif text-xl font-semibold mt-4">מוזיקה של צדדים שלישיים</h3>
           <p>
-            The music albums and playlists featured on our Site are the property of their respective
-            copyright holders. We do not claim ownership of the music content. We provide links to
-            authorized streaming platforms where you can legally access the music.
+            אלבומי המוזיקה והפלייליסטים המוצגים באתר שלנו הם רכוש של בעליהם
+            זכויות יוצרים בהתאמה. אנחנו לא תובעים בעלות על תוכן המוזיקה. אנחנו מספקים קישורים ל
+            פלטפורמות סטרימינג מורשות שבהן תוכל לגשת חוקית למוזיקה.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">User Responsibilities</h2>
-          <p>When using our Site, you agree not to:</p>
+          <h2 className="font-serif text-2xl font-semibold">אחריות המשתמש</h2>
+          <p>בעת שימוש באתר שלנו, אתה מסכים שלא:</p>
           <ul>
-            <li>Use the Site for any illegal purpose</li>
-            <li>Attempt to gain unauthorized access to any part of the Site</li>
-            <li>Use any automated means to access the Site without our permission</li>
-            <li>Interfere with or disrupt the Site or servers</li>
-            <li>Reproduce, duplicate, copy, or resell any part of the Site</li>
+            <li>תשתמש באתר לכל מטרה בלתי חוקית</li>
+            <li>תנסה להשיג גישה לא מורשית לכל חלק מהאתר</li>
+            <li>תשתמש בכל אמצעים אוטומטיים לגישה לאתר ללא הרשותנו</li>
+            <li>תפריע לפעולה או הפרעה לאתר או לשרתים</li>
+            <li>תשכפל, תשכפל, תעתיק, או תמכור מחדש כל חלק מהאתר</li>
           </ul>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Third-Party Links</h2>
+          <h2 className="font-serif text-2xl font-semibold">קישורים לצדדים שלישיים</h2>
           <p>
-            Our Site contains links to third-party websites, particularly music streaming platforms
-            (Spotify, Apple Music, Amazon Music, YouTube, YouTube Music). We do not control these
-            websites and are not responsible for their content, privacy policies, or practices.
+            האתר שלנו כולל קישורים לאתרי אינטרנט של צדדים שלישיים, במיוחד פלטפורמות סטרימינג מוזיקה
+            (Spotify, Apple Music, Amazon Music, YouTube, YouTube Music). אנחנו לא שולטים באתרים אלה ו
+            לא אחראים לתוכנם, מדיניות הפרטיות שלהם, או כללי הנוהג שלהם.
           </p>
           <p>
-            Your use of third-party websites is subject to their respective terms and conditions.
-            We encourage you to review the terms and privacy policies of any third-party sites you visit.
-          </p>
-        </section>
-
-        <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Disclaimer of Warranties</h2>
-          <p>
-            The Site is provided on an "as is" and "as available" basis. We make no representations or
-            warranties of any kind, express or implied, regarding the operation of the Site or the
-            information, content, materials, or products included on the Site.
-          </p>
-          <p>
-            We do not warrant that the Site will be uninterrupted, timely, secure, or error-free.
-            We are not responsible for the availability, quality, or legality of music on third-party
-            streaming platforms.
+            השימוש שלך באתרי אינטרנט של צדדים שלישיים כפוף לתנאים וההגבלות שלהם בהתאמה.
+            אנחנו מעודדים אותך לבדוק את תנאים ומדיניות הפרטיות של כל אתרי צדדים שלישיים שתבקר בהם.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Limitation of Liability</h2>
+          <h2 className="font-serif text-2xl font-semibold">הבהרת אחריות</h2>
           <p>
-            To the fullest extent permitted by law, {siteConfig.name} shall not be liable for any
-            direct, indirect, incidental, special, consequential, or exemplary damages, including but
-            not limited to damages for loss of profits, goodwill, use, data, or other intangible losses,
-            resulting from:
+            האתר מסופק על בסיס "כמו שהוא" ו"כפי שהוא זמין". אנחנו לא עורכים או
+            הצהרות או ערבויות מסוג כלשהו, מפורש או משתמע, לגבי פעולה
+            האתר או המידע, התוכן, החומרים או המוצרים הכלולים באתר.
+          </p>
+          <p>
+            אנחנו לא מבטיחים שהאתר יהיה ללא הפרעה, בזמן, בטוח או ללא שגיאות.
+            אנחנו לא אחראים לזמינות, איכות או חוקיות של מוזיקה בפלטפורמות סטרימינג של צדדים שלישיים.
+          </p>
+        </section>
+
+        <section className="mt-8">
+          <h2 className="font-serif text-2xl font-semibold">הגבלת אחריות</h2>
+          <p>
+            במידה המרבית המותרת על ידי חוק, {siteConfig.name} לא תהיה אחראית עבור כל
+            נזק ישיר, עקיף, מקרי, מיוחד, כתוצאה, או מעונה, כולל אך לא מוגבל
+            לנזקים בגלל הפסדי רווחים, טוב כוונה, שימוש, נתונים, או הפסדים אחרים
+            נבעו מ:
           </p>
           <ul>
-            <li>The use or inability to use the Site</li>
-            <li>Unauthorized access to or alteration of your transmissions or data</li>
-            <li>Statements or conduct of any third party on the Site</li>
-            <li>Any other matter relating to the Site</li>
+            <li>השימוש או חוסר היכולת להשתמש באתר</li>
+            <li>גישה לא מורשית או שינוי של ההעברות או הנתונים שלך</li>
+            <li>הצהרות או התנהגות של כל צד שלישי באתר</li>
+            <li>כל עניין אחר הקשור לאתר</li>
           </ul>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Indemnification</h2>
+          <h2 className="font-serif text-2xl font-semibold">פיצוי</h2>
           <p>
-            You agree to indemnify, defend, and hold harmless {siteConfig.name}, its officers, directors,
-            employees, agents, and affiliates from any claim, demand, damage, or loss, including reasonable
-            attorneys' fees, arising out of your use of the Site or violation of these Terms.
+            אתה מסכים להגן, להגן, ולהגן {siteConfig.name}, הקציניים, המנהלים,
+            עובדים, סוכנים, וקשורים מכל דרישה, דרישה, נזק, או הפסד, כולל סביר
+            עלויות עריכויות, הנובעות מהשימוש שלך באתר או הפרה של תנאים אלה.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Changes to Terms</h2>
+          <h2 className="font-serif text-2xl font-semibold">שינויים בתנאים</h2>
           <p>
-            We reserve the right to modify these Terms at any time. We will provide notice of significant
-            changes by posting the updated Terms on this page and updating the "Last updated" date.
-            Your continued use of the Site after such changes constitutes your acceptance of the new Terms.
+            אנחנו שומרים על הזכות לשנות תנאים אלה בכל עת. אנחנו נספק הודעה על שינויים משמעותיים על ידי
+            הפוסט של תנאים מעודכנים בדף זה ועדכון תאריך "עדכון אחרון".
+            השימוש המתמשך שלך באתר לאחר שינויים כאלה מהווה קבלה שלך של התנאים החדשים.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Governing Law</h2>
+          <h2 className="font-serif text-2xl font-semibold">חוק שלוט</h2>
           <p>
-            These Terms shall be governed by and construed in accordance with the laws of the jurisdiction
-            where {siteConfig.name} operates, without regard to its conflict of law provisions.
+            תנאים אלה יופעלו ויותרגמו בהתאם לחוקים של השיפוט
+            כאשר {siteConfig.name} פועלת, ללא שום התייחסות להוראות התנגדות חוק שלה.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Contact Information</h2>
+          <h2 className="font-serif text-2xl font-semibold">יצור קשר</h2>
           <p>
-            If you have any questions about these Terms, please contact us:
+            אם יש לך שאלות לגבי תנאים אלה, אנא צור איתנו קשר:
           </p>
           <p className="mt-2">
             <Link href="/contact" className="text-primary hover:underline font-medium underline decoration-primary">
-              Contact Page
+              דף יצור קשר
             </Link>
           </p>
         </section>

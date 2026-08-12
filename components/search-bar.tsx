@@ -46,13 +46,13 @@ export function SearchBar() {
   return (
     <div className="relative w-full max-w-md">
       <form onSubmit={handleSubmit} className="relative">
-        <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+        <Search className="absolute right-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
         <input
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="חפש המלצות מוזיקה..."
-          className="w-full rounded-lg border border-border bg-background py-2 pl-10 pr-4 text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none"
+          className="w-full rounded-lg border border-border bg-background py-2 pl-4 pr-10 text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none"
           onFocus={() => suggestions.length > 0 && setIsOpen(true)}
           onBlur={() => setTimeout(() => setIsOpen(false), 200)}
         />
@@ -87,7 +87,7 @@ export function SearchBar() {
                   setIsOpen(false)
                 }}
               >
-                <span>View all results for "{query}"</span>
+                <span>הצג את כל התוצאות עבור "{query}"</span>
                 <Search className="size-4" />
               </button>
             )}

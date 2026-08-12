@@ -37,22 +37,41 @@ export function SiteFooter() {
 
       <div className="border-t border-border/60">
         <div className="mx-auto max-w-6xl px-4 py-5 text-xs text-muted-foreground sm:px-6">
-          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-            <p>
-              &copy; {new Date().getFullYear()} {siteConfig.name}. כל הזכויות שמורות.
-            </p>
-            <div className="flex gap-4">
-              <Link href="/" className="hover:text-foreground">
-                בית
+          <div className="flex flex-col gap-3 sm:gap-1">
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+              <p>
+                &copy; {new Date().getFullYear()} {siteConfig.name}. כל הזכויות שמורות.
+              </p>
+              <div className="flex flex-wrap gap-x-4 gap-y-1">
+                <Link href="/" className="hover:text-foreground">
+                  בית
+                </Link>
+                <Link href="/articles" className="hover:text-foreground">
+                  כל המוזיקה
+                </Link>
+                <Link href="/about" className="hover:text-foreground">
+                  אודות
+                </Link>
+                <Link href="/contact" className="hover:text-foreground">
+                  צור קשר
+                </Link>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 border-t border-border/40 pt-3 sm:justify-center">
+              <Link href="/accessibility" className="hover:text-foreground font-medium">
+                הצהרת נגישות
               </Link>
-              <Link href="/articles" className="hover:text-foreground">
-                כל המוזיקה
+              <span className="text-muted-foreground/50">•</span>
+              <Link href="/privacy" className="hover:text-foreground">
+                מדיניות פרטיות
               </Link>
-              <Link href="/about" className="hover:text-foreground">
-                אודות
+              <span className="text-muted-foreground/50">•</span>
+              <Link href="/terms" className="hover:text-foreground">
+                תנאי שימוש
               </Link>
-              <Link href="/contact" className="hover:text-foreground">
-                צור קשר
+              <span className="text-muted-foreground/50">•</span>
+              <Link href="/cookies" className="hover:text-foreground">
+                מדיניות עוגיות
               </Link>
             </div>
           </div>

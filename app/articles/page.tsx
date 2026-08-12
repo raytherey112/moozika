@@ -33,10 +33,10 @@ export default function AllArticlesPage() {
 
             <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
               <span className="rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary">
-                {articles.length} articles
+                {articles.length} כתבות
               </span>
               <span>•</span>
-              <span>Click any card to read and listen</span>
+              <span>לחצ על כל כרטיס כדי לקרוא ולהקשיב</span>
             </div>
           </div>
 

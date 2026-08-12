@@ -41,27 +41,21 @@ export default function AboutPage() {
             <h2 className="font-serif text-xl font-semibold">הפילוסופיה שלנו</h2>
             <div className="mt-4 space-y-4">
               <div>
-                <h3 className="font-medium">Quality Over Quantity</h3>
+                <h3 className="font-medium">איכות על כמות</h3>
                 <p className="mt-1 text-muted-foreground">
-                  We feature a curated selection of instrumental albums rather than overwhelming you
-                  with endless options. Each recommendation is chosen for its suitability to specific
-                  activities and moods.
+                  אנחנו מציגים בחירה קוריית של אלבומים אינסטרומנטליים במקום להציף אתכם באפשרויות אינסופיות. כל המלצה נבחרה לכשירותה לפעילויות ומצבי רוח ספציפיים.
                 </p>
               </div>
               <div>
-                <h3 className="font-medium">Honest Recommendations</h3>
+                <h3 className="font-medium">המלצות כנות</h3>
                 <p className="mt-1 text-muted-foreground">
-                  We only write about music we genuinely believe works for the stated purpose. Our
-                  descriptions are honest, practical, and focused on how the music actually functions
-                  in real-world situations.
+                  אנחנו כותבים רק על מוזיקה שאנחנו באמת מאמינים שהיא עובדת למטרה המדויקת. התיאורים שלנו כנים, מעשיים, וממוקדים על איך המוזיקה בעצם פועלת בחיים האמיתיים.
                 </p>
               </div>
               <div>
-                <h3 className="font-medium">Access for All</h3>
+                <h3 className="font-medium">גישה לכל</h3>
                 <p className="mt-1 text-muted-foreground">
-                  Every album we recommend is available on major streaming platforms. We provide direct
-                  links to Spotify, Apple Music, Amazon Music, YouTube, and YouTube Music — you choose
-                  your preferred service.
+                  כל אלבום שהנחנו זמין בפלטפורמות סטרימינג ראשיות. אנחנו מספקים קישורים ישירים ל-Spotify, Apple Music, Amazon Music, YouTube, ו-YouTube Music — אתה בוחר בשירות המועדף שלך.
                 </p>
               </div>
             </div>
@@ -69,89 +63,84 @@ export default function AboutPage() {
 
           <div className="mt-8 grid gap-8 md:grid-cols-2">
             <div className="rounded-lg border bg-card p-6">
-              <h2 className="font-serif text-xl font-semibold">For Listeners</h2>
+              <h2 className="font-serif text-xl font-semibold">למאזיניים</h2>
               <p className="mt-2 text-muted-foreground">
-                Discover music perfectly suited to your activities. Whether you're climbing, coding,
-                meditating, or just relaxing, we've found instrumental albums that complement the
-                experience without distracting from it.
+                גלו מוזיקה מתאימה בדיוק לפעילויות שלכם. בין אם אתם טיפסים, מקודדים, מדיטציה, או פשוט משתכחים, אנחנו מצאנו אלבומים אינסטרומנטליים שמשלימים את החוויה מבלי להסיח דעתכם ממנה.
               </p>
               <div className="mt-4">
                 <Button>
-                  <Link href="/">Explore Recommendations</Link>
+                  <Link href="/">גלו המלצות</Link>
                 </Button>
               </div>
             </div>
 
             <div className="rounded-lg border bg-card p-6">
-              <h2 className="font-serif text-xl font-semibold">For Artists</h2>
+              <h2 className="font-serif text-xl font-semibold">לאמנים</h2>
               <p className="mt-2 text-muted-foreground">
-                We help instrumental music find its audience by connecting it with specific use cases
-                and activities. Our focus on context helps listeners discover music they might not
-                find through traditional browsing.
+                אנחנו עוזרים למוזיקה אינסטרומנטלית למצוא את קהל היעד שלה בחיבור אותה לשימושים ופעילויות ספציפיות. התמקדות שלנו בהקשר עוזרת למאזיניים לגלות מוזיקה שהם אולי לא יימצאו דרך גלישה מסורתית.
               </p>
             </div>
           </div>
 
           <div className="mt-8 rounded-lg border bg-card p-6">
-            <h2 className="font-serif text-xl font-semibold">Our Content Approach</h2>
+            <h2 className="font-serif text-xl font-semibold">גישת התוכן שלנו</h2>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               <div>
-                <h3 className="font-medium">Targeted</h3>
+                <h3 className="font-medium">ממוקד</h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Each page addresses one specific search term and activity
+                  כל עמוד מטפל במונח חיפוש ופעילות ספציפית אחת בלבד
                 </p>
               </div>
               <div>
-                <h3 className="font-medium">Concise</h3>
+                <h3 className="font-medium">תמציתי</h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Clear, practical information without unnecessary length
+                  מידע ברור ומעשי ללא אורך מיותר
                 </p>
               </div>
               <div>
-                <h3 className="font-medium">Visual</h3>
+                <h3 className="font-medium">ויזואלי</h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Beautiful, relevant hero images for each recommendation
+                  תמונות גיבור יפות ורלוונטיות לכל המלצה
                 </p>
               </div>
             </div>
           </div>
 
           <div className="mt-8">
-            <h2 className="font-serif text-xl font-semibold">Explore Our Recommendations</h2>
+            <h2 className="font-serif text-xl font-semibold">גלו את ההמלצות שלנו</h2>
             <p className="mt-2 text-muted-foreground">
-              Start discovering music tailored to your activities:
+              התחיל לגלות מוזיקה מותאמת לפעילויות שלך:
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Button variant="outline" size="sm">
-                <Link href="/music-for-climbing">Climbing Music</Link>
+                <Link href="/music-for-climbing">מוזיקה לטיפוס</Link>
               </Button>
               <Button variant="outline" size="sm">
-                <Link href="/music-for-stargazing">Stargazing Music</Link>
+                <Link href="/music-for-stargazing">מוזיקה לצפייה בכוכבים</Link>
               </Button>
               <Button variant="outline" size="sm">
-                <Link href="/music-for-meditation">Meditation Music</Link>
+                <Link href="/music-for-meditation">מוזיקה למדיטציה</Link>
               </Button>
               <Button variant="outline" size="sm">
-                <Link href="/music-for-coding">Coding Music</Link>
+                <Link href="/music-for-coding">מוזיקה לקידוד</Link>
               </Button>
               <Button variant="outline" size="sm">
-                <Link href="/music-for-baking">Baking Music</Link>
+                <Link href="/music-for-baking">מוזיקה לאפייה</Link>
               </Button>
               <Button variant="outline" size="sm">
-                <Link href="/music-for-reading-fantasy">Reading Music</Link>
+                <Link href="/music-for-reading-fantasy">מוזיקה לקריאה</Link>
               </Button>
             </div>
           </div>
 
           <div className="mt-8 rounded-lg border bg-card p-6">
-            <h2 className="font-serif text-xl font-semibold">Contact & Feedback</h2>
+            <h2 className="font-serif text-xl font-semibold">יצור קשר והמלצות</h2>
             <p className="mt-2 text-muted-foreground">
-              Have suggestions for new activity-specific music recommendations? Want to provide feedback
-              on our site? We'd love to hear from you.
+              יש הצעות להמלצות מוזיקה חדשות במפגשים ספציפיים? רוצה לתת משוב על האתר שלנו? היינו שמחים לשמוע ממך.
             </p>
             <div className="mt-4">
               <Button variant="outline">
-                <Link href="/contact">Get in Touch</Link>
+                <Link href="/contact">צור קשר</Link>
               </Button>
             </div>
           </div>

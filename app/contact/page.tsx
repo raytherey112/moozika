@@ -23,93 +23,86 @@ export default function ContactPage() {
 
           <div className="mt-8 grid gap-8 md:grid-cols-2">
             <div className="rounded-lg border bg-card p-6">
-              <h2 className="font-serif text-xl font-semibold">General Inquiries</h2>
+              <h2 className="font-serif text-xl font-semibold">בקשות כלליות</h2>
               <p className="mt-2 text-muted-foreground">
-                For general questions about our music recommendations, website functionality, or
-                suggestions for new content, please email us at:
+                לשאלות כלליות על המלצות המוזיקה שלנו, פונקציונליות האתר, או הצעות לתוכן חדש, אנא שלח לנו דוא"ל ל:
               </p>
               <div className="mt-4">
                 <Button variant="outline">
-                  <a href={`mailto:contact@${siteConfig.url.replace('https://', '')}`}>
-                    contact@{siteConfig.url.replace('https://', '')}
+                  <a href={`mailto:${siteConfig.contactEmail}`}>
+                    {siteConfig.contactEmail}
                   </a>
                 </Button>
               </div>
             </div>
 
             <div className="rounded-lg border bg-card p-6">
-              <h2 className="font-serif text-xl font-semibold">Legal Inquiries</h2>
+              <h2 className="font-serif text-xl font-semibold">בקשות משפטיות</h2>
               <p className="mt-2 text-muted-foreground">
-                For privacy concerns, copyright questions, or other legal matters, please review our
-                legal pages first:
+                לשאלות פרטיות, זכויות יוצרים או עניינים משפטיים אחרים, אנא בדוק את הדפים המשפטיים שלנו תחילה:
               </p>
               <div className="mt-4 flex flex-col gap-2">
                 <Button variant="ghost" size="sm">
-                  <Link href="/privacy">Privacy Policy</Link>
+                  <Link href="/privacy">מדיניות פרטיות</Link>
                 </Button>
                 <Button variant="ghost" size="sm">
-                  <Link href="/terms">Terms of Service</Link>
+                  <Link href="/terms">תנאי שימוש</Link>
                 </Button>
                 <Button variant="ghost" size="sm">
-                  <Link href="/cookies">Cookie Policy</Link>
+                  <Link href="/cookies">מדיניות עוגיות</Link>
                 </Button>
               </div>
             </div>
           </div>
 
           <div className="mt-8 rounded-lg border bg-card p-6">
-            <h2 className="font-serif text-xl font-semibold">Frequently Asked Questions</h2>
+            <h2 className="font-serif text-xl font-semibold">שאלות נפוצות</h2>
             <div className="mt-4 space-y-4">
               <div>
-                <h3 className="font-medium">Can I request specific music recommendations?</h3>
+                <h3 className="font-medium">האם אוכל להציע המלצות מוזיקה ספציפיות?</h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Yes! We're always looking for new scenarios and activities to create music recommendations for.
-                  If you have a specific activity, mood, or scenario you'd like us to cover, please let us know.
+                  כן! אנחנו תמיד מחפשים תרחישים ופעילויות חדשות ליצור המלצות מוזיקה. אם יש לך פעילות, מצב רוח או תרחיש ספציפי שהיית רוצה שנכסה, אנא בידיעתנו.
                 </p>
               </div>
               <div>
-                <h3 className="font-medium">Do you have affiliate links with streaming platforms?</h3>
+                <h3 className="font-medium">האם יש לכם קישורים שותפים עם פלטפורמות סטרימינג?</h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  No. We provide direct links to streaming platforms for your convenience, but we do not
-                  receive any compensation or affiliate commissions for clicks or streams.
+                  לא. אנחנו מספקים קישורים ישירים לפלטפורמות סטרימינג לנוחותך, אך אנחנו לא מקבלים כל פיצוי או עמלות שותפים בעבור קליקים או זרמים.
                 </p>
               </div>
               <div>
-                <h3 className="font-medium">Can I submit my music for consideration?</h3>
+                <h3 className="font-medium">האם אוכל להגיש את המוזיקה שלי לשיקול?</h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Currently, we feature specific instrumental albums. We're not accepting submissions
-                  at this time, but this may change in the future.
+                  כרגע, אנחנו מציגים אלבומים אינסטרומנטליים ספציפיים. אנחנו לא מקבלים הגשות כרגע, אך זה עשוי להשתנות בעתיד.
                 </p>
               </div>
             </div>
           </div>
 
           <div className="mt-8 rounded-lg border bg-card p-6">
-            <h2 className="font-serif text-xl font-semibold">Response Time</h2>
+            <h2 className="font-serif text-xl font-semibold">זמן תגובה</h2>
             <p className="mt-2 text-muted-foreground">
-              We strive to respond to all inquiries within 2-3 business days. Please note that we may
-              not be able to respond to every message individually, especially if similar questions
-              have been addressed in our FAQ section.
+              אנחנו שואפים לענות על כל הבקשות תוך 2-3 ימי עבודה. שימו לב שאנחנו אולי לא נוכל להשיב לכל הודעה בנפרד, במיוחד אם שאלות דומות טופלו בסעיף השאלות הנפוצות שלנו.
             </p>
           </div>
 
           <div className="mt-8">
-            <h2 className="font-serif text-xl font-semibold">Other Ways to Explore</h2>
+            <h2 className="font-serif text-xl font-semibold">דרכים נוספות לגלות</h2>
             <p className="mt-2 text-muted-foreground">
-              While you're here, why not explore some of our popular music recommendations?
+              בזמן שאתה כאן, למה לא לגלות חלק מהמלצות המוזיקה הפופולריות שלנו?
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <Button variant="outline" size="sm">
-                <Link href="/music-for-climbing">Music for Climbing</Link>
+                <Link href="/music-for-climbing">מוזיקה לטיפוס</Link>
               </Button>
               <Button variant="outline" size="sm">
-                <Link href="/music-for-stargazing">Music for Stargazing</Link>
+                <Link href="/music-for-stargazing">מוזיקה לצפייה בכוכבים</Link>
               </Button>
               <Button variant="outline" size="sm">
-                <Link href="/music-for-meditation">Music for Meditation</Link>
+                <Link href="/music-for-meditation">מוזיקה למדיטציה</Link>
               </Button>
               <Button variant="outline" size="sm">
-                <Link href="/music-for-coding">Music for Coding</Link>
+                <Link href="/music-for-coding">מוזיקה לקידוד</Link>
               </Button>
             </div>
           </div>

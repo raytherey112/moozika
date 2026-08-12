@@ -91,7 +91,7 @@ export default async function ArticlePage({ params }: PageProps) {
       {
         "@type": "ListItem",
         position: 1,
-        name: "Home",
+        name: "בית",
         item: siteConfig.url,
       },
       {
@@ -153,7 +153,7 @@ export default async function ArticlePage({ params }: PageProps) {
             className="mb-8 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft className="size-4" />
-            All collections
+            כל הקולקציות
           </Link>
 
           {/* Album promo at the very top */}
@@ -161,9 +161,9 @@ export default async function ArticlePage({ params }: PageProps) {
             <AlbumFeature album={album} />
           ) : (
             <p className="rounded-lg border border-border bg-card p-4 text-sm text-muted-foreground">
-              Album not found. Check the{" "}
-              <code className="text-foreground">albumId</code> for this article
-              in the config.
+              האלבום לא נמצא. בדוק את ה-{" "}
+              <code className="text-foreground">albumId</code> של הכתבה
+              בקובץ ההגדרות.
             </p>
           )}
 
@@ -190,7 +190,7 @@ export default async function ArticlePage({ params }: PageProps) {
           {article.faqs && article.faqs.length > 0 && (
             <section className="mt-12 border-t border-border/60 pt-8">
               <h2 className="font-serif text-xl font-semibold tracking-tight sm:text-2xl">
-                Frequently asked questions
+                שאלות נפוצות
               </h2>
               <dl className="mt-4 flex flex-col gap-5">
                 {article.faqs.map((faq) => (
@@ -211,7 +211,7 @@ export default async function ArticlePage({ params }: PageProps) {
           {album && (
             <section className="mt-12 border-t border-border/60 pt-8">
               <h2 className="mb-4 font-serif text-xl font-semibold tracking-tight">
-                Ready to listen?
+                מוכן להקשיב?
               </h2>
               <AlbumFeature album={album} />
             </section>
@@ -228,7 +228,7 @@ export default async function ArticlePage({ params }: PageProps) {
               id="related-heading"
               className="mb-6 font-serif text-2xl font-semibold tracking-tight"
             >
-              More collections
+              קולקציות נוספות
             </h2>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((item) => (

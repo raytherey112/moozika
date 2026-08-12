@@ -18,123 +18,123 @@ export default function CookiesPage() {
         </p>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">What Are Cookies</h2>
+          <h2 className="font-serif text-2xl font-semibold">מה הן עוגיות</h2>
           <p>
-            Cookies are small text files that are placed on your computer or mobile device when you
-            visit a website. They are widely used to make websites work more efficiently and provide
-            information to the website owners.
+            עוגיות (Cookies) הן קבצי טקסט קטנים שמונחים על המחשב או המכשיר הנייד שלך כשאתה
+            מבקר באתר אינטרנט. הן נמצאות בשימוש נרחב כדי לגרום לאתרים לעבוד ביעילות רבה יותר ולספק
+            מידע לבעלי האתרים.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">How We Use Cookies</h2>
+          <h2 className="font-serif text-2xl font-semibold">כיצד אנו משתמשים בעוגיות</h2>
           <p>
-            We use cookies for the following purposes:
+            אנחנו משתמשים בעוגיות למטרות הבאות:
           </p>
-          <h3 className="font-serif text-xl font-semibold mt-4">Essential Cookies</h3>
+          <h3 className="font-serif text-xl font-semibold mt-4">עוגיות חיוניות</h3>
           <p>
-            These cookies are necessary for the website to function properly. They enable basic functions
-            like page navigation and access to secure areas of the website. The website cannot function
-            properly without these cookies.
-          </p>
-
-          <h3 className="font-serif text-xl font-semibold mt-4">Analytics Cookies</h3>
-          <p>
-            We use Vercel Analytics to understand how visitors use our Site. These cookies help us
-            collect information about how visitors interact with our website, including which pages
-            are visited most often, how users navigate between pages, and whether they encounter errors.
-            This information is aggregated and anonymous.
+            עוגיות אלו הכרחיות לתפקוד תקין של האתר. הן מאפשרות פונקציות בסיסיות
+            כמו ניווט בדפים וגישה לאזורים מאובטחים של האתר. האתר אינו יכול לתפקד
+            כראוי ללא עוגיות אלו.
           </p>
 
-          <h3 className="font-serif text-xl font-semibold mt-4">Preference Cookies</h3>
+          <h3 className="font-serif text-xl font-semibold mt-4">עוגיות אנליטיקה</h3>
           <p>
-            These cookies enable the website to remember choices you make (such as your preferred
-            language or region) and provide enhanced, more personalized features.
+            אנחנו משתמשים ב-Vercel Analytics כדי להבין כיצד מבקרים משתמשים באתר שלנו. עוגיות אלו עוזרות לנו
+            לאסוף מידע על האופן שבו מבקרים מתקשרים עם האתר שלנו, כולל אילו דפים
+            מבוקרים הכי הרבה, כיצד משתמשים מנווטים בין דפים, והאם הם נתקלים בשגיאות.
+            מידע זה מצטבר ואנונימי.
+          </p>
+
+          <h3 className="font-serif text-xl font-semibold mt-4">עוגיות העדפות</h3>
+          <p>
+            עוגיות אלו מאפשרות לאתר לזכור בחירות שאתה עושה (כגון שפה מועדפת
+            או אזור) ולספק תכונות משופרות ויותר מותאמות אישית.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Third-Party Cookies</h2>
+          <h2 className="font-serif text-2xl font-semibold">עוגיות צד שלישי</h2>
           <p>
-            In addition to our own cookies, we may also use various third-party cookies, including:
+            בנוסף לעוגיות שלנו, אנו עשויים גם להשתמש בעוגיות צד שלישי שונות, כולל:
           </p>
-          <h3 className="font-serif text-xl font-semibold mt-4">Analytics Providers</h3>
+          <h3 className="font-serif text-xl font-semibold mt-4">ספקי אנליטיקה</h3>
           <p>
-            Vercel Analytics: We use Vercel Analytics to help us understand how our website is used.
-            Vercel's use of cookies is governed by their privacy policy.
+            Vercel Analytics: אנחנו משתמשים ב-Vercel Analytics כדי לעזור לנו להבין כיצד האתר שלנו נמצא בשימוש.
+            השימוש של Vercel בעוגיות כפוף למדיניות הפרטיות שלהם.
           </p>
 
-          <h3 className="font-serif text-xl font-semibold mt-4">Embedded Content</h3>
+          <h3 className="font-serif text-xl font-semibold mt-4">תוכן מוטמע</h3>
           <p>
-            Pages on this site may include embedded content (e.g., videos, images, articles, etc.).
-            Embedded content from other websites behaves in the exact same way as if the visitor has
-            visited the other website.
+            דפים באתר זה עשויים לכלול תוכן מוטמע (למשל, סרטונים, תמונות, מאמרים וכו').
+            תוכן מוטמע מאתרים אחרים מתנהג בדיוק באותו אופן כאילו המבקר ביקר
+            באתר האחר.
           </p>
           <p>
-            These websites may collect data about you, use cookies, embed additional third-party tracking,
-            and monitor your interaction with that embedded content, including tracking your interaction
-            with the embedded content if you have an account and are logged in to that website.
+            אתרים אלו עשויים לאסוף נתונים עליך, להשתמש בעוגיות, להטמיע מעקב נוסף של צד שלישי,
+            ולנטר את האינטראקציה שלך עם התוכן המוטמע, כולל מעקב אחר האינטראקציה שלך
+            עם התוכן המוטמע אם יש לך חשבון ואתה מחובר לאתר זה.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Managing Cookies</h2>
+          <h2 className="font-serif text-2xl font-semibold">ניהול עוגיות</h2>
           <p>
-            You can control and/or delete cookies as you wish. You can delete all cookies that are
-            already on your computer and you can set most browsers to prevent them from being placed.
-            However, if you do this, you may have to manually adjust some preferences every time you
-            visit a site and some services and functionalities may not work.
+            אתה יכול לשלוט ו/או למחוק עוגיות כרצונך. אתה יכול למחוק את כל העוגיות שכבר
+            נמצאות על המחשב שלך ואתה יכול להגדיר את רוב הדפדפנים למנוע מהן להיות מוצבות.
+            עם זאת, אם תעשה זאת, ייתכן שתצטרך להתאים ידנית כמה העדפות בכל פעם שתבקר
+            באתר וכמה שירותים ופונקציונליות לא יעבדו.
           </p>
 
-          <h3 className="font-serif text-xl font-semibold mt-4">Browser Settings</h3>
+          <h3 className="font-serif text-xl font-semibold mt-4">הגדרות דפדפן</h3>
           <p>
-            Most web browsers allow some control of most cookies through the browser settings. To find
-            out more about cookies, including how to see what cookies have been set and how to manage
-            and delete them, visit <a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium underline decoration-primary">www.aboutcookies.org</a> or
+            רוב דפדפני האינטרנט מאפשרים שליטה מסוימת ברוב העוגיות דרך הגדרות הדפדפן. למידע
+            נוסף על עוגיות, כולל כיצד לראות אילו עוגיות הוגדרו וכיצד לנהל
+            ולמחוק אותן, בקר ב-<a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium underline decoration-primary">www.aboutcookies.org</a> או
             <a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium underline decoration-primary"> www.allaboutcookies.org</a>.
           </p>
 
-          <h3 className="font-serif text-xl font-semibold mt-4">Opting Out of Analytics</h3>
+          <h3 className="font-serif text-xl font-semibold mt-4">יציאה מאנליטיקה</h3>
           <p>
-            To opt out of Vercel Analytics, you can use their opt-out mechanism or adjust your browser
-            settings to reject cookies.
+            כדי לצאת מ-Vercel Analytics, אתה יכול להשתמש במנגנון היציאה שלהם או להתאים את הגדרות
+            הדפדפן שלך לדחות עוגיות.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Cookie Duration</h2>
+          <h2 className="font-serif text-2xl font-semibold">משך זמן עוגיות</h2>
           <p>
-            Cookies can remain on your device for different periods of time:
+            עוגיות יכולות להישאר על המכשיר שלך לתקופות זמן שונות:
           </p>
           <ul>
             <li>
-              <strong>Session cookies:</strong> These are temporary cookies that expire when you close
-              your browser.
+              <strong>עוגיות סשן:</strong> אלו עוגיות זמניות שפגות כשאתה סוגר
+              את הדפדפן שלך.
             </li>
             <li>
-              <strong>Persistent cookies:</strong> These remain on your device for a set period of time
-              or until you delete them.
+              <strong>עוגיות קבועות:</strong> אלו נשארות על המכשיר שלך לתקופת זמן קבועה
+              או עד שאתה מוחק אותן.
             </li>
           </ul>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Updates to This Policy</h2>
+          <h2 className="font-serif text-2xl font-semibold">עדכונים למדיניות זו</h2>
           <p>
-            We may update this Cookie Policy from time to time to reflect changes in our practices or
-            for other operational, legal, or regulatory reasons. We will notify you of any changes by
-            posting the new Cookie Policy on this page and updating the "Last updated" date.
+            אנו עשויים לעדכן את מדיניות העוגיות הזו מעת לעת כדי לשקף שינויים בפרקטיקות שלנו או
+            מסיבות תפעוליות, משפטיות או רגולטוריות אחרות. אנו נודיע לך על כל שינוי על ידי
+            פרסום מדיניות העוגיות החדשה בעמוד זה ועדכון תאריך "עודכן לאחרונה".
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Contact Us</h2>
+          <h2 className="font-serif text-2xl font-semibold">צור קשר</h2>
           <p>
-            If you have any questions about our use of cookies, please contact us:
+            אם יש לך שאלות כלשהן לגבי השימוש שלנו בעוגיות, אנא צור איתנו קשר:
           </p>
           <p className="mt-2">
             <Link href="/contact" className="text-primary hover:underline font-medium underline decoration-primary">
-              Contact Page
+              דף יצירת קשר
             </Link>
           </p>
         </section>

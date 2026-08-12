@@ -18,122 +18,121 @@ export default function PrivacyPage() {
         </p>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Introduction</h2>
+          <h2 className="font-serif text-2xl font-semibold">מבוא</h2>
           <p>
-            This Privacy Policy describes how {siteConfig.name} ("we", "our", or "us") collects, uses,
-            and shares your personal information when you use our website {siteConfig.url} (the "Site").
+            מדיניות פרטיות זו מתארת כיצד {siteConfig.name} ("אנחנו", "שלנו", או "אותנו") אוספת, משתמשת,
+            ומשתפת את המידע האישי שלך כשאתה משתמש באתר שלנו {siteConfig.url} ("האתר").
           </p>
           <p>
-            We are committed to protecting your privacy and ensuring transparency about our data practices.
-            This website primarily serves as a content platform for music recommendations and does not require
-            account creation or collect extensive personal data.
+            אנחנו מחויבים להגן על הפרטיות שלך ולהבטיח שקיפות לגבי פרקטיקות הנתונים שלנו.
+            אתר זה משמש בעיקר כפלטפורמת תוכן להמלצות מוזיקה ואינו דורש יצירת חשבון או איסוף נתונים אישיים נרחבים.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Information We Collect</h2>
-          <h3 className="font-serif text-xl font-semibold mt-4">Automatically Collected Information</h3>
+          <h2 className="font-serif text-2xl font-semibold">מידע שאנו אוספים</h2>
+          <h3 className="font-serif text-xl font-semibold mt-4">מידע הנאסף אוטומטית</h3>
           <p>
-            When you visit our Site, we automatically collect certain information about your device and
-            browsing activity, including:
+            כשאתה מבקר באתר שלנו, אנו אוספים אוטומטית מידע מסוים על המכשיר שלך ועל
+            פעילות הגלישה, כולל:
           </p>
           <ul>
-            <li>IP address</li>
-            <li>Browser type and version</li>
-            <li>Operating system</li>
-            <li>Referring website</li>
-            <li>Pages viewed and time spent on pages</li>
-            <li>Date and time of visit</li>
+            <li>כתובת IP</li>
+            <li>סוג דפדפן וגרסה</li>
+            <li>מערכת הפעלה</li>
+            <li>אתר ממנו הגעת</li>
+            <li>עמודים שנצפו וזמן שבילית בעמודים</li>
+            <li>תאריך ושעת ביקור</li>
           </ul>
 
-          <h3 className="font-serif text-xl font-semibold mt-4">Analytics Data</h3>
+          <h3 className="font-serif text-xl font-semibold mt-4">נתוני אנליטיקה</h3>
           <p>
-            We use Vercel Analytics to understand how visitors use our Site. This service collects
-            anonymized data about website traffic and user behavior. The data is aggregated and cannot
-            be used to identify individual users.
+            אנחנו משתמשים ב-Vercel Analytics כדי להבין איך מבקרים משתמשים באתר שלנו. שירות זה אוסף
+            נתונים אנונימיים על תעבורת אתר והתנהגות משתמשים. הנתונים מצטברים ולא ניתן
+            להשתמש בהם כדי לזהות משתמשים בודדים.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">How We Use Your Information</h2>
-          <p>We use the collected information for the following purposes:</p>
+          <h2 className="font-serif text-2xl font-semibold">כיצד אנו משתמשים במידע שלך</h2>
+          <p>אנו משתמשים במידע שנאסף למטרות הבאות:</p>
           <ul>
-            <li>To analyze website performance and improve user experience</li>
-            <li>To understand which content is most valuable to visitors</li>
-            <li>To detect and prevent security issues</li>
-            <li>To comply with legal obligations</li>
+            <li>לניתוח ביצועי האתר ושיפור חוויית המשתמש</li>
+            <li>להבין איזה תוכן הכי שווה למבקרים</li>
+            <li>לזיהוי ומניעת בעיות אבטחה</li>
+            <li>לעמידה בחובות משפטיות</li>
           </ul>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Third-Party Services</h2>
-          <h3 className="font-serif text-xl font-semibold mt-4">Streaming Platforms</h3>
+          <h2 className="font-serif text-2xl font-semibold">שירותי צד שלישי</h2>
+          <h3 className="font-serif text-xl font-semibold mt-4">פלטפורמות סטרימינג</h3>
           <p>
-            Our Site contains links to third-party music streaming platforms (Spotify, Apple Music,
-            Amazon Music, YouTube, YouTube Music). When you click these links, you will be directed
-            to their respective websites. We do not control these external sites and their privacy
-            policies may differ from ours.
+            האתר שלנו מכיל קישורים לפלטפורמות סטרימינג מוזיקה של צד שלישי (Spotify, Apple Music,
+            Amazon Music, YouTube, YouTube Music). כשאתה לוחץ על הקישורים האלה, תופנה
+            לאתרים שלהם. אנחנו לא שולטים באתרים חיצוניים אלה ומדיניות הפרטיות שלהם
+            עשויה להיות שונה משלנו.
           </p>
 
-          <h3 className="font-serif text-xl font-semibold mt-4">Analytics Providers</h3>
+          <h3 className="font-serif text-xl font-semibold mt-4">ספקי אנליטיקה</h3>
           <p>
-            We use Vercel Analytics for website analytics. Vercel's privacy policy governs their
-            collection and use of analytics data.
+            אנחנו משתמשים ב-Vercel Analytics לאנליטיקה של האתר. מדיניות הפרטיות של Vercel שולטת
+            באיסוף ושימוש שלהם בנתוני אנליטיקה.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Your Rights</h2>
+          <h2 className="font-serif text-2xl font-semibold">הזכויות שלך</h2>
           <p>
-            Depending on your location, you may have certain rights regarding your personal information,
-            including:
+            תלוי במיקום שלך, ייתכן שיש לך זכויות מסוימות לגבי המידע האישי שלך,
+            כולל:
           </p>
           <ul>
-            <li>The right to access the personal information we hold about you</li>
-            <li>The right to request correction of inaccurate information</li>
-            <li>The right to request deletion of your personal information</li>
-            <li>The right to object to or restrict certain processing activities</li>
+            <li>הזכות לגשת למידע האישי שאנו מחזיקים עליך</li>
+            <li>הזכות לבקש תיקון של מידע לא מדויק</li>
+            <li>הזכות לבקש מחיקה של המידע האישי שלך</li>
+            <li>הזכות להתנגד או להגביל פעילויות עיבוד מסוימות</li>
           </ul>
           <p>
-            To exercise any of these rights, please contact us using the information provided in the
-            Contact section below.
+            כדי להפעיל כל אחת מהזכויות האלה, אנא צור איתנו קשר באמצעות המידע שמסופק ב
+            סעיף יצירת הקשר למטה.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Data Security</h2>
+          <h2 className="font-serif text-2xl font-semibold">אבטחת נתונים</h2>
           <p>
-            We implement reasonable security measures to protect the information we collect. However,
-            no method of transmission over the internet or electronic storage is 100% secure, and we
-            cannot guarantee absolute security.
+            אנחנו מיישמים אמצעי אבטחה סבירים כדי להגן על המידע שאנו אוספים. עם זאת,
+            אף שיטת העברה דרך האינטרנט או אחסון אלקטרוני אינה 100% מאובטחת, ואנחנו
+            לא יכולים להבטיח אבטחה מוחלטת.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Children's Privacy</h2>
+          <h2 className="font-serif text-2xl font-semibold">פרטיות ילדים</h2>
           <p>
-            Our Site is not intended for children under the age of 13. We do not knowingly collect
-            personal information from children under 13. If you are a parent or guardian and believe
-            your child has provided us with personal information, please contact us.
+            האתר שלנו אינו מיועד לילדים מתחת לגיל 13. אנחנו לא אוספים במודע
+            מידע אישי מילדים מתחת לגיל 13. אם אתה הורה או אפוטרופוס ומאמין
+            שילדך סיפק לנו מידע אישי, אנא צור איתנו קשר.
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Changes to This Policy</h2>
+          <h2 className="font-serif text-2xl font-semibold">שינויים במדיניות זו</h2>
           <p>
-            We may update this Privacy Policy from time to time. We will notify you of any changes by
-            posting the new Privacy Policy on this page and updating the "Last updated" date.
+            אנחנו עשויים לעדכן את מדיניות הפרטיות הזו מעת לעת. אנחנו נודיע לך על כל שינוי על ידי
+            פרסום מדיניות הפרטיות החדשה בעמוד זה ועדכון תאריך "עודכן לאחרונה".
           </p>
         </section>
 
         <section className="mt-8">
-          <h2 className="font-serif text-2xl font-semibold">Contact Us</h2>
+          <h2 className="font-serif text-2xl font-semibold">צור קשר</h2>
           <p>
-            If you have any questions about this Privacy Policy, please contact us at:
+            אם יש לך שאלות כלשהן לגבי מדיניות פרטיות זו, אנא צור איתנו קשר ב:
           </p>
           <p className="mt-2">
             <Link href="/contact" className="text-primary hover:underline font-medium underline decoration-primary">
-              Contact Page
+              דף יצירת קשר
             </Link>
           </p>
         </section>
