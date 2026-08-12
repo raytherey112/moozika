@@ -1,0 +1,3756 @@
+/**
+ * ============================================================================
+ * ARTICLES (SEO LANDING PAGES)
+ * ============================================================================
+ * Each entry becomes a page at /{slug} (e.g. /music-for-climbing) and is the
+ * core of the site's SEO strategy: one page targeting one specific, low-
+ * competition search term, promoting one album.
+ *
+ * TO ADD A NEW ARTICLE:
+ *   1. Copy an entry below.
+ *   2. Set a unique `slug` (this becomes the URL).
+ *   3. Point `albumId` at any album in config/albums.ts.
+ *   4. Pick a `heroImage` (drop a file in /public/images/heroes and reference it).
+ *   5. Write a short, honest intro + 2-3 sections. Keep it concise.
+ *
+ * Everything else (metadata, structured data, sitemap) updates automatically.
+ * ----------------------------------------------------------------------------
+ */
+
+export type ArticleSection = {
+  heading: string
+  body: string
+}
+
+export type ArticleFAQ = {
+  question: string
+  answer: string
+}
+
+export type Article = {
+  /** URL path segment, e.g. "music-for-climbing" -> /music-for-climbing */
+  slug: string
+  /** The exact search phrase this page targets. */
+  searchTerm: string
+  /** Visible H1 / card title. */
+  title: string
+  /** <title> tag. Keep under ~60 chars. Falls back to `title` if omitted. */
+  metaTitle?: string
+  /** Meta description. Keep ~150-160 chars. */
+  metaDescription: string
+  /** Extra keywords for the meta keywords tag. */
+  keywords: string[]
+  /** Hero image path (in /public) + descriptive alt text. */
+  heroImage: string
+  heroAlt: string
+  /** Album promoted on this page — must be an id from config/albums.ts. */
+  albumId: string
+  /** Short summary shown on homepage cards. */
+  excerpt: string
+  /** ISO dates used for SEO / structured data. */
+  publishedAt: string
+  updatedAt: string
+  /** Opening paragraph shown above the article body. */
+  intro: string
+  /** Main article body. Keep short and accurate. */
+  sections: ArticleSection[]
+  /** Optional FAQ — rendered on the page and as FAQ structured data. */
+  faqs?: ArticleFAQ[]
+}
+
+export const articles: Article[] = [
+  {
+    slug: "music-for-climbing",
+    searchTerm: "music for climbing",
+    title: "Music for Climbing",
+    metaTitle: "Music for Climbing — An Album for the Wall",
+    metaDescription:
+      "Looking for music for climbing and bouldering? A calm, driving instrumental album to soundtrack your sessions, with links to every streaming service.",
+    keywords: [
+      "music for climbing",
+      "climbing music",
+      "bouldering playlist",
+      "instrumental music for climbing",
+    ],
+    heroImage: "/images/heroes/climbing.png",
+    heroAlt: "A climber high on a sunlit granite wall at golden hour",
+    albumId: "ancient-arrow",
+    excerpt:
+      "A steady instrumental companion for training sessions, projecting and long days at the crag.",
+    publishedAt: "2026-01-05",
+    updatedAt: "2026-01-05",
+    intro:
+      "Climbing rewards focus. Whether you are warming up on the wall, working a boulder problem, or settling your breathing before a hard move, the right instrumental music can help you find a rhythm and stay in it. The album below is our pick to keep on in the background.",
+    sections: [
+      {
+        heading: "Why instrumental music suits climbing",
+        body: "Music without lyrics tends to stay out of the way while you think. That matters when you are reading a route, remembering a sequence, or listening for your belay partner. A consistent, mid-tempo instrumental keeps momentum through rests and repeats without demanding your attention.",
+      },
+      {
+        heading: "How to use it",
+        body: "Keep the volume low enough to hear your partner and any safety calls — at the gym, at the crag, and especially outdoors. Many climbers use one earbud, or a small speaker for the group. Treat it as a backdrop for your session rather than the main event.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is this good for bouldering as well as roped climbing?",
+        answer:
+          "Yes. It works as background music for both bouldering sessions and roped climbing. Just keep the volume low enough to hear people around you.",
+      },
+      {
+        question: "Where can I listen?",
+        answer:
+          "The album is available on Spotify, Apple Music, Amazon Music, YouTube and YouTube Music — all linked at the top of this page.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-stargazing",
+    searchTerm: "music for stargazing",
+    title: "Music for Stargazing",
+    metaTitle: "Music for Stargazing — A Calm Night-Sky Album",
+    metaDescription:
+      "Music for stargazing: a slow, spacious instrumental album to play under the night sky. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for stargazing",
+      "stargazing music",
+      "night sky music",
+      "ambient music for stargazing",
+    ],
+    heroImage: "/images/heroes/stargazing.png",
+    heroAlt: "A person lying under a vast star-filled night sky",
+    albumId: "ancient-arrow",
+    excerpt:
+      "Slow, spacious instrumentals for quiet nights spent looking up.",
+    publishedAt: "2026-01-05",
+    updatedAt: "2026-01-05",
+    intro:
+      "There is something about a clear night that asks for quiet. Whether you are on a blanket in the backyard or somewhere far from city lights, a slow instrumental album can hold the mood without breaking it. Here is the one we would put on.",
+    sections: [
+      {
+        heading: "Set the scene",
+        body: "Give your eyes time to adjust — full dark adaptation takes around 20 to 30 minutes, so keep bright screens dimmed or away. A low, unobtrusive instrumental helps the time pass while you wait for fainter stars to appear.",
+      },
+      {
+        heading: "Keep it in the background",
+        body: "Stargazing is mostly about noticing. Play the music quietly so it supports the calm rather than competing with it, and let the sky do the rest.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is this suitable for a relaxed, quiet evening?",
+        answer:
+          "Yes. The album is slow and spacious, which makes it a comfortable backdrop for a calm night outdoors or by a window.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-late-night-coding",
+    searchTerm: "music for late night coding",
+    title: "Music for Late-Night Coding",
+    metaTitle: "Music for Late-Night Coding — Focus Album",
+    metaDescription:
+      "Music for late-night coding sessions: a steady, low-key instrumental album to help you stay in flow. Available on Spotify, Apple Music, Amazon and YouTube.",
+    keywords: [
+      "music for late night coding",
+      "coding music",
+      "programming music",
+      "focus music for coding",
+    ],
+    heroImage: "/images/heroes/coding.png",
+    heroAlt: "A dim home desk at night lit by a warm lamp and a laptop screen",
+    albumId: "deep-whistle",
+    excerpt:
+      "A low-key instrumental backdrop for deep work after dark.",
+    publishedAt: "2026-01-05",
+    updatedAt: "2026-01-05",
+    intro:
+      "Late-night coding has its own quiet momentum. The house is still, the notifications have died down, and you can finally sink into a problem. A steady instrumental album can help you hold that focus without pulling your attention away from the screen.",
+    sections: [
+      {
+        heading: "Why lyrics can get in the way",
+        body: "When you are reading or writing code, words in music can compete with the words in your head. Instrumental tracks sidestep that, which is why many people reach for them during focused work.",
+      },
+      {
+        heading: "Protect your focus and your ears",
+        body: "Consistent, mid-tempo music tends to work better than anything that constantly shifts. Keep the volume moderate — long sessions at high volume are hard on your hearing — and let the album loop in the background.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Will this work for studying too?",
+        answer:
+          "Many people find calm instrumental music helpful for studying and other focused work, though preferences vary from person to person.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-pottery-studio",
+    searchTerm: "music for pottery studio",
+    title: "Music for the Pottery Studio",
+    metaTitle: "Music for the Pottery Studio — Calm Album",
+    metaDescription:
+      "Music for the pottery studio: a warm, unhurried instrumental album for time at the wheel or the bench. Listen on Spotify, Apple Music, Amazon and YouTube.",
+    keywords: [
+      "music for pottery studio",
+      "pottery music",
+      "ceramics studio music",
+      "music for the wheel",
+    ],
+    heroImage: "/images/heroes/pottery.png",
+    heroAlt: "Hands shaping wet clay on a spinning pottery wheel in a sunlit studio",
+    albumId: "heart-dimension",
+    excerpt:
+      "Warm, unhurried instrumentals for time at the wheel or the bench.",
+    publishedAt: "2026-01-05",
+    updatedAt: "2026-01-05",
+    intro:
+      "Working with clay sets its own pace. Centering, throwing, trimming and glazing all ask for steady hands and patience, and a calm instrumental album can help settle into that slower rhythm. This is the one we would leave playing in the studio.",
+    sections: [
+      {
+        heading: "A backdrop for slow, careful work",
+        body: "Handwork like ceramics is a good match for music that stays even and unhurried. Something without sudden shifts lets you keep your attention on the clay while the sound fills the room.",
+      },
+      {
+        heading: "Practical notes",
+        body: "Studios get messy, so a speaker you can control hands-free is handy when your fingers are covered in slip. Keep the volume comfortable if you share the space with others.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-winter-cabin-evenings",
+    searchTerm: "music for winter cabin evenings",
+    title: "Music for Winter Cabin Evenings",
+    metaTitle: "Music for Winter Cabin Evenings — Cozy Album",
+    metaDescription:
+      "Music for winter cabin evenings: a warm, comforting instrumental album for fireside nights. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for winter cabin evenings",
+      "cozy winter music",
+      "cabin music",
+      "fireside instrumental music",
+    ],
+    heroImage: "/images/heroes/cabin.png",
+    heroAlt: "A cozy wooden cabin interior with a glowing fireplace on a winter night",
+    albumId: "heart-dimension",
+    excerpt:
+      "Warm, comforting instrumentals for fireside nights indoors.",
+    publishedAt: "2026-01-05",
+    updatedAt: "2026-01-05",
+    intro:
+      "When it is cold and dark outside, an evening indoors is its own reward — a fire going, something warm to drink, and nowhere to be. A gentle instrumental album can round out that feeling. Here is our pick for a slow winter night.",
+    sections: [
+      {
+        heading: "Music that matches the mood",
+        body: "Quiet, warm-sounding instrumentals suit a relaxed evening better than anything busy or bright. The idea is to add to the calm, not interrupt it.",
+      },
+      {
+        heading: "Make an evening of it",
+        body: "Dim the lights, put the album on low, and let it play through. It works just as well for reading, cooking a slow dinner, or simply doing nothing at all.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-solo-hiking",
+    searchTerm: "music for solo hiking",
+    title: "Music for Solo Hiking",
+    metaTitle: "Music for Solo Hiking — Trail Companion Album",
+    metaDescription:
+      "Music for solo hiking: a steady, atmospheric instrumental album for quiet trails. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for solo hiking",
+      "solo hiking music",
+      "trail music",
+      "hiking instrumental music",
+    ],
+    heroImage: "/images/heroes/solo-hiking.png",
+    heroAlt: "A lone hiker on a mountain trail with expansive valley views",
+    albumId: "ancient-arrow",
+    excerpt:
+      "Atmospheric instrumentals for long, quiet walks in nature.",
+    publishedAt: "2026-01-10",
+    updatedAt: "2026-01-10",
+    intro:
+      "Solo hiking means moving at your own pace, with no one else's rhythm to match. A steady instrumental album can keep you company on the trail while leaving plenty of room for the sounds of the forest and the trail underfoot.",
+    sections: [
+      {
+        heading: "Music that leaves room for nature",
+        body: "When you are hiking alone, you want to hear birds, wind in the trees, and your own footsteps. A low-key instrumental album with space between notes lets those natural sounds come through.",
+      },
+      {
+        heading: "Safety first",
+        body: "Always keep the volume low enough to hear approaching wildlife, other hikers, and changes in the weather. Many solo hikers use just one earbud, or keep a small speaker turned down.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is this suitable for all types of hiking?",
+        answer:
+          "It works for moderate to easy trails. On more technical terrain, you might prefer to hike without music so you can fully focus on foot placement and navigation.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-meditation",
+    searchTerm: "music for meditation",
+    title: "Music for Meditation",
+    metaTitle: "Music for Meditation — Calming Instrumental Album",
+    metaDescription:
+      "Music for meditation: a calm, spacious instrumental album to support quiet focus. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for meditation",
+      "meditation music",
+      "calming instrumental music",
+      "focus music for meditation",
+    ],
+    heroImage: "/images/heroes/meditation.png",
+    heroAlt: "A person meditating peacefully in a serene natural setting at sunrise",
+    albumId: "heart-dimension",
+    excerpt:
+      "Calm, spacious instrumentals for quiet focus and inner stillness.",
+    publishedAt: "2026-01-10",
+    updatedAt: "2026-01-10",
+    intro:
+      "Meditation is about letting go of distraction and turning inward. A gentle, consistent instrumental can help establish a quiet baseline, making it easier to settle into the practice. This album offers that kind of steady support.",
+    sections: [
+      {
+        heading: "Music as a backdrop, not a focus",
+        body: "The best meditation music stays in the background, providing a steady sonic anchor without demanding your attention. It should be predictable enough that it doesn't pull you out of your focus.",
+      },
+      {
+        heading: "How to use it",
+        body: "Start your session with the music already playing at a low volume. Let it run in the background as you settle into your breath or your chosen focus point, without trying to follow the music itself.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is instrumental music better than guided meditation?",
+        answer:
+          "It depends on your preference. Instrumental music works well for silent meditation or when you want to use your own meditation technique without spoken guidance.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-baking",
+    searchTerm: "music for baking",
+    title: "Music for Baking",
+    metaTitle: "Music for Baking — Warm Kitchen Album",
+    metaDescription:
+      "Music for baking: a warm, pleasant instrumental album for time in the kitchen. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for baking",
+      "baking music",
+      "kitchen music",
+      "cooking instrumental music",
+    ],
+    heroImage: "/images/heroes/baking.png",
+    heroAlt: "Freshly baked bread and pastries on a wooden kitchen counter",
+    albumId: "just-dmiles-3",
+    excerpt:
+      "Warm, pleasant instrumentals for relaxed time in the kitchen.",
+    publishedAt: "2026-01-10",
+    updatedAt: "2026-01-10",
+    intro:
+      "Baking moves at its own pace — measuring, mixing, waiting for dough to rise, watching something turn golden in the oven. A gentle instrumental album can fill the kitchen with a comfortable background sound while you work.",
+    sections: [
+      {
+        heading: "Music for slow, methodical tasks",
+        body: "Baking is often repetitive and rhythmical. A consistent instrumental album can match that pace, making the time pass pleasantly without pulling your attention away from the recipe.",
+      },
+      {
+        heading: "Practical considerations",
+        body: "Keep the volume low enough to hear your timer and any instructions you might be following. If you are kneading dough or working with noisy appliances, you might want to pause the music temporarily.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-reading-fantasy",
+    searchTerm: "music for reading fantasy",
+    title: "Music for Reading Fantasy",
+    metaTitle: "Music for Reading Fantasy — Atmospheric Album",
+    metaDescription:
+      "Music for reading fantasy books: an atmospheric instrumental album that supports immersion without distraction. Available on Spotify, Apple Music, Amazon and YouTube.",
+    keywords: [
+      "music for reading fantasy",
+      "fantasy reading music",
+      "book reading music",
+      "atmospheric reading music",
+    ],
+    heroImage: "/images/heroes/reading-fantasy.png",
+    heroAlt: "An open fantasy book with magical glowing illustrations in a cozy reading nook",
+    albumId: "heart-dimension",
+    excerpt:
+      "Atmospheric instrumentals that support deep reading immersion.",
+    publishedAt: "2026-01-10",
+    updatedAt: "2026-01-10",
+    intro:
+      "Fantasy books ask you to step into another world. The right instrumental music can help deepen that immersion, creating a sonic backdrop that matches the mood of the story without competing with the words on the page.",
+    sections: [
+      {
+        heading: "Why instrumental music works",
+        body: "Music with lyrics can clash with the words you are reading. Instrumental tracks stay in the background, supporting the atmosphere without interrupting your flow through the story.",
+      },
+      {
+        heading: "Finding the right volume",
+        body: "Set the volume low enough that you can still hear the story in your head. Many readers find that just barely audible background music works best for maintaining immersion.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Does this work for other genres too?",
+        answer:
+          "Many readers use similar instrumental music for all kinds of fiction. Fantasy readers in particular often look for atmospheric, non-intrusive music to accompany long reading sessions.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-houseplants",
+    searchTerm: "music for houseplants",
+    title: "Music for Houseplants",
+    metaTitle: "Music for Houseplants — Gentle Album",
+    metaDescription:
+      "Music for houseplants: a gentle, steady instrumental album for quiet plant care time. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for houseplants",
+      "plant care music",
+      "houseplant music",
+      "calm gardening music",
+    ],
+    heroImage: "/images/heroes/houseplants.png",
+    heroAlt: "Lush green houseplants in a bright sunny room with morning light",
+    albumId: "robokan",
+    excerpt:
+      "Gentle, steady instrumentals for quiet plant care sessions.",
+    publishedAt: "2026-01-10",
+    updatedAt: "2026-01-10",
+    intro:
+      "Caring for houseplants is a quiet, attentive activity — checking soil, trimming leaves, misting, rotating pots for even light. A soft instrumental album can make that time feel even more intentional and pleasant.",
+    sections: [
+      {
+        heading: "Music for focused attention",
+        body: "Plant care asks you to look closely and notice small changes. A calm, repetitive instrumental background can help you settle into that attentive state without distraction.",
+      },
+      {
+        heading: "Make it part of the routine",
+        body: "Put the album on when you start your plant care session. Let it play at low volume while you work, creating a consistent soundtrack for this regular, mindful activity.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-oil-painting",
+    searchTerm: "music for oil painting",
+    title: "Music for Oil Painting",
+    metaTitle: "Music for Oil Painting — Creative Flow Album",
+    metaDescription:
+      "Music for oil painting: a steady, unhurried instrumental album for time at the easel. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for oil painting",
+      "oil painting music",
+      "painting studio music",
+      "creative flow music",
+    ],
+    heroImage: "/images/heroes/oil-painting.png",
+    heroAlt: "An artist's hands mixing oil paints on a palette with a canvas in progress",
+    albumId: "ancient-arrow",
+    excerpt:
+      "Steady, unhurried instrumentals for extended sessions at the easel.",
+    publishedAt: "2026-01-15",
+    updatedAt: "2026-01-15",
+    intro:
+      "Oil painting moves slowly — layers need to dry, colors must be mixed carefully, decisions unfold over hours or days. A consistent instrumental album can help maintain that slow, deliberate pace without rushing the process.",
+    sections: [
+      {
+        heading: "Music that matches the medium",
+        body: "Oil paint dries slowly, and paintings often develop over multiple sessions. A steady, repeating instrumental album can help you return to the same mental space each time you come back to the canvas.",
+      },
+      {
+        heading: "Practical studio notes",
+        body: "Keep the volume low enough to hear your brush on the canvas and any thoughts you want to follow. If you use solvents or work in a ventilated area, make sure your speaker placement is safe and practical.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Would this work for other painting mediums too?",
+        answer:
+          "Yes, many artists use similar instrumental music for watercolor, acrylics, or drawing. The key is finding music that supports your focus without interrupting your creative flow.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-train-journeys",
+    searchTerm: "music for train journeys",
+    title: "Music for Train Journeys",
+    metaTitle: "Music for Train Journeys — Travel Album",
+    metaDescription:
+      "Music for train journeys: a steady, atmospheric instrumental album for long rides through changing landscapes. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for train journeys",
+      "train travel music",
+      "rail journey music",
+      "travel instrumental music",
+    ],
+    heroImage: "/images/heroes/train.png",
+    heroAlt: "A scenic train journey through mountains and valleys from a window seat",
+    albumId: "deep-whistle",
+    excerpt:
+      "Steady, atmospheric instrumentals for watching landscapes roll by.",
+    publishedAt: "2026-01-15",
+    updatedAt: "2026-01-15",
+    intro:
+      "Train journeys have their own rhythm — the steady motion, the changing scenery outside the window, the sense of moving from one place to another without effort. An instrumental album can complement that rhythm, making the trip feel even more immersive.",
+    sections: [
+      {
+        heading: "Music that moves with the landscape",
+        body: "A consistent, mid-tempo instrumental album can match the steady pace of a train, creating a sonic backdrop that flows with the passing views rather than competing with them.",
+      },
+      {
+        heading: "Travel considerations",
+        body: "Use headphones to respect other passengers, and keep the volume low enough to hear announcements and any travel companions. A long album is ideal for extended journeys.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-stormy-nights",
+    searchTerm: "music for stormy nights",
+    title: "Music for Stormy Nights",
+    metaTitle: "Music for Stormy Nights — Atmospheric Album",
+    metaDescription:
+      "Music for stormy nights: a dramatic, atmospheric instrumental album for when the weather turns. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for stormy nights",
+      "storm music",
+      "rainy night music",
+      "atmospheric weather music",
+    ],
+    heroImage: "/images/heroes/storm.png",
+    heroAlt: "A dramatic thunderstorm over a dark landscape with lightning flashes",
+    albumId: "reflection-symphony",
+    excerpt:
+      "Dramatic, atmospheric instrumentals for when the weather turns.",
+    publishedAt: "2026-01-15",
+    updatedAt: "2026-01-15",
+    intro:
+      "There is something compelling about a good storm — the sound of rain, the rumble of thunder, the dramatic shifts in light. An instrumental album with some depth and movement can enhance that experience when you are safe indoors.",
+    sections: [
+      {
+        heading: "Music that complements the weather",
+        body: "On a stormy night, you want music that has some weight and atmosphere but does not overwhelm the natural soundscape outside. The album below walks that line.",
+      },
+      {
+        heading: "How to listen",
+        body: "Put it on as the storm builds, and let it play at a volume that lets you still hear the rain and thunder. It works well for reading, relaxing, or simply watching the weather from a window.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-chess",
+    searchTerm: "music for chess",
+    title: "Music for Chess",
+    metaTitle: "Music for Chess — Focus Album",
+    metaDescription:
+      "Music for chess: a calm, focused instrumental album for thoughtful games and study. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for chess",
+      "chess music",
+      "board game music",
+      "strategic thinking music",
+    ],
+    heroImage: "/images/heroes/chess.png",
+    heroAlt: "A chessboard mid-game with thoughtful hands considering a move",
+    albumId: "heart-dimension",
+    excerpt:
+      "Calm, focused instrumentals for thoughtful games and study.",
+    publishedAt: "2026-01-15",
+    updatedAt: "2026-01-15",
+    intro:
+      "Chess asks for deep concentration — visualizing moves ahead, weighing options, spotting patterns. A steady instrumental album can help create a bubble of focus, keeping outside distractions at bay while you think.",
+    sections: [
+      {
+        heading: "Why instrumental music helps",
+        body: "Music with lyrics can interfere with the verbal thinking many players use during analysis. A consistent instrumental background helps maintain mental clarity without adding competing words.",
+      },
+      {
+        heading: "Setting up for a session",
+        body: "Start the album as you set up the board, and let it run quietly in the background. Keep the volume low enough that you can still hear your thoughts clearly and any discussion if you are playing with a partner.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is this suitable for tournament play?",
+        answer:
+          "Most tournaments do not allow headphones or external music during play. This album is better suited for practice, study, or casual games where music is permitted.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-poetry-writing",
+    searchTerm: "music for poetry writing",
+    title: "Music for Poetry Writing",
+    metaTitle: "Music for Poetry Writing — Creative Space Album",
+    metaDescription:
+      "Music for poetry writing: a subtle, spacious instrumental album for finding words and rhythm. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for poetry writing",
+      "poetry music",
+      "creative writing music",
+      "wordcraft music",
+    ],
+    heroImage: "/images/heroes/poetry.png",
+    heroAlt: "A notebook with handwritten poetry and a fountain pen on a wooden desk",
+    albumId: "heart-dimension",
+    excerpt:
+      "Subtle, spacious instrumentals for finding words and rhythm.",
+    publishedAt: "2026-01-15",
+    updatedAt: "2026-01-15",
+    intro:
+      "Writing poetry is about listening — to the rhythm of words, to the silence between them, to whatever feeling or image you are trying to capture. A very quiet instrumental album can hold a space for that listening without filling it.",
+    sections: [
+      {
+        heading: "Music as a gentle container",
+        body: "The best writing music stays so far in the background that it almost disappears, creating a quiet sonic environment that supports concentration without dictating mood or tempo.",
+      },
+      {
+        heading: "How to use it",
+        body: "Set the volume extremely low — just enough to sense the music's presence without actually following it. Many writers find that barely-audible background sound helps quiet mental chatter.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Would this work for other types of writing?",
+        answer:
+          "Yes, many writers use similar quiet instrumental music for fiction, journaling, or other creative writing. The key is finding music that supports focus without competing for attention.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-early-morning",
+    searchTerm: "music for early morning",
+    title: "Music for Early Morning",
+    metaTitle: "Music for Early Morning — Gentle Wake-up Album",
+    metaDescription:
+      "Music for early morning: a gentle, gradual instrumental album for quiet starts to the day. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for early morning",
+      "morning music",
+      "wake up music",
+      "gentle start music",
+    ],
+    heroImage: "/images/heroes/baking.png", // Using baking image as it has morning light feel
+    heroAlt: "Soft morning light streaming through a window onto a quiet room",
+    albumId: "beme-2",
+    excerpt:
+      "Gentle, gradual instrumentals for quiet starts to the day.",
+    publishedAt: "2026-01-15",
+    updatedAt: "2026-01-15",
+    intro:
+      "The first hours of the day set a tone. Whether you are easing into wakefulness with coffee, doing some quiet work before the world starts, or simply enjoying the stillness, a gentle instrumental album can help maintain that calm, deliberate pace.",
+    sections: [
+      {
+        heading: "Music that respects the quiet",
+        body: "Early morning is often the quietest time of day. A soft, slow-building instrumental album can complement that quiet rather than break it, adding just enough sound to feel companioned.",
+      },
+      {
+        heading: "How to begin",
+        body: "Start the album at low volume as you begin your morning routine. Let it play quietly in the background while you move slowly into the day, keeping the mood gentle and intentional.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-swimming",
+    searchTerm: "music for swimming",
+    title: "Music for Swimming",
+    metaTitle: "Music for Swimming — Waterproof Rhythm Album",
+    metaDescription:
+      "Music for swimming: a steady, rhythmic instrumental album for lap swimming and pool workouts. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for swimming",
+      "swimming music",
+      "lap swimming music",
+      "pool workout music",
+    ],
+    heroImage: "/images/heroes/generic.png", // Using climbing as generic sports image
+    heroAlt: "A swimmer in a pool with clean water and sunlight filtering through",
+    albumId: "future-arrow",
+    excerpt:
+      "Steady, rhythmic instrumentals for focused lap swimming sessions.",
+    publishedAt: "2026-01-20",
+    updatedAt: "2026-01-20",
+    intro:
+      "Swimming requires a consistent rhythm — breath, stroke, kick, repeat. A steady instrumental album can help establish and maintain that rhythm, making long sets feel more fluid and focused.",
+    sections: [
+      {
+        heading: "Music for underwater focus",
+        body: "When you are swimming laps, external sounds fade away. A consistent, rhythmic instrumental track can help you maintain pace and stay mentally engaged through repetitive strokes.",
+      },
+      {
+        heading: "Safety considerations",
+        body: "Only use waterproof audio devices designed for swimming. Keep the volume low enough to hear pool whistles, other swimmers, and any safety announcements.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What type of music works best for swimming?",
+        answer:
+          "Steady, consistent instrumental music with a clear beat tends to work well for maintaining swim pace. Avoid music with sudden tempo changes or complex arrangements.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-cycling",
+    searchTerm: "music for cycling",
+    title: "Music for Cycling",
+    metaTitle: "Music for Cycling — Road Rhythm Album",
+    metaDescription:
+      "Music for cycling: an energetic, steady instrumental album for road rides and training. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for cycling",
+      "cycling music",
+      "bike riding music",
+      "road cycling music",
+    ],
+    heroImage: "/images/heroes/solo-hiking.png", // Using hiking as outdoor activity image
+    heroAlt: "A cyclist on a scenic road with mountains in the distance",
+    albumId: "just-dmiles-2",
+    excerpt:
+      "Energetic, steady instrumentals for road rides and indoor training.",
+    publishedAt: "2026-01-20",
+    updatedAt: "2026-01-20",
+    intro:
+      "Cycling thrives on rhythm — the steady turning of pedals, the consistent breathing pattern, the miles rolling by. A driving instrumental album can help lock into that rhythm and make long rides feel more purposeful.",
+    sections: [
+      {
+        heading: "Music that matches your cadence",
+        body: "Many cyclists match their pedal strokes to music tempo. A steady instrumental album with a consistent beat can help you maintain optimal cadence, whether you are climbing, sprinting, or cruising.",
+      },
+      {
+        heading: "Safety first",
+        body: "On road rides, use only one earbud or keep volume very low so you can hear traffic, other cyclists, and environmental sounds. Consider bone conduction headphones for maximum situational awareness.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-car-road-trips",
+    searchTerm: "music for car road trips",
+    title: "Music for Car Road Trips",
+    metaTitle: "Music for Car Road Trips — Highway Album",
+    metaDescription:
+      "Music for car road trips: a driving, atmospheric instrumental album for long highway journeys. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for car road trips",
+      "road trip music",
+      "driving music",
+      "highway music",
+    ],
+    heroImage: "/images/heroes/train.png", // Using train image for travel
+    heroAlt: "A scenic highway road stretching into distant mountains",
+    albumId: "just-dmiles-2",
+    excerpt:
+      "Driving, atmospheric instrumentals for epic highway journeys.",
+    publishedAt: "2026-01-20",
+    updatedAt: "2026-01-20",
+    intro:
+      "There is something special about a long drive — the changing landscapes, the sense of movement, the hours to think or talk. An instrumental album with some forward momentum can complement that feeling perfectly.",
+    sections: [
+      {
+        heading: "Music that moves with the road",
+        body: "A steady, driving instrumental album can match the rhythm of the highway, making the miles pass more pleasantly without demanding too much attention from the driver or passengers.",
+      },
+      {
+        heading: "Creating the right atmosphere",
+        body: "Set the volume to a comfortable level where conversation is still easy. Let the album play through, creating a consistent sonic backdrop for the journey rather than a constantly changing playlist.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is instrumental music better than vocal music for driving?",
+        answer:
+          "Many drivers find instrumental music less distracting because there are no lyrics to process. This can be especially helpful on long drives where you want to stay alert but not overstimulated.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-horseback-riding",
+    searchTerm: "music for horseback riding",
+    title: "Music for Horseback Riding",
+    metaTitle: "Music for Horseback Riding — Trail Album",
+    metaDescription:
+      "Music for horseback riding: a calm, steady instrumental album for trail rides and arena work. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for horseback riding",
+      "horse riding music",
+      "equestrian music",
+      "trail riding music",
+    ],
+    heroImage: "/images/heroes/solo-hiking.png", // Using hiking for outdoor activity
+    heroAlt: "A rider on horseback on a scenic forest trail",
+    albumId: "want-you",
+    excerpt:
+      "Calm, steady instrumentals for peaceful trail rides and arena work.",
+    publishedAt: "2026-01-20",
+    updatedAt: "2026-01-20",
+    intro:
+      "Horseback riding asks for focus and calm — reading your horse, feeling their movement, staying balanced and relaxed. A gentle instrumental album can help both rider and horse stay in a peaceful, focused state.",
+    sections: [
+      {
+        heading: "Music for horse and rider",
+        body: "Horses respond to calm, consistent energy. A steady instrumental album played at low volume can help create a relaxed atmosphere for training, trail rides, or simply spending time together.",
+      },
+      {
+        heading: "Practical considerations",
+        body: "Keep the volume very low so you can hear your horse's breathing, footfalls, and any environmental sounds. Use a small portable speaker rather than headphones to maintain full situational awareness.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-morning-workouts",
+    searchTerm: "music for morning workouts",
+    title: "Music for Morning Workouts",
+    metaTitle: "Music for Morning Workouts — Energizing Album",
+    metaDescription:
+      "Music for morning workouts: an energizing but steady instrumental album for early exercise sessions. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for morning workouts",
+      "morning exercise music",
+      "early workout music",
+      "gym morning music",
+    ],
+    heroImage: "/images/heroes/climbing.png", // Using climbing for sports
+    heroAlt: "Someone exercising in a gym during early morning hours",
+    albumId: "just-dmiles-2",
+    excerpt:
+      "Energizing but steady instrumentals for early exercise sessions.",
+    publishedAt: "2026-01-20",
+    updatedAt: "2026-01-20",
+    intro:
+      "Morning workouts set the tone for the day. You want energy but not chaos, focus but not overstimulation. A driving instrumental album can provide that perfect balance — enough momentum to get moving, enough steadiness to stay controlled.",
+    sections: [
+      {
+        heading: "Music that wakes you up gently",
+        body: "Early morning exercise benefits from music that builds gradually rather than starting at full intensity. A steady instrumental album can help ease your body and mind into movement mode.",
+      },
+      {
+        heading: "Setting the right pace",
+        body: "Match the music tempo to your workout intensity — slower for warm-ups and stretching, more energetic for the main session. Keep the volume moderate to protect your hearing while still feeling motivated.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-yoga",
+    searchTerm: "music for yoga",
+    title: "Music for Yoga",
+    metaTitle: "Music for Yoga — Mindful Flow Album",
+    metaDescription:
+      "Music for yoga: a calm, flowing instrumental album for yoga practice and meditation. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for yoga",
+      "yoga music",
+      "yoga practice music",
+      "mindful flow music",
+    ],
+    heroImage: "/images/heroes/meditation.png", // Using meditation image
+    heroAlt: "A person in yoga pose with peaceful morning light",
+    albumId: "heart-dimension",
+    excerpt:
+      "Calm, flowing instrumentals for mindful movement and breath work.",
+    publishedAt: "2026-01-20",
+    updatedAt: "2026-01-20",
+    intro:
+      "Yoga is about connection — breath to movement, mind to body, effort to ease. A gentle instrumental album can help create a container for that connection, supporting your practice without directing it.",
+    sections: [
+      {
+        heading: "Music as background support",
+        body: "The best yoga music stays subtle, providing a steady sonic foundation without pulling attention away from your breath and bodily sensations. It should feel supportive, not distracting.",
+      },
+      {
+        heading: "Matching music to practice style",
+        body: "For gentle or restorative yoga, choose slower, more spacious music. For vinyasa or flow practices, something with a bit more momentum can help maintain rhythm through sequences.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Should I use different music for different types of yoga?",
+        answer:
+          "Many practitioners do adjust their music based on practice style. Slower, more ambient music often works better for yin or restorative yoga, while steady rhythmic music can support vinyasa flows.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-running",
+    searchTerm: "music for running",
+    title: "Music for Running",
+    metaTitle: "Music for Running — Steady Pace Album",
+    metaDescription:
+      "Music for running: a steady, driving instrumental album for road runs and trail running. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for running",
+      "running music",
+      "jogging music",
+      "road running music",
+    ],
+    heroImage: "/images/heroes/solo-hiking.png", // Using hiking for outdoor activity
+    heroAlt: "A runner on a scenic trail at golden hour",
+    albumId: "future-arrow",
+    excerpt:
+      "Steady, driving instrumentals for maintaining running pace and motivation.",
+    publishedAt: "2026-01-20",
+    updatedAt: "2026-01-20",
+    intro:
+      "Running is rhythm — footfalls, breathing, arm swing. A consistent instrumental album can help you lock into that rhythm, making miles feel more automatic and less like work.",
+    sections: [
+      {
+        heading: "Music for pace maintenance",
+        body: "Many runners use music tempo to maintain consistent pace. A steady instrumental album with a clear beat can help you avoid starting too fast or slowing down unintentionally.",
+      },
+      {
+        heading: "Safety on the run",
+        body: "Use only one earbud or keep volume low enough to hear traffic, other people, and environmental sounds. Bone conduction headphones are a popular choice for runners who want music and situational awareness.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-weightlifting",
+    searchTerm: "music for weightlifting",
+    title: "Music for Weightlifting",
+    metaTitle: "Music for Weightlifting — Focus Album",
+    metaDescription:
+      "Music for weightlifting: a focused, driving instrumental album for strength training sessions. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for weightlifting",
+      "weightlifting music",
+      "strength training music",
+      "gym workout music",
+    ],
+    heroImage: "/images/heroes/climbing.png", // Using climbing for sports
+    heroAlt: "Weightlifting equipment in a gym with focused atmosphere",
+    albumId: "giro-fatal",
+    excerpt:
+      "Focused, driving instrumentals for intense strength training sessions.",
+    publishedAt: "2026-01-20",
+    updatedAt: "2026-01-20",
+    intro:
+      "Weightlifting demands concentration — proper form, controlled movement, focused breathing. A driving instrumental album can help create a bubble of focus, blocking out gym distractions while you work.",
+    sections: [
+      {
+        heading: "Music for mental preparation",
+        body: "The right music can help you get into the right mindset for heavy lifts. A steady, powerful instrumental track can provide mental momentum before and during challenging sets.",
+      },
+      {
+        heading: "Practical gym considerations",
+        body: "Keep volume moderate — you want to stay focused but still hear any spotters or safety calls. Many lifters prefer over-ear headphones for better noise isolation during intense focus moments.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-motocycle-rides",
+    searchTerm: "music for motorcycle rides",
+    title: "Music for Motorcycle Rides",
+    metaTitle: "Music for Motorcycle Rides — Road Album",
+    metaDescription:
+      "Music for motorcycle rides: an atmospheric instrumental album for scenic rides and highway cruising. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for motorcycle rides",
+      "motorcycle music",
+      "bike riding music",
+      "scenic ride music",
+    ],
+    heroImage: "/images/heroes/generic.png", // Using train for travel
+    heroAlt: "A motorcycle on a winding mountain road with scenic views",
+    albumId: "abducted",
+    excerpt:
+      "Atmospheric instrumentals for the focus and freedom of motorcycle riding.",
+    publishedAt: "2026-01-20",
+    updatedAt: "2026-01-20",
+    intro:
+      "Motorcycle riding combines intense focus with a sense of freedom — reading the road, feeling the machine, moving through landscapes. An instrumental album with some space and movement can complement that experience perfectly.",
+    sections: [
+      {
+        heading: "Music that enhances the ride",
+        body: "On a motorcycle, you are surrounded by engine sounds, wind, and road noise. A steady instrumental album played at moderate volume through helmet speakers can add to the experience without overwhelming important auditory cues.",
+      },
+      {
+        heading: "Safety considerations",
+        body: "Always keep music volume low enough to clearly hear traffic, horns, emergency vehicles, and your own engine. Consider using only one earphone or specially designed motorcycle audio systems that maintain situational awareness.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-skating",
+    searchTerm: "music for skating",
+    title: "Music for Skating",
+    metaTitle: "Music for Skating — Flow Album",
+    metaDescription:
+      "Music for skating: a flowing, rhythmic instrumental album for roller skating, skateboarding, or ice skating. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for skating",
+      "skating music",
+      "roller skating music",
+      "skateboard music",
+    ],
+    heroImage: "/images/heroes/generic.png", // Using climbing for sports
+    heroAlt: "Someone skating on a smooth surface with flowing movement",
+    albumId: "robokan",
+    excerpt:
+      "Flowing, rhythmic instrumentals for smooth skating sessions.",
+    publishedAt: "2026-01-20",
+    updatedAt: "2026-01-20",
+    intro:
+      "Skating is about flow — the smooth connection between pushes, turns, and glides. A rhythmic instrumental album can help you find and maintain that flow, making sessions feel more connected and less effortful.",
+    sections: [
+      {
+        heading: "Music for movement rhythm",
+        body: "Whether you are roller skating, skateboarding, or ice skating, a steady beat can help coordinate your movements and maintain consistent speed and flow through different maneuvers.",
+      },
+      {
+        heading: "Environmental awareness",
+        body: "Always keep volume low enough to hear traffic, other skaters, and potential hazards. Consider using only one earbud or bone conduction headphones when skating in public spaces.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-surfing",
+    searchTerm: "music for surfing",
+    title: "Music for Surfing",
+    metaTitle: "Music for Surfing — Ocean Rhythm Album",
+    metaDescription:
+      "Music for surfing: a flowing, oceanic instrumental album for pre-surf focus and post-session relaxation. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for surfing",
+      "surfing music",
+      "surf session music",
+      "ocean sports music",
+    ],
+    heroImage: "/images/heroes/storm.png", // Using storm for ocean/water
+    heroAlt: "A surfer riding a wave at sunrise",
+    albumId: "deep-whistle",
+    excerpt:
+      "Flowing, oceanic instrumentals for pre-surf focus and beach time.",
+    publishedAt: "2026-01-25",
+    updatedAt: "2026-01-25",
+    intro:
+      "Surfing connects you to ocean rhythms — sets, waves, tides. A flowing instrumental album with some spaciousness can complement that connection, whether you are getting focused before paddling out or relaxing after a session.",
+    sections: [
+      {
+        heading: "Music for pre-surf mindset",
+        body: "Many surfers use music to get into the right headspace before hitting the water — calm but focused, relaxed but ready. A steady instrumental album can help establish that balance.",
+      },
+      {
+        heading: "Practical ocean considerations",
+        body: "Never wear headphones in the water. Use music only on the beach before or after surfing. Keep volume low enough to hear ocean conditions and any safety announcements from lifeguards.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-rock-climbing",
+    searchTerm: "music for rock climbing",
+    title: "Music for Rock Climbing",
+    metaTitle: "Music for Rock Climbing — Focus Album",
+    metaDescription:
+      "Music for rock climbing: a focused, steady instrumental album for bouldering and route climbing. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for rock climbing",
+      "rock climbing music",
+      "bouldering music",
+      "climbing gym music",
+    ],
+    heroImage: "/images/heroes/climbing.png",
+    heroAlt: "A climber working on a challenging boulder problem",
+    albumId: "ancient-arrow",
+    excerpt:
+      "Focused, steady instrumentals for technical climbing problems.",
+    publishedAt: "2026-01-25",
+    updatedAt: "2026-01-25",
+    intro:
+      "Rock climbing demands intense focus — reading routes, planning sequences, executing precise movements. A steady instrumental album can help create mental space for that focus, blocking out gym chatter while you work through problems.",
+    sections: [
+      {
+        heading: "Music for problem-solving",
+        body: "When you are working a climbing problem, you need to think through beta and visualize movements. A consistent instrumental background can help maintain concentration without adding mental clutter.",
+      },
+      {
+        heading: "Gym etiquette",
+        body: "Keep volume low enough to hear spotters, other climbers, and safety calls. Consider using just one earbud or sharing a small speaker with your climbing partner if you are working on the same problem.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-crossfit",
+    searchTerm: "music for crossfit",
+    title: "Music for CrossFit",
+    metaTitle: "Music for CrossFit — High-Energy Album",
+    metaDescription:
+      "Music for CrossFit: a high-energy, driving instrumental album for intense workout sessions. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for crossfit",
+      "crossfit music",
+      "HIIT workout music",
+      "high-intensity music",
+    ],
+    heroImage: "/images/heroes/climbing.png", // Using climbing for sports
+    heroAlt: "CrossFit workout equipment and athletes in action",
+    albumId: "skyline-mirror",
+    excerpt:
+      "High-energy, driving instrumentals for intense CrossFit workouts.",
+    publishedAt: "2026-01-25",
+    updatedAt: "2026-01-25",
+    intro:
+      "CrossFit workouts push intensity — speed, power, endurance, all in one session. A driving instrumental album can help fuel that intensity, providing energy without distracting lyrics during complex movements.",
+    sections: [
+      {
+        heading: "Music for workout momentum",
+        body: "During high-intensity workouts, music with a strong, consistent beat can help maintain pace through challenging intervals and complex movement sequences.",
+      },
+      {
+        heading: "Safety in intensity",
+        body: "Keep volume moderate so you can still hear coaches' cues and any safety warnings. During heavy lifts or technical movements, some athletes prefer to pause music entirely for maximum focus.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-pilates",
+    searchTerm: "music for pilates",
+    title: "Music for Pilates",
+    metaTitle: "Music for Pilates — Controlled Movement Album",
+    metaDescription:
+      "Music for Pilates: a controlled, precise instrumental album for focused core work and body awareness. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for pilates",
+      "pilates music",
+      "core workout music",
+      "controlled movement music",
+    ],
+    heroImage: "/images/heroes/meditation.png", // Using meditation for mindful movement
+    heroAlt: "Pilates reformer equipment in a calm studio setting",
+    albumId: "abducted",
+    excerpt:
+      "Controlled, precise instrumentals for focused Pilates sessions.",
+    publishedAt: "2026-01-25",
+    updatedAt: "2026-01-25",
+    intro:
+      "Pilates is about control — precise movements, engaged muscles, focused breathing. A steady instrumental album can support that control, providing a consistent rhythm without dictating the pace of your practice.",
+    sections: [
+      {
+        heading: "Music for precision and focus",
+        body: "The slow, controlled movements of Pilates benefit from music that is steady but not rushed. A consistent instrumental track can help maintain focus on form and breath throughout the session.",
+      },
+      {
+        heading: "Creating the right atmosphere",
+        body: "Keep volume low to moderate — you want enough sound to support focus but not so much that it overwhelms your awareness of body alignment and muscle engagement.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-wedding-preparation",
+    searchTerm: "music for wedding preparation",
+    title: "Music for Wedding Preparation",
+    metaTitle: "Music for Wedding Preparation — Calm Album",
+    metaDescription:
+      "Music for wedding preparation: a calm, uplifting instrumental album for getting ready on the big day. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for wedding preparation",
+      "wedding music",
+      "getting ready music",
+      "bridal preparation music",
+    ],
+    heroImage: "/images/heroes/cabin.png", // Using cabin for cozy preparation
+    heroAlt: "Elegant wedding preparation details in a calm setting",
+    albumId: "want-you",
+    excerpt:
+      "Calm, uplifting instrumentals for peaceful wedding day preparation.",
+    publishedAt: "2026-01-25",
+    updatedAt: "2026-01-25",
+    intro:
+      "Wedding mornings can be hectic — last-minute details, emotions running high, lots of people moving around. A calm instrumental album can help create pockets of peace, making the preparation time feel more intentional and less chaotic.",
+    sections: [
+      {
+        heading: "Music for emotional regulation",
+        body: "A steady, uplifting instrumental album can help manage pre-wedding nerves and excitement, creating a consistent emotional baseline amidst the morning's busyness.",
+      },
+      {
+        heading: "Practical considerations",
+        body: "Keep volume at a comfortable background level — loud enough to create atmosphere but quiet enough for conversations, phone calls, and any coordination that needs to happen.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is instrumental music better than vocal music for wedding prep?",
+        answer:
+          "Many people prefer instrumental music during preparation because it creates atmosphere without competing with conversations or adding emotional complexity through lyrics.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-study-sessions",
+    searchTerm: "music for study sessions",
+    title: "Music for Study Sessions",
+    metaTitle: "Music for Study Sessions — Focus Album",
+    metaDescription:
+      "Music for study sessions: a consistent, non-distracting instrumental album for deep concentration. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for study sessions",
+      "study music",
+      "focus music",
+      "concentration music",
+    ],
+    heroImage: "/images/heroes/coding.png", // Using coding for focus work
+    heroAlt: "Study materials on a desk with focused lighting",
+    albumId: "shiny-star",
+    excerpt:
+      "Consistent, non-distracting instrumentals for deep study concentration.",
+    publishedAt: "2026-01-25",
+    updatedAt: "2026-01-25",
+    intro:
+      "Studying requires sustained attention — reading, processing, memorizing, problem-solving. A steady instrumental album can help block out environmental distractions while creating a consistent mental environment for focus.",
+    sections: [
+      {
+        heading: "Music for cognitive flow",
+        body: "Instrumental music without lyrics is often preferred for studying because it doesn't compete with the verbal processing required for reading and thinking. A consistent track can help maintain mental momentum through long study sessions.",
+      },
+      {
+        heading: "Finding the right volume",
+        body: "Set the volume just high enough to mask background noise but low enough that it stays in the background of your awareness. Many students find that barely-audible music works best for maintaining concentration.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-cooking-dinner",
+    searchTerm: "music for cooking dinner",
+    title: "Music for Cooking Dinner",
+    metaTitle: "Music for Cooking Dinner — Kitchen Album",
+    metaDescription:
+      "Music for cooking dinner: a pleasant, steady instrumental album for evening meal preparation. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for cooking dinner",
+      "cooking music",
+      "kitchen music",
+      "meal preparation music",
+    ],
+    heroImage: "/images/heroes/baking.png",
+    heroAlt: "Evening cooking preparation in a warm kitchen",
+    albumId: "time-to-shine",
+    excerpt:
+      "Pleasant, steady instrumentals for relaxed evening meal preparation.",
+    publishedAt: "2026-01-25",
+    updatedAt: "2026-01-25",
+    intro:
+      "Cooking dinner marks the transition from workday to evening — chopping, stirring, tasting, creating. A steady instrumental album can help ease that transition, making kitchen time feel more like a ritual than a chore.",
+    sections: [
+      {
+        heading: "Music for kitchen rhythm",
+        body: "Cooking has its own rhythms — prep work, cooking times, final adjustments. A consistent instrumental album can complement those rhythms, making the process feel more fluid and less fragmented.",
+      },
+      {
+        heading: "Practical kitchen considerations",
+        body: "Keep volume moderate so you can still hear timers, sizzling pans, and any cooking cues. Consider a speaker with good sound quality that can handle kitchen humidity and occasional splashes.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-sunrise",
+    searchTerm: "music for sunrise",
+    title: "Music for Sunrise",
+    metaTitle: "Music for Sunrise — Morning Light Album",
+    metaDescription:
+      "Music for sunrise: a gentle, gradual instrumental album for watching the day begin. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for sunrise",
+      "sunrise music",
+      "morning light music",
+      "dawn music",
+    ],
+    heroImage: "/images/heroes/stargazing.png", // Using stargazing for early morning
+    heroAlt: "A beautiful sunrise over a landscape with first light",
+    albumId: "beme-2",
+    excerpt:
+      "Gentle, gradual instrumentals for peaceful sunrise moments.",
+    publishedAt: "2026-01-25",
+    updatedAt: "2026-01-25",
+    intro:
+      "Sunrise is nature's slowest, most dramatic show — light gradually returning, colors shifting, the world waking up. A gentle instrumental album that builds slowly can mirror that progression, enhancing the experience without rushing it.",
+    sections: [
+      {
+        heading: "Music that matches the light",
+        body: "Just as sunrise happens gradually, the best sunrise music builds slowly. A gentle instrumental album that starts quietly and develops over time can complement the changing light and atmosphere.",
+      },
+      {
+        heading: "Creating a morning ritual",
+        body: "Start the album as the first light appears, and let it play through as the sun fully rises. Keep the volume very low — just enough to provide sonic companionship without overwhelming the natural sounds of morning.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-camping",
+    searchTerm: "music for camping",
+    title: "Music for Camping",
+    metaTitle: "Music for Camping — Nature Album",
+    metaDescription:
+      "Music for camping: an atmospheric, nature-inspired instrumental album for campfire evenings and tent mornings. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for camping",
+      "camping music",
+      "campfire music",
+      "nature trip music",
+    ],
+    heroImage: "/images/heroes/cabin.png", // Using cabin for outdoor vibe
+    heroAlt: "A campsite at dusk with tent and campfire",
+    albumId: "beme",
+    excerpt:
+      "Atmospheric, nature-inspired instrumentals for campfire evenings.",
+    publishedAt: "2026-01-25",
+    updatedAt: "2026-01-25",
+    intro:
+      "Camping connects you to natural rhythms — daylight, weather, fire, stars. An atmospheric instrumental album can complement that connection, providing gentle background sound for campfire conversations or quiet tent moments.",
+    sections: [
+      {
+        heading: "Music that respects nature",
+        body: "Camping music should enhance the outdoor experience, not compete with it. Choose instrumental tracks with space and atmosphere that leave plenty of room for natural sounds like crackling fire, wind, and wildlife.",
+      },
+      {
+        heading: "Practical camping considerations",
+        body: "Keep volume very low to respect other campers and maintain wildlife awareness. Use a small portable speaker rather than headphones so everyone can enjoy the music together around the campfire.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-airplane-travel",
+    searchTerm: "music for airplane travel",
+    title: "Music for Airplane Travel",
+    metaTitle: "Music for Airplane Travel — Journey Album",
+    metaDescription:
+      "Music for airplane travel: a steady, atmospheric instrumental album for flights and airport time. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for airplane travel",
+      "flight music",
+      "travel music",
+      "airport music",
+    ],
+    heroImage: "/images/heroes/train.png", // Using train for travel
+    heroAlt: "Airplane window view of clouds and sky",
+    albumId: "direct-potion",
+    excerpt:
+      "Steady, atmospheric instrumentals for flights and travel transitions.",
+    publishedAt: "2026-01-25",
+    updatedAt: "2026-01-25",
+    intro:
+      "Air travel creates its own suspended reality — hours in a seat, views of clouds, the hum of engines. A steady instrumental album can help pass that time pleasantly, creating a personal sonic space within the shared aircraft environment.",
+    sections: [
+      {
+        heading: "Music for travel focus",
+        body: "Whether you are working, reading, resting, or simply watching the world go by below, a consistent instrumental album can help create focus and make flight time feel more purposeful.",
+      },
+      {
+        heading: "Travel practicalities",
+        body: "Use noise-cancelling headphones for best results, and keep volume at safe levels for extended listening. Make sure to pause music during announcements and safety briefings.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-photography-sessions",
+    searchTerm: "music for photography sessions",
+    title: "Music for Photography Sessions",
+    metaTitle: "Music for Photography — Creative Focus Album",
+    metaDescription:
+      "Music for photography sessions: a focused, atmospheric instrumental album for photo shoots and editing. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for photography sessions",
+      "photography music",
+      "photo shoot music",
+      "creative work music",
+    ],
+    heroImage: "/images/heroes/oil-painting.png", // Using art for creative work
+    heroAlt: "Photography equipment and creative workspace",
+    albumId: "just-dmiles-3",
+    excerpt:
+      "Focused, atmospheric instrumentals for photography creativity.",
+    publishedAt: "2026-01-25",
+    updatedAt: "2026-01-25",
+    intro:
+      "Photography requires both technical focus and creative flow — seeing light, composing frames, working with subjects. An atmospheric instrumental album can help maintain that balance, supporting concentration while leaving mental space for creative decisions.",
+    sections: [
+      {
+        heading: "Music for visual thinking",
+        body: "When you are looking through a viewfinder or editing photos, you are thinking visually. Instrumental music supports that visual thinking without adding verbal distractions that might interfere with your creative process.",
+      },
+      {
+        heading: "Working with subjects",
+        body: "During photo shoots, keep music volume low enough for clear communication with your subject. Choose music that creates the right mood for the shoot without dictating or limiting creative possibilities.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-cleaning",
+    searchTerm: "music for cleaning",
+    title: "Music for Cleaning",
+    metaTitle: "Music for Cleaning — Productive Rhythm Album",
+    metaDescription:
+      "Music for cleaning: an upbeat, steady instrumental album to make household chores more enjoyable. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for cleaning",
+      "cleaning music",
+      "housework music",
+      "chore music",
+    ],
+    heroImage: "/images/heroes/baking.png", // Using baking for household activity
+    heroAlt: "Clean, organized home space with natural light",
+    albumId: "just-dmiles-2",
+    excerpt:
+      "Upbeat, steady instrumentals to make cleaning sessions more productive.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Cleaning transforms your space from chaotic to calm, and the right music can transform the chore from tedious to therapeutic. A steady instrumental album provides energy without distraction, helping you move through tasks with purpose.",
+    sections: [
+      {
+        heading: "Music for cleaning momentum",
+        body: "A consistent beat gives cleaning sessions their own rhythm — dusting, vacuuming, organizing all flow together when you have musical momentum. It turns isolated tasks into a cohesive, productive session.",
+      },
+      {
+        heading: "Practical cleaning considerations",
+        body: "Keep volume at a level where you can still hear doorbells, phone calls, and any household sounds that need attention. Consider a portable speaker you can move from room to room as you work.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What type of music works best for cleaning?",
+        answer:
+          "Upbeat instrumental music with a steady rhythm tends to work well for cleaning. It provides energy without lyrics that might distract you from your tasks or compete with your thoughts.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-proposal",
+    searchTerm: "music for proposal",
+    title: "Music for a Proposal",
+    metaTitle: "Music for a Proposal — Romantic Album",
+    metaDescription:
+      "Music for a proposal: a romantic, heartfelt instrumental album for that special moment. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for proposal",
+      "proposal music",
+      "romantic music",
+      "engagement music",
+    ],
+    heroImage: "/images/heroes/cabin.png", // Using cabin for romantic setting
+    heroAlt: "Romantic setting for a marriage proposal",
+    albumId: "heart-dimension",
+    excerpt:
+      "Romantic, heartfelt instrumentals for that life-changing question.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "A marriage proposal is one of life's most meaningful moments — full of emotion, hope, and significance. The right instrumental music can enhance that moment, creating a beautiful backdrop without words that might distract from your own.",
+    sections: [
+      {
+        heading: "Why instrumental music works",
+        body: "Instrumental music allows your own words and emotions to take center stage. It provides emotional support without adding specific lyrical meaning that might not match your personal story or feelings.",
+      },
+      {
+        heading: "Setting the scene",
+        body: "Choose music that reflects your relationship's tone — whether tender, joyful, or deeply emotional. Keep the volume subtle, creating atmosphere rather than overwhelming the moment with sound.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-welcome-playlist",
+    searchTerm: "wedding welcome playlist",
+    title: "Wedding Welcome Playlist",
+    metaTitle: "Wedding Welcome Playlist — Arrival Music",
+    metaDescription:
+      "Wedding welcome playlist: a warm, inviting instrumental album for guest arrivals and pre-ceremony atmosphere. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "wedding welcome playlist",
+      "wedding arrival music",
+      "guest welcome music",
+      "pre-ceremony music",
+    ],
+    heroImage: "/images/heroes/cabin.png", // Using cabin for wedding setting
+    heroAlt: "Elegant wedding venue with guests arriving",
+    albumId: "reflection-symphony",
+    excerpt:
+      "Warm, inviting instrumentals for wedding guest arrivals and pre-ceremony atmosphere.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "The first moments guests experience at a wedding set the tone for the entire celebration. A warm instrumental playlist welcomes them into your special day, creating immediate atmosphere while allowing conversation to flow naturally.",
+    sections: [
+      {
+        heading: "Music for arrival energy",
+        body: "Welcome music should feel inviting but not overwhelming — enough to create atmosphere, but quiet enough that guests can greet each other, find their seats, and take in the setting without shouting.",
+      },
+      {
+        heading: "Transition considerations",
+        body: "Choose music that can transition smoothly into your ceremony music. A consistent instrumental style helps create a cohesive experience from arrival through the ceremony's beginning.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-gardening",
+    searchTerm: "music for gardening",
+    title: "Music for Gardening",
+    metaTitle: "Music for Gardening — Earthy Album",
+    metaDescription:
+      "Music for gardening: a steady, earthy instrumental album for time in the garden. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for gardening",
+      "gardening music",
+      "yard work music",
+      "outdoor work music",
+    ],
+    heroImage: "/images/heroes/houseplants.png",
+    heroAlt: "Hands working in soil with plants and gardening tools",
+    albumId: "reflection-symphony",
+    excerpt:
+      "Steady, earthy instrumentals for peaceful gardening sessions.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Gardening connects you to earth rhythms — planting, tending, waiting, harvesting. A steady instrumental album can complement that connection, making garden time feel more meditative and less like work.",
+    sections: [
+      {
+        heading: "Music for repetitive tasks",
+        body: "Gardening often involves repetitive motions — digging, weeding, pruning. A consistent instrumental track can help establish a rhythm for these tasks, making the time pass pleasantly and productively.",
+      },
+      {
+        heading: "Outdoor considerations",
+        body: "Use a weather-resistant speaker and keep volume low enough to hear birds, neighbors, and any environmental sounds. The music should enhance your garden experience, not isolate you from it.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-writing",
+    searchTerm: "music for writing",
+    title: "Music for Writing",
+    metaTitle: "Music for Writing — Creative Flow Album",
+    metaDescription:
+      "Music for writing: a focused, flowing instrumental album for creative writing sessions. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for writing",
+      "creative writing music",
+      "author music",
+      "writing flow music",
+    ],
+    heroImage: "/images/heroes/poetry.png",
+    heroAlt: "Writer's desk with notebook, pen, and creative inspiration",
+    albumId: "reflection-symphony",
+    excerpt:
+      "Focused, flowing instrumentals for creative writing and journaling.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Writing asks you to listen — to characters, to ideas, to the rhythm of your own thoughts. A steady instrumental album can create space for that listening, blocking out distractions while leaving mental room for your words to emerge.",
+    sections: [
+      {
+        heading: "Music for word flow",
+        body: "When you are searching for the right words or building sentences, instrumental music provides background support without adding competing verbal content. It can help maintain mental momentum through writing blocks.",
+      },
+      {
+        heading: "Finding the right volume",
+        body: "Set the volume just high enough to mask environmental noise but low enough that it stays in the background of your awareness. Many writers find that barely-audible music works best for maintaining creative flow.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-drawing",
+    searchTerm: "music for drawing",
+    title: "Music for Drawing",
+    metaTitle: "Music for Drawing — Creative Focus Album",
+    metaDescription:
+      "Music for drawing: a focused, atmospheric instrumental album for sketching and illustration. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for drawing",
+      "drawing music",
+      "sketching music",
+      "illustration music",
+    ],
+    heroImage: "/images/heroes/oil-painting.png",
+    heroAlt: "Drawing materials and sketches on an artist's desk",
+    albumId: "ancient-arrow",
+    excerpt:
+      "Focused, atmospheric instrumentals for sketching and creative drawing sessions.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Drawing requires both technical precision and creative freedom — seeing shapes, controlling lines, making artistic decisions. An atmospheric instrumental album can support that balance, helping you stay focused while leaving room for inspiration.",
+    sections: [
+      {
+        heading: "Music for visual thinking",
+        body: "When you are drawing, you are thinking visually about form, composition, and expression. Instrumental music supports that visual thinking process without adding verbal distractions that might interfere with your creative flow.",
+      },
+      {
+        heading: "Creating the right studio atmosphere",
+        body: "Choose music that matches your drawing style — more energetic for quick sketches, more spacious for detailed work. Keep volume at a level that supports concentration without overwhelming your creative space.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-home-office",
+    searchTerm: "music for home office",
+    title: "Music for Home Office",
+    metaTitle: "Music for Home Office — Professional Focus Album",
+    metaDescription:
+      "Music for home office: a professional, focused instrumental album for remote work and productivity. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for home office",
+      "home office music",
+      "remote work music",
+      "work from home music",
+    ],
+    heroImage: "/images/heroes/coding.png",
+    heroAlt: "Clean, organized home office workspace",
+    albumId: "deep-whistle",
+    excerpt:
+      "Professional, focused instrumentals for productive remote work sessions.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Working from home requires creating your own professional atmosphere amidst domestic surroundings. A focused instrumental album can help establish that work mindset, signaling to your brain that it's time for productivity.",
+    sections: [
+      {
+        heading: "Music for work boundaries",
+        body: "The right background music can help create psychological separation between home life and work life. Starting your workday with a consistent instrumental album can become a ritual that helps transition into professional mode.",
+      },
+      {
+        heading: "Balancing concentration and availability",
+        body: "Keep volume at a level that supports focus but still allows you to hear doorbells, family members, or important notifications. Many remote workers use just one earbud during calls or collaborative work.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-laundry-day",
+    searchTerm: "music for laundry day",
+    title: "Music for Laundry Day",
+    metaTitle: "Music for Laundry Day — Productive Chore Album",
+    metaDescription:
+      "Music for laundry day: a steady, upbeat instrumental album for folding and sorting sessions. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for laundry day",
+      "laundry music",
+      "folding clothes music",
+      "household chores music",
+    ],
+    heroImage: "/images/heroes/baking.png", // Using baking for household chore
+    heroAlt: "Neatly folded laundry and organized closet",
+    albumId: "skyline-mirror",
+    excerpt:
+      "Steady, upbeat instrumentals to make laundry day more pleasant.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Laundry day involves repetitive tasks — sorting, folding, putting away. A steady instrumental album can provide pleasant momentum through these chores, turning necessary work into almost-meditative time.",
+    sections: [
+      {
+        heading: "Music for repetitive rhythm",
+        body: "Folding clothes has its own rhythm — shake, fold, stack, repeat. A consistent musical beat can complement that rhythm, making the process feel more automatic and less tedious.",
+      },
+      {
+        heading: "Multi-tasking considerations",
+        body: "Keep volume at a level where you can still hear washing machine cycles finishing or any household needs. Consider a portable speaker you can move from laundry room to folding area.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-birdwatching",
+    searchTerm: "music for birdwatching",
+    title: "Music for Birdwatching",
+    metaTitle: "Music for Birdwatching — Nature Album",
+    metaDescription:
+      "Music for birdwatching: a subtle, nature-inspired instrumental album for quiet observation time. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for birdwatching",
+      "birdwatching music",
+      "nature observation music",
+      "quiet outdoor music",
+    ],
+    heroImage: "/images/heroes/stargazing.png", // Using stargazing for quiet observation
+    heroAlt: "Peaceful outdoor setting perfect for birdwatching",
+    albumId: "heart-dimension",
+    excerpt:
+      "Subtle, nature-inspired instrumentals for quiet birdwatching sessions.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Birdwatching asks for patience and quiet attention — listening for calls, watching for movement, being still. A very subtle instrumental album can provide gentle companionship during long waits without disturbing the birds you are hoping to see.",
+    sections: [
+      {
+        heading: "Music that enhances observation",
+        body: "The best birdwatching music stays so far in the background that it almost disappears, creating a calm mental space for observation without competing with the natural sounds you are trying to hear.",
+      },
+      {
+        heading: "Respecting wildlife",
+        body: "Always keep volume extremely low — barely audible. Better yet, use just one earbud at minimal volume so you can still hear bird calls and environmental sounds clearly with your other ear.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-coffee-morning",
+    searchTerm: "music for coffee morning",
+    title: "Music for Coffee Morning",
+    metaTitle: "Music for Coffee Morning — Gentle Start Album",
+    metaDescription:
+      "Music for coffee morning: a gentle, warm instrumental album for first sips and quiet planning. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for coffee morning",
+      "coffee music",
+      "morning ritual music",
+      "quiet morning music",
+    ],
+    heroImage: "/images/heroes/baking.png", // Using baking for morning kitchen
+    heroAlt: "Morning coffee with steam rising in soft light",
+    albumId: "beme-2",
+    excerpt:
+      "Gentle, warm instrumentals for peaceful coffee mornings and planning.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "That first cup of coffee marks the beginning of your day — a moment to wake up slowly, gather thoughts, and set intentions. A gentle instrumental album can enhance that ritual, creating a calm space before the day's demands begin.",
+    sections: [
+      {
+        heading: "Music for morning transition",
+        body: "Coffee time is often the bridge between sleep and wakefulness. Soft, gradual instrumental music can ease that transition, helping you move gently into the day rather than jumping straight into its pace.",
+      },
+      {
+        heading: "Creating your morning ritual",
+        body: "Start the album as you begin making your coffee, and let it play through your morning routine. Keep the volume low — just enough to create atmosphere without overwhelming the quiet of early hours.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-packing",
+    searchTerm: "music for packing",
+    title: "Music for Packing",
+    metaTitle: "Music for Packing — Organized Travel Album",
+    metaDescription:
+      "Music for packing: a steady, organized instrumental album for travel preparation. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for packing",
+      "packing music",
+      "travel preparation music",
+      "suitcase packing music",
+    ],
+    heroImage: "/images/heroes/train.png", // Using train for travel
+    heroAlt: "Neatly packed suitcase and travel essentials",
+    albumId: "beme-2",
+    excerpt:
+      "Steady, organized instrumentals for efficient travel packing sessions.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Packing requires both organization and decision-making — what to bring, how to fit it, remembering essentials. A steady instrumental album can help maintain focus through these tasks, making packing feel more systematic and less stressful.",
+    sections: [
+      {
+        heading: "Music for packing rhythm",
+        body: "Packing involves repetitive motions — folding, placing, checking lists. A consistent beat can help establish a productive rhythm, turning what can feel chaotic into an orderly process.",
+      },
+      {
+        heading: "Practical packing considerations",
+        body: "Keep volume at a level where you can still hear your packing checklist reminders or any travel planning thoughts. Music should support your organization, not distract from it.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-walking",
+    searchTerm: "music for walking",
+    title: "Music for Walking",
+    metaTitle: "Music for Walking — Steady Pace Album",
+    metaDescription:
+      "Music for walking: a steady, pleasant instrumental album for daily walks and neighborhood strolls. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for walking",
+      "walking music",
+      "daily walk music",
+      "neighborhood stroll music",
+    ],
+    heroImage: "/images/heroes/solo-hiking.png",
+    heroAlt: "Person walking on a pleasant neighborhood path",
+    albumId: "beme-2",
+    excerpt:
+      "Steady, pleasant instrumentals for daily walks and exercise strolls.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Walking is simple, rhythmic movement — left, right, breathe, repeat. A steady instrumental album can complement that rhythm, making walks feel more purposeful and enjoyable, whether for exercise, contemplation, or simple pleasure.",
+    sections: [
+      {
+        heading: "Music for walking pace",
+        body: "Many walkers match their stride to music tempo. A consistent instrumental beat can help maintain optimal walking speed, whether you are power walking for exercise or taking a leisurely stroll.",
+      },
+      {
+        heading: "Safety on walks",
+        body: "Use only one earbud or keep volume very low so you can hear traffic, other people, and environmental sounds. Consider bone conduction headphones that leave your ears open to surrounding sounds.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-rainy-days",
+    searchTerm: "music for rainy days",
+    title: "Music for Rainy Days",
+    metaTitle: "Music for Rainy Days — Cozy Album",
+    metaDescription:
+      "Music for rainy days: a cozy, atmospheric instrumental album for indoor time during storms. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for rainy days",
+      "rainy day music",
+      "stormy weather music",
+      "indoor cozy music",
+    ],
+    heroImage: "/images/heroes/storm.png",
+    heroAlt: "Cozy indoor scene with rain visible through windows",
+    albumId: "beme",
+    excerpt:
+      "Cozy, atmospheric instrumentals for peaceful indoor time during rain.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Rain transforms the world outside — steady sound on roofs and windows, gray light, slowed pace. An atmospheric instrumental album can complement that transformation, making indoor time feel even more cozy and intentional.",
+    sections: [
+      {
+        heading: "Music that matches the weather",
+        body: "Rain has its own rhythm and atmosphere. Music with some space and movement can enhance that natural soundscape rather than compete with it, creating a layered sensory experience.",
+      },
+      {
+        heading: "Creating rainy day atmosphere",
+        body: "Set the volume to blend with the rain sounds rather than overpower them. The music should feel like part of the weather experience, not separate from it.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-journaling",
+    searchTerm: "music for journaling",
+    title: "Music for Journaling",
+    metaTitle: "Music for Journaling — Reflective Album",
+    metaDescription:
+      "Music for journaling: a reflective, spacious instrumental album for writing thoughts and reflections. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for journaling",
+      "journaling music",
+      "diary writing music",
+      "reflection music",
+    ],
+    heroImage: "/images/heroes/poetry.png",
+    heroAlt: "Open journal with pen and thoughtful writing",
+    albumId: "direct-potion",
+    excerpt:
+      "Reflective, spacious instrumentals for thoughtful journaling sessions.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Journaling is conversation with yourself — sorting thoughts, processing experiences, finding clarity. A spacious instrumental album can hold space for that conversation, creating a quiet container for your reflections without adding its own words.",
+    sections: [
+      {
+        heading: "Music for inner listening",
+        body: "When you are journaling, you are listening to your own thoughts and feelings. Instrumental music provides gentle background support without adding lyrical content that might influence or distract from your personal reflections.",
+      },
+      {
+        heading: "Finding the right journaling atmosphere",
+        body: "Keep volume very low — just enough to create a sense of privacy and focus. The music should feel like a supportive presence rather than an active participant in your writing process.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-sunset",
+    searchTerm: "music for sunset",
+    title: "Music for Sunset",
+    metaTitle: "Music for Sunset — Evening Transition Album",
+    metaDescription:
+      "Music for sunset: a gradual, peaceful instrumental album for watching the day end. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for sunset",
+      "sunset music",
+      "evening transition music",
+      "dusk music",
+    ],
+    heroImage: "/images/heroes/stargazing.png", // Using stargazing for evening
+    heroAlt: "Beautiful sunset over landscape with fading light",
+    albumId: "just-dmiles-3",
+    excerpt:
+      "Gradual, peaceful instrumentals for watching the day transition to evening.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Sunset marks daily transition — light fading, colors deepening, day shifting to night. A gradual instrumental album can mirror that transition, enhancing the experience of watching the world change around you.",
+    sections: [
+      {
+        heading: "Music that follows the light",
+        body: "Just as sunset happens gradually over minutes, the best sunset music develops slowly. An instrumental album that changes subtly over time can complement the shifting light and colors in the sky.",
+      },
+      {
+        heading: "Creating sunset ritual",
+        body: "Start the album as the sun begins to set, and let it play through until full dark. Keep volume very low — the music should enhance the natural experience, not compete with it.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-tax-preparation",
+    searchTerm: "music for tax preparation",
+    title: "Music for Tax Preparation",
+    metaTitle: "Music for Tax Preparation — Focused Album",
+    metaDescription:
+      "Music for tax preparation: a focused, steady instrumental album for organizing documents and completing forms. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for tax preparation",
+      "tax music",
+      "document organization music",
+      "financial paperwork music",
+    ],
+    heroImage: "/images/heroes/coding.png", // Using coding for focused work
+    heroAlt: "Organized tax documents and paperwork on a desk",
+    albumId: "skyline-mirror",
+    excerpt:
+      "Focused, steady instrumentals for organized tax preparation sessions.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Tax preparation requires sustained concentration — sorting documents, checking numbers, completing forms accurately. A steady instrumental album can help maintain focus through this detailed work, making a necessary task feel more manageable.",
+    sections: [
+      {
+        heading: "Music for detailed concentration",
+        body: "When working with numbers and important documents, you need clear focus. Instrumental music provides background support without lyrics that might distract from the precision required for accurate tax preparation.",
+      },
+      {
+        heading: "Practical work considerations",
+        body: "Keep volume at a level that supports concentration but allows you to still hear important notifications or household sounds. Consider taking regular breaks to rest your eyes and mind from detailed work.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-baby-nap-time",
+    searchTerm: "music for baby nap time",
+    title: "Music for Baby Nap Time",
+    metaTitle: "Music for Baby Nap Time — Soothing Album",
+    metaDescription:
+      "Music for baby nap time: a gentle, consistent instrumental album for creating calm sleep environment. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for baby nap time",
+      "baby sleep music",
+      "nap time music",
+      "soothing infant music",
+    ],
+    heroImage: "/images/heroes/meditation.png", // Using meditation for calm
+    heroAlt: "Peaceful nursery setting for baby sleep time",
+    albumId: "heart-dimension",
+    excerpt:
+      "Gentle, consistent instrumentals for creating calm baby sleep environment.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Nap time creates precious quiet moments in a baby's day — and often in a parent's day too. A gentle instrumental album can help signal sleep time and maintain a calm atmosphere, supporting rest for both baby and caregiver.",
+    sections: [
+      {
+        heading: "Music for sleep cues",
+        body: "Consistent music can become part of a baby's sleep routine, signaling that it's time to wind down. The same instrumental album played at each nap can help establish this pattern over time.",
+      },
+      {
+        heading: "Safety and volume considerations",
+        body: "Keep volume very low — just enough to be audible but not stimulating. Place speakers at a safe distance from the crib, and follow current pediatric guidelines for sound levels in infant sleep environments.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is instrumental music better than lullabies for baby sleep?",
+        answer:
+          "Many parents find instrumental music less stimulating than songs with lyrics, especially as babies get older and begin to understand words. Consistent instrumental music can become a reliable sleep cue without varying lyrical content.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-home-renovation",
+    searchTerm: "music for home renovation",
+    title: "Music for Home Renovation",
+    metaTitle: "Music for Home Renovation — Project Album",
+    metaDescription:
+      "Music for home renovation: a steady, energetic instrumental album for DIY projects and home improvement. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for home renovation",
+      "home improvement music",
+      "DIY project music",
+      "renovation work music",
+    ],
+    heroImage: "/images/heroes/pottery.png", // Using pottery for hands-on work
+    heroAlt: "Home renovation project in progress with tools",
+    albumId: "giro-fatal",
+    excerpt:
+      "Steady, energetic instrumentals for productive home renovation sessions.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Home renovation combines physical work with creative vision — measuring, cutting, assembling, transforming spaces. A steady instrumental album can provide energy and focus through long project sessions, making the work feel more purposeful.",
+    sections: [
+      {
+        heading: "Music for project momentum",
+        body: "Renovation work often involves repetitive tasks and extended focus. A consistent instrumental track can help maintain momentum through these sessions, providing energy without distracting from the work at hand.",
+      },
+      {
+        heading: "Safety with tools and equipment",
+        body: "Always keep volume low enough to hear power tools, safety equipment, and any communication with helpers. Consider using hearing protection over earbuds when working with loud equipment.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-waiting-room",
+    searchTerm: "music for waiting room",
+    title: "Music for Waiting Room",
+    metaTitle: "Music for Waiting Room — Calm Album",
+    metaDescription:
+      "Music for waiting room: a calm, neutral instrumental album for appointments and waiting time. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for waiting room",
+      "waiting music",
+      "appointment music",
+      "calm waiting music",
+    ],
+    heroImage: "/images/heroes/meditation.png",
+    heroAlt: "Calm waiting room setting",
+    albumId: "want-you",
+    excerpt:
+      "Calm, neutral instrumentals for peaceful waiting time during appointments.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "Waiting rooms create their own suspended time — between arrival and appointment, in shared but often silent spaces. A calm instrumental album can help make that time feel more peaceful and less anxious, whether for medical visits or other appointments.",
+    sections: [
+      {
+        heading: "Music for waiting patience",
+        body: "A steady, neutral instrumental album can help pass waiting time more pleasantly, providing gentle distraction without demanding attention or adding emotional complexity through lyrics.",
+      },
+      {
+        heading: "Considerate volume levels",
+        body: "Use headphones and keep volume low enough to still hear your name being called or any important announcements. The music should be personal comfort, not public disturbance.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-focus-pomodoro",
+    searchTerm: "music for focus pomodoro",
+    title: "Music for Focus Pomodoro",
+    metaTitle: "Music for Focus Pomodoro — Productivity Album",
+    metaDescription:
+      "Music for focus pomodoro: a steady, focused instrumental album for 25-minute work sessions. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for focus pomodoro",
+      "pomodoro music",
+      "productivity music",
+      "work session music",
+    ],
+    heroImage: "/images/heroes/coding.png",
+    heroAlt: "Productive work session with timer and focus tools",
+    albumId: "wise-pop",
+    excerpt:
+      "Steady, focused instrumentals for productive 25-minute work sessions.",
+    publishedAt: "2026-02-01",
+    updatedAt: "2026-02-01",
+    intro:
+      "The Pomodoro Technique breaks work into focused 25-minute sessions followed by short breaks. A steady instrumental album can help signal and maintain that focused state, creating consistent work rhythm throughout your day.",
+    sections: [
+      {
+        heading: "Music for work ritual",
+        body: "Starting each Pomodoro session with the same instrumental album can become a powerful work ritual. The music signals to your brain that it's time for focused work, helping transition into productive mode quickly.",
+      },
+      {
+        heading: "Timing considerations",
+        body: "Choose an album with tracks that naturally fit within 25-minute sessions, or let a longer album run across multiple Pomodoros. The consistency helps maintain work rhythm through multiple focused sessions.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-new-artists",
+    searchTerm: "music for new artists",
+    title: "Music for New Artists",
+    metaTitle: "Music for New Artists — Creative Inspiration Album",
+    metaDescription:
+      "Music for new artists: an inspiring instrumental album from an independent creator. Discover fresh sounds on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for new artists",
+      "new musician music",
+      "independent artist music",
+      "emerging creator music",
+    ],
+    heroImage: "/images/heroes/oil-painting.png", // Using art for creativity
+    heroAlt: "Creative workspace for new musical artists",
+    albumId: "the-lost-band",
+    excerpt:
+      "Inspiring instrumental music from an independent creator for fellow artists.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Starting a creative journey in music can feel both exciting and overwhelming. Hearing work from another independent artist who has built a catalog over time can provide inspiration and perspective on the creative process.",
+    sections: [
+      {
+        heading: "Music as creative companionship",
+        body: "When you are beginning your own artistic path, listening to other creators who have navigated similar challenges can feel like having a companion on the journey. Their work reminds you what is possible with persistence and creative focus.",
+      },
+      {
+        heading: "Learning from independent creation",
+        body: "Independent artists often develop unique approaches to composition, production, and sharing their work. Listening to their albums can offer insights into building a creative practice outside traditional industry structures.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Why listen to independent artists as a new creator?",
+        answer:
+          "Independent artists often have complete creative control over their work, which can result in unique, personal musical expressions. Their journeys can inspire new creators to pursue their own artistic visions.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-starting-over",
+    searchTerm: "music for starting over",
+    title: "Music for Starting Over",
+    metaTitle: "Music for Starting Over — New Beginning Album",
+    metaDescription:
+      "Music for starting over: a hopeful, forward-moving instrumental album for new chapters and fresh starts. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for starting over",
+      "new beginning music",
+      "fresh start music",
+      "life transition music",
+    ],
+    heroImage: "/images/heroes/train.png", // Using train for journey
+    heroAlt: "New path or journey symbolizing fresh starts",
+    albumId: "soul-spark",
+    excerpt:
+      "Hopeful, forward-moving instrumentals for new chapters and fresh starts.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Starting over can mean many things — a new job, a move, a personal transformation, a creative rebirth. A forward-moving instrumental album can provide sonic companionship through that transition, matching the momentum of new beginnings.",
+    sections: [
+      {
+        heading: "Music for transition energy",
+        body: "When you are in between what was and what will be, music with some forward motion can help maintain positive momentum. It provides emotional support without prescribing specific feelings through lyrics.",
+      },
+      {
+        heading: "Creating space for possibility",
+        body: "Instrumental music leaves room for your own thoughts and feelings about your fresh start. It creates atmosphere without adding specific narrative, allowing you to project your own hopes and intentions onto the sound.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-missing-someone",
+    searchTerm: "music for missing someone",
+    title: "Music for Missing Someone",
+    metaTitle: "Music for Missing Someone — Emotional Album",
+    metaDescription:
+      "Music for missing someone: a heartfelt, emotional instrumental album for when someone is far away. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for missing someone",
+      "missing someone music",
+      "long distance music",
+      "emotional instrumental music",
+    ],
+    heroImage: "/images/heroes/cabin.png", // Using cabin for emotional space
+    heroAlt: "Peaceful space for reflection and remembering",
+    albumId: "heart-dimension",
+    excerpt:
+      "Heartfelt, emotional instrumentals for when someone is far away.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Missing someone creates its own emotional space — memories, longing, hope for reunion. A heartfelt instrumental album can hold that space with you, providing emotional resonance without words that might limit or define your specific feelings.",
+    sections: [
+      {
+        heading: "Music for emotional processing",
+        body: "When you are missing someone, instrumental music can provide emotional companionship without prescribing how you should feel. It creates room for your own memories, hopes, and complex emotions to exist and be processed.",
+      },
+      {
+        heading: "Finding comfort in sound",
+        body: "A consistent instrumental album can become a comforting presence during times of separation. Its familiar sounds can provide stability amidst the emotional flux of missing someone important to you.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-big-decisions",
+    searchTerm: "music for big decisions",
+    title: "Music for Big Decisions",
+    metaTitle: "Music for Big Decisions — Thoughtful Album",
+    metaDescription:
+      "Music for big decisions: a thoughtful, spacious instrumental album for weighing important choices. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for big decisions",
+      "decision making music",
+      "important choice music",
+      "life decision music",
+    ],
+    heroImage: "/images/heroes/chess.png", // Using chess for strategy/decisions
+    heroAlt: "Thoughtful moment of decision making",
+    albumId: "the-formula",
+    excerpt:
+      "Thoughtful, spacious instrumentals for weighing important life choices.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Big decisions ask for clear thinking — weighing options, considering consequences, listening to intuition. A spacious instrumental album can help create mental space for that thinking, blocking distractions while leaving room for your own thoughts to emerge.",
+    sections: [
+      {
+        heading: "Music for clear thinking",
+        body: "When facing important choices, you need mental clarity. Instrumental music provides background support without lyrics that might influence or distract from your decision-making process. It creates a steady environment for thoughtful consideration.",
+      },
+      {
+        heading: "Creating decision space",
+        body: "Set the volume very low — just enough to create a focused atmosphere. The music should feel like a neutral companion to your thinking, not an active participant in your decision process.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-moving-house",
+    searchTerm: "music for moving house",
+    title: "Music for Moving House",
+    metaTitle: "Music for Moving House — Transition Album",
+    metaDescription:
+      "Music for moving house: a steady, energetic instrumental album for packing and settling into a new home. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for moving house",
+      "moving music",
+      "relocation music",
+      "new home music",
+    ],
+    heroImage: "/images/heroes/cabin.png", // Using cabin for home
+    heroAlt: "Moving boxes and the beginning of settling into a new space",
+    albumId: "far-road",
+    excerpt:
+      "Steady, energetic instrumentals for the transition of moving homes.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Moving house combines physical labor with emotional transition — packing memories, transporting belongings, creating new spaces. A steady instrumental album can provide energy for the work and emotional support for the change.",
+    sections: [
+      {
+        heading: "Music for moving momentum",
+        body: "Moving involves repetitive physical tasks that benefit from musical rhythm. A consistent beat can help maintain energy through packing, lifting, and organizing, making the work feel more purposeful and less overwhelming.",
+      },
+      {
+        heading: "Emotional transitions",
+        body: "Moving often stirs mixed emotions — excitement for the new, nostalgia for the old. Instrumental music can provide emotional companionship through this transition without adding specific emotional content through lyrics.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-bad-days",
+    searchTerm: "music for bad days",
+    title: "Music for Bad Days",
+    metaTitle: "Music for Bad Days — Comfort Album",
+    metaDescription:
+      "Music for bad days: a comforting, steady instrumental album for difficult moments. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for bad days",
+      "bad day music",
+      "comfort music",
+      "difficult day music",
+    ],
+    heroImage: "/images/heroes/storm.png", // Using storm for difficult times
+    heroAlt: "Comforting space for difficult days",
+    albumId: "trust-the-flow",
+    excerpt:
+      "Comforting, steady instrumentals for getting through difficult days.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Everyone has difficult days — moments when everything feels heavy, frustrating, or overwhelming. A steady instrumental album can provide gentle companionship through those times, offering consistency without demanding emotional engagement.",
+    sections: [
+      {
+        heading: "Music for emotional regulation",
+        body: "On challenging days, music with a steady, predictable rhythm can help regulate emotional responses. It provides something consistent to anchor to when other things feel chaotic or difficult.",
+      },
+      {
+        heading: "Creating space without pressure",
+        body: "Instrumental music creates emotional space without prescribing how you should feel or what you should do. It simply offers presence — a steady sonic companion through whatever you are experiencing.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-small-wins",
+    searchTerm: "music for small wins",
+    title: "Music for Small Wins",
+    metaTitle: "Music for Small Wins — Celebration Album",
+    metaDescription:
+      "Music for small wins: an uplifting, celebratory instrumental album for acknowledging daily achievements. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for small wins",
+      "small victory music",
+      "daily achievement music",
+      "celebration music",
+    ],
+    heroImage: "/images/heroes/baking.png", // Using baking for accomplishment
+    heroAlt: "Celebrating small accomplishments and daily achievements",
+    albumId: "time-to-shine",
+    excerpt:
+      "Uplifting, celebratory instrumentals for acknowledging daily achievements.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Small wins matter — finishing a task, making progress, overcoming a small challenge. An uplifting instrumental album can help mark and celebrate these moments, turning them into meaningful rituals rather than passing events.",
+    sections: [
+      {
+        heading: "Music for acknowledgment",
+        body: "Playing specific music when you achieve something, no matter how small, can help reinforce positive habits and build momentum. It creates a sensory marker for success that your brain begins to associate with accomplishment.",
+      },
+      {
+        heading: "Building celebration rituals",
+        body: "Create a simple ritual: when you complete something worth celebrating, put on this album for a few minutes. Let the music serve as both reward and transition before moving to your next task or taking a proper break.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-memory-lane",
+    searchTerm: "music for memory lane",
+    title: "Music for Memory Lane",
+    metaTitle: "Music for Memory Lane — Nostalgic Album",
+    metaDescription:
+      "Music for memory lane: a nostalgic, reflective instrumental album for looking back and remembering. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for memory lane",
+      "nostalgic music",
+      "memory music",
+      "reflective looking back music",
+    ],
+    heroImage: "/images/heroes/train.png", // Using train for journey through time
+    heroAlt: "Reflective space for memories and nostalgia",
+    albumId: "ancient-arrow",
+    excerpt:
+      "Nostalgic, reflective instrumentals for looking back and remembering.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Sometimes we need to travel back — through photo albums, old letters, or simply our own memories. A reflective instrumental album can accompany that journey, creating emotional space for whatever surfaces without dictating how you should feel about it.",
+    sections: [
+      {
+        heading: "Music for memory space",
+        body: "When revisiting memories, instrumental music provides emotional backdrop without adding specific narrative through lyrics. It creates room for your own memories and associations to emerge and be experienced.",
+      },
+      {
+        heading: "Navigating nostalgia",
+        body: "Nostalgia can bring mixed emotions — joy, sadness, warmth, longing. Instrumental music can hold space for that complexity without simplifying or resolving it, allowing you to sit with whatever feelings arise.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-social-anxiety",
+    searchTerm: "music for social anxiety",
+    title: "Music for Social Anxiety",
+    metaTitle: "Music for Social Anxiety — Calming Album",
+    metaDescription:
+      "Music for social anxiety: a calming, steady instrumental album for preparing for social situations. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for social anxiety",
+      "anxiety music",
+      "social situation music",
+      "calm preparation music",
+    ],
+    heroImage: "/images/heroes/meditation.png", // Using meditation for calm
+    heroAlt: "Calm preparation space before social situations",
+    albumId: "deep-whistle",
+    excerpt:
+      "Calming, steady instrumentals for preparing for social situations.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Social situations can feel overwhelming for many people — the noise, the expectations, the energy required. A calming instrumental album played beforehand can help create a centered, grounded state, making social engagement feel more manageable.",
+    sections: [
+      {
+        heading: "Music for nervous system regulation",
+        body: "Steady, predictable instrumental music can help regulate the nervous system before potentially stressful situations. Its consistency provides something reliable to anchor to when social environments feel unpredictable.",
+      },
+      {
+        heading: "Creating pre-social ritual",
+        body: "Develop a preparation ritual: 10-15 minutes before a social event, listen to this album at low volume. Let it help transition from private to public mode, creating psychological space between your inner world and the social world ahead.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can music really help with social anxiety?",
+        answer:
+          "Many people find that calming instrumental music before social situations helps regulate their nervous system and create a more centered state. It provides a consistent, predictable sensory experience before entering potentially unpredictable social environments.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-digital-detox",
+    searchTerm: "music for digital detox",
+    title: "Music for Digital Detox",
+    metaTitle: "Music for Digital Detox — Analog Album",
+    metaDescription:
+      "Music for digital detox: an organic, analog-feeling instrumental album for screen-free time. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for digital detox",
+      "digital detox music",
+      "screen-free music",
+      "analog time music",
+    ],
+    heroImage: "/images/heroes/pottery.png", // Using pottery for hands-on, analog activity
+    heroAlt: "Screen-free time with analog activities",
+    albumId: "reflection-symphony",
+    excerpt:
+      "Organic, analog-feeling instrumentals for screen-free time and digital breaks.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Digital detox means creating space away from screens, notifications, and constant connectivity. An instrumental album with organic, analog qualities can help establish that different kind of time — slower, more present, more connected to physical reality.",
+    sections: [
+      {
+        heading: "Music for different time",
+        body: "Screen time often feels fast, fragmented, demanding. Music for digital detox should feel different — more continuous, less demanding, more supportive of sustained attention to non-digital activities.",
+      },
+      {
+        heading: "Creating detox rituals",
+        body: "Use this album to mark the beginning of screen-free time. Let it play as you put devices away and transition to analog activities — reading, crafting, walking, or simply being present without digital mediation.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-empathy",
+    searchTerm: "music for empathy",
+    title: "Music for Empathy",
+    metaTitle: "Music for Empathy — Emotional Connection Album",
+    metaDescription:
+      "Music for empathy: an emotional, connecting instrumental album for understanding others' perspectives. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for empathy",
+      "empathy music",
+      "emotional connection music",
+      "understanding others music",
+    ],
+    heroImage: "/images/heroes/meditation.png", // Using meditation for connection
+    heroAlt: "Space for emotional connection and understanding",
+    albumId: "ivory-beats",
+    excerpt:
+      "Emotional, connecting instrumentals for understanding others' perspectives.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Empathy asks us to step outside ourselves — to imagine other experiences, feel with other people, understand different perspectives. An emotional instrumental album can create space for that stepping out, providing emotional resonance without specific narrative.",
+    sections: [
+      {
+        heading: "Music for emotional space",
+        body: "When trying to understand others, we need emotional space to imagine their experiences. Instrumental music provides that space without prescribing specific emotions or stories through lyrics.",
+      },
+      {
+        heading: "Creating connection containers",
+        body: "Music can help create psychological containers for difficult conversations or emotional sharing. A steady instrumental album played at low volume during such times can provide emotional support without interfering with words being spoken.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-imposter-syndrome",
+    searchTerm: "music for imposter syndrome",
+    title: "Music for Imposter Syndrome",
+    metaTitle: "Music for Imposter Syndrome — Confidence Album",
+    metaDescription:
+      "Music for imposter syndrome: a confident, steady instrumental album for moments of self-doubt. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for imposter syndrome",
+      "imposter syndrome music",
+      "self-doubt music",
+      "confidence music",
+    ],
+    heroImage: "/images/heroes/coding.png", // Using coding for professional self-doubt
+    heroAlt: "Overcoming professional self-doubt and imposter feelings",
+    albumId: "heart-dimension",
+    excerpt:
+      "Confident, steady instrumentals for moments of professional self-doubt.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Imposter syndrome whispers that you don't belong, that you're not qualified, that you'll be discovered as a fraud. A steady, confident instrumental album can provide counter-energy to those whispers, offering sonic evidence of capability and consistency.",
+    sections: [
+      {
+        heading: "Music for counter-narrative",
+        body: "When internal voices say you're not enough, external music with steady confidence can provide a different message. Its consistency and forward motion can help shift your internal narrative from doubt to capability.",
+      },
+      {
+        heading: "Creating evidence of competence",
+        body: "Use this album when working on challenging projects. Let its steady presence become associated with your competent work, creating sensory evidence that contradicts imposter feelings when they arise.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-boundary-setting",
+    searchTerm: "music for boundary setting",
+    title: "Music for Boundary Setting",
+    metaTitle: "Music for Boundary Setting — Clear Space Album",
+    metaDescription:
+      "Music for boundary setting: a clear, defined instrumental album for establishing personal limits and space. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for boundary setting",
+      "boundary music",
+      "personal space music",
+      "limits music",
+    ],
+    heroImage: "/images/heroes/cabin.png", // Using cabin for personal space
+    heroAlt: "Creating clear personal boundaries and space",
+    albumId: "ancient-arrow",
+    excerpt:
+      "Clear, defined instrumentals for establishing personal limits and space.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Setting boundaries means defining what is yours and what isn't — your time, your energy, your attention, your emotional space. A clear, defined instrumental album can help establish that sense of definition, creating sonic boundaries that support your personal ones.",
+    sections: [
+      {
+        heading: "Music for space definition",
+        body: "When you need to create psychological or emotional boundaries, music with clear structure and definition can help. Its sonic boundaries can reinforce your personal ones, making them feel more tangible and real.",
+      },
+      {
+        heading: "Creating boundary rituals",
+        body: "Use this album when you need to establish or reinforce boundaries — before difficult conversations, when transitioning from work to personal time, or when protecting time for important priorities.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-writers-block",
+    searchTerm: "music for writers block",
+    title: "Music for Writer's Block",
+    metaTitle: "Music for Writer's Block — Creative Unblocking Album",
+    metaDescription:
+      "Music for writer's block: a flowing, unblocking instrumental album for stuck creative moments. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for writers block",
+      "writer's block music",
+      "creative block music",
+      "unblocking music",
+    ],
+    heroImage: "/images/heroes/poetry.png",
+    heroAlt: "Overcoming creative blocks and finding flow",
+    albumId: "just-dmiles-2",
+    excerpt:
+      "Flowing, unblocking instrumentals for stuck creative moments.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Writer's block creates its own frustrating paradox — the more you try to force words, the less they come. A flowing instrumental album can help break that cycle, providing movement and momentum that might help your own creative flow resume.",
+    sections: [
+      {
+        heading: "Music for creative momentum",
+        body: "When you are stuck, music with forward motion can provide external momentum that might help unlock internal creative flow. Its movement can suggest possibility when you feel none exists.",
+      },
+      {
+        heading: "Changing the creative environment",
+        body: "Sometimes writer's block is actually environment block. Changing your sensory environment with different music can shift your mental state enough to see your work from a new perspective.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-grief",
+    searchTerm: "music for grief",
+    title: "Music for Grief",
+    metaTitle: "Music for Grief — Holding Space Album",
+    metaDescription:
+      "Music for grief: a spacious, holding instrumental album for loss and mourning. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for grief",
+      "grief music",
+      "mourning music",
+      "loss music",
+    ],
+    heroImage: "/images/heroes/storm.png", // Using storm for difficult emotions
+    heroAlt: "Space for grief and mourning process",
+    albumId: "abducted",
+    excerpt:
+      "Spacious, holding instrumentals for the process of grief and mourning.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Grief needs space — to feel, to remember, to process, to simply be with loss. A spacious instrumental album can hold that space with you, providing emotional companionship without words that might limit or define your specific experience of loss.",
+    sections: [
+      {
+        heading: "Music for emotional containment",
+        body: "Grief can feel overwhelming, chaotic, too big to hold. Music with space and steadiness can provide a container for those feelings, making them feel more manageable without minimizing their significance.",
+      },
+      {
+        heading: "Creating ritual for mourning",
+        body: "Music can help create rituals for mourning — specific times to remember, to feel, to honor what has been lost. A consistent album played during these times can provide continuity through the changing landscape of grief.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-introvert-recharge",
+    searchTerm: "music for introvert recharge",
+    title: "Music for Introvert Recharge",
+    metaTitle: "Music for Introvert Recharge — Restorative Album",
+    metaDescription:
+      "Music for introvert recharge: a restorative, low-stimulation instrumental album for alone time recovery. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for introvert recharge",
+      "introvert music",
+      "alone time music",
+      "recharge music",
+    ],
+    heroImage: "/images/heroes/cabin.png", // Using cabin for alone time
+    heroAlt: "Peaceful alone time for recharging energy",
+    albumId: "ancient-arrow",
+    excerpt:
+      "Restorative, low-stimulation instrumentals for alone time recovery.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Introvert recharge requires time alone — away from social demands, external stimulation, and the energy drain of being constantly 'on.' A low-stimulation instrumental album can support that recharge, providing gentle companionship without social demands.",
+    sections: [
+      {
+        heading: "Music for low-stimulation space",
+        body: "After social interaction, introverts often need sensory environments with minimal demands. Instrumental music without complex arrangements or demanding attention can provide pleasant background without adding to sensory load.",
+      },
+      {
+        heading: "Creating recharge rituals",
+        body: "Develop post-social rituals: when you return from social events or demanding interactions, put on this album as part of your transition back to alone time. Let it signal to your nervous system that it's safe to down-regulate.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-manifestation",
+    searchTerm: "music for manifestation",
+    title: "Music for Manifestation",
+    metaTitle: "Music for Manifestation — Intention Album",
+    metaDescription:
+      "Music for manifestation: an intentional, focused instrumental album for visualizing goals and dreams. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for manifestation",
+      "manifestation music",
+      "intention music",
+      "visualization music",
+    ],
+    heroImage: "/images/heroes/stargazing.png", // Using stargazing for dreams/goals
+    heroAlt: "Space for visualization and intentional creation",
+    albumId: "ancient-arrow",
+    excerpt:
+      "Intentional, focused instrumentals for visualizing goals and dreams.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Manifestation combines clear intention with emotional alignment — visualizing what you want while feeling as if it's already happening. A focused instrumental album can help create the mental and emotional space for that practice, supporting concentration without distraction.",
+    sections: [
+      {
+        heading: "Music for intentional focus",
+        body: "When visualizing goals, you need clear, undistracted focus. Instrumental music provides background support without lyrics that might pull your attention away from your specific intentions and visualizations.",
+      },
+      {
+        heading: "Creating manifestation rituals",
+        body: "Use this album consistently during your manifestation practice. Let it become part of the ritual that signals to your brain it's time for focused intention-setting and visualization work.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-perfectionism",
+    searchTerm: "music for perfectionism",
+    title: "Music for Perfectionism",
+    metaTitle: "Music for Perfectionism — Progress Album",
+    metaDescription:
+      "Music for perfectionism: a progress-focused instrumental album for overcoming 'all or nothing' thinking. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for perfectionism",
+      "perfectionism music",
+      "progress music",
+      "good enough music",
+    ],
+    heroImage: "/images/heroes/pottery.png", // Using pottery for imperfect creation
+    heroAlt: "Embracing imperfection and progress over perfection",
+    albumId: "robokan",
+    excerpt:
+      "Progress-focused instrumentals for overcoming 'all or nothing' thinking.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Perfectionism often stops progress — if it can't be perfect, why start? If it's not perfect yet, why continue? A steady, progress-focused instrumental album can help shift that mindset, emphasizing forward motion over flawless results.",
+    sections: [
+      {
+        heading: "Music for process over product",
+        body: "Perfectionism focuses on end results. Music that develops gradually, with small variations and consistent forward motion, can help refocus attention on process — the doing itself rather than the perfect outcome.",
+      },
+      {
+        heading: "Creating imperfect action rituals",
+        body: "Use this album when starting tasks you tend to procrastinate on due to perfectionism. Let its steady progress remind you that starting imperfectly is better than not starting at all, and continuing imperfectly is better than abandoning the effort.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-mind-wandering",
+    searchTerm: "music for mind wandering",
+    title: "Music for Mind Wandering",
+    metaTitle: "Music for Mind Wandering — Creative Association Album",
+    metaDescription:
+      "Music for mind wandering: an associative, meandering instrumental album for creative thinking and daydreaming. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for mind wandering",
+      "mind wandering music",
+      "daydreaming music",
+      "creative association music",
+    ],
+    heroImage: "/images/heroes/stargazing.png", // Using stargazing for wandering thoughts
+    heroAlt: "Space for creative daydreaming and associative thinking",
+    albumId: "skyline-mirror",
+    excerpt:
+      "Associative, meandering instrumentals for creative thinking and daydreaming.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Mind wandering isn't distraction — it's often where creative connections happen, where problems get solved indirectly, where new ideas emerge. A meandering instrumental album can support that wandering, providing sonic landscape for your thoughts to explore.",
+    sections: [
+      {
+        heading: "Music for associative thinking",
+        body: "When you need creative solutions or new perspectives, sometimes the best approach is indirect. Music with some variation and development can encourage associative thinking, helping your mind make unexpected connections.",
+      },
+      {
+        heading: "Creating space for indirect problem-solving",
+        body: "When stuck on a problem, try listening to this album while doing something unrelated — walking, doodling, simple tasks. Let the music and the physical activity create conditions for indirect, creative problem-solving to occur.",
+      },
+    ],
+  },
+  {
+    slug: "music-for-boredom",
+    searchTerm: "music for boredom",
+    title: "Music for Boredom",
+    metaTitle: "Music for Boredom — Curiosity Album",
+    metaDescription:
+      "Music for boredom: a curious, engaging instrumental album for transforming empty time into creative space. Available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "music for boredom",
+      "boredom music",
+      "empty time music",
+      "curiosity music",
+    ],
+    heroImage: "/images/heroes/train.png", // Using train for journey through time
+    heroAlt: "Transforming empty time into creative possibility",
+    albumId: "just-dmiles",
+    excerpt:
+      "Curious, engaging instrumentals for transforming empty time into creative space.",
+    publishedAt: "2026-02-10",
+    updatedAt: "2026-02-10",
+    intro:
+      "Boredom often gets a bad reputation, but it can be creative space waiting to be filled — time when your mind is free to wander, imagine, create. A curious instrumental album can help transform that empty time into something generative rather than something to escape.",
+    sections: [
+      {
+        heading: "Music for empty space",
+        body: "When you feel bored, you're actually experiencing empty mental space. Music with some curiosity and engagement can help you explore that space rather than immediately filling it with distraction or rushing to end it.",
+      },
+      {
+        heading: "Creating boredom rituals",
+        body: "Instead of immediately reaching for your phone when bored, try putting on this album first. Give yourself 10-15 minutes of just listening, letting your mind wander, seeing what emerges from the empty space before filling it with external stimulation.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-reception-playlist",
+    searchTerm: "wedding reception playlist",
+    title: "Wedding Reception Playlist",
+    metaTitle: "Wedding Reception Playlist — Celebration Music",
+    metaDescription:
+      "Wedding reception playlist: perfect instrumental music for dancing, dining, and celebrating. Fresh songs available on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "wedding reception playlist",
+      "reception music",
+      "wedding dance music",
+      "celebration playlist",
+    ],
+    heroImage: "/images/heroes/cabin.png",
+    heroAlt: "Elegant wedding reception with dancing and celebration",
+    albumId: "beme-2",
+    excerpt:
+      "Perfect instrumental music for wedding dancing, dining, and celebrating.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "The wedding reception is all about celebration — first dances, toasts, dinner music, and dancing into the night. The right instrumental playlist keeps energy high while allowing conversation to flow naturally throughout the evening.",
+    sections: [
+      {
+        heading: "Music for celebration flow",
+        body: "A wedding reception moves through different phases: cocktail hour, dinner, speeches, dancing. A versatile instrumental album can provide continuous musical backdrop that adapts to each moment without jarring transitions.",
+      },
+      {
+        heading: "Creating reception atmosphere",
+        body: "Work with your DJ or band to blend this album with other music. Its instrumental nature makes it easy to mix with vocal tracks, creating a cohesive musical journey through your reception.",
+      },
+    ],
+  },
+  {
+    slug: "racing-music-playlist",
+    searchTerm: "racing music playlist",
+    title: "Racing Music Playlist",
+    metaTitle: "Racing Music Playlist — High-Energy Driving Songs",
+    metaDescription:
+      "Racing music playlist: high-energy instrumental tracks for racing games, driving, and competition. Fresh driving music on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "racing music playlist",
+      "racing songs",
+      "driving competition music",
+      "high-energy driving playlist",
+    ],
+    heroImage: "/images/heroes/train.png",
+    heroAlt: "Exciting racing action with high-speed vehicles",
+    albumId: "direct-potion",
+    excerpt:
+      "High-energy instrumental tracks for racing games and competitive driving.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Racing demands intense focus and adrenaline — whether on track, in simulators, or during competitive driving. A high-energy instrumental playlist provides the perfect sonic fuel, matching the intensity without distracting lyrics.",
+    sections: [
+      {
+        heading: "Music for racing focus",
+        body: "When milliseconds matter, you need music that enhances concentration rather than distracting from it. Driving-focused instrumental tracks provide energy while keeping your mind clear for split-second decisions.",
+      },
+      {
+        heading: "Safety considerations",
+        body: "For actual driving, keep volume at safe levels where you can clearly hear engine sounds, other vehicles, and important auditory cues. Consider using only when practicing on closed circuits or in simulation environments.",
+      },
+    ],
+  },
+  {
+    slug: "sports-training-playlist",
+    searchTerm: "sports training playlist",
+    title: "Sports Training Playlist",
+    metaTitle: "Sports Training Playlist — Workout Motivation Music",
+    metaDescription:
+      "Sports training playlist: motivating instrumental music for athletic training and workouts. Fresh workout songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "sports training playlist",
+      "workout music",
+      "athletic training songs",
+      "sports motivation playlist",
+    ],
+    heroImage: "/images/heroes/climbing.png",
+    heroAlt: "Athlete in intense training session",
+    albumId: "direct-potion",
+    excerpt:
+      "Motivating instrumental music for athletic training and sports workouts.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Sports training pushes physical limits — strength, endurance, speed, technique. The right instrumental playlist provides consistent motivational energy, helping you push through plateaus and maintain training intensity.",
+    sections: [
+      {
+        heading: "Music for training rhythm",
+        body: "Many athletes use music tempo to pace their training — matching beats to reps, strides, or intervals. A steady instrumental playlist helps maintain consistent training rhythm through challenging workouts.",
+      },
+      {
+        heading: "Training environment considerations",
+        body: "Keep volume at safe levels, especially when training outdoors or in shared spaces. Consider bone conduction headphones for outdoor training to maintain situational awareness while enjoying your playlist.",
+      },
+    ],
+  },
+  {
+    slug: "fresh-music-discovery",
+    searchTerm: "fresh music discovery",
+    title: "Fresh Music Discovery",
+    metaTitle: "Fresh Music Discovery — New Instrumental Songs",
+    metaDescription:
+      "Fresh music discovery: explore new instrumental tracks and albums from independent artists. Discover fresh songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "fresh music discovery",
+      "new music discovery",
+      "instrumental songs discovery",
+      "fresh tracks playlist",
+    ],
+    heroImage: "/images/heroes/stargazing.png",
+    heroAlt: "Discovering new music in a creative space",
+    albumId: "just-dmiles-3",
+    excerpt:
+      "Explore fresh instrumental tracks and albums from independent artists.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Music discovery keeps your listening experience fresh and exciting. Exploring instrumental work from independent artists often reveals unique creative perspectives that mainstream music might overlook.",
+    sections: [
+      {
+        heading: "Discovering independent voices",
+        body: "Independent artists often have complete creative freedom, resulting in unique musical expressions. Their instrumental work can offer fresh perspectives on composition and production worth discovering.",
+      },
+      {
+        heading: "Building your discovery routine",
+        body: "Make music discovery a regular habit. Set aside time each week to explore new instrumental albums, creating personal playlists of your favorite fresh discoveries.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-ceremony-music",
+    searchTerm: "wedding ceremony music",
+    title: "Wedding Ceremony Music",
+    metaTitle: "Wedding Ceremony Music — Elegant Instrumental Songs",
+    metaDescription:
+      "Wedding ceremony music: elegant instrumental tracks for walking down the aisle and ceremony moments. Beautiful wedding songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "wedding ceremony music",
+      "aisle walking music",
+      "ceremony songs",
+      "wedding instrumental music",
+    ],
+    heroImage: "/images/heroes/cabin.png",
+    heroAlt: "Beautiful wedding ceremony setting",
+    albumId: "reflection-symphony",
+    excerpt:
+      "Elegant instrumental tracks for walking down the aisle and wedding ceremony moments.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "The wedding ceremony contains life's most meaningful moments — walking down the aisle, exchanging vows, the first kiss as a married couple. Elegant instrumental music enhances these moments without words that might distract from their significance.",
+    sections: [
+      {
+        heading: "Music for ceremony timing",
+        body: "Ceremony music needs precise timing — processional, recessional, moments of reflection. Instrumental tracks with clear structure help coordinate these moments smoothly while creating beautiful atmosphere.",
+      },
+      {
+        heading: "Creating emotional resonance",
+        body: "The right ceremony music creates emotional resonance that guests remember for years. Its beauty supports the significance of the moment without competing with spoken words or personal emotions.",
+      },
+    ],
+  },
+  {
+    slug: "marathon-running-playlist",
+    searchTerm: "marathon running playlist",
+    title: "Marathon Running Playlist",
+    metaTitle: "Marathon Running Playlist — Endurance Running Music",
+    metaDescription:
+      "Marathon running playlist: steady instrumental music for long-distance running and endurance training. Fresh running songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "marathon running playlist",
+      "long distance running music",
+      "endurance running songs",
+      "marathon training playlist",
+    ],
+    heroImage: "/images/heroes/solo-hiking.png",
+    heroAlt: "Marathon runner in training on scenic route",
+    albumId: "just-dmiles",
+    excerpt:
+      "Steady instrumental music for marathon running and endurance training.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Marathon running demands both physical endurance and mental fortitude — hours of consistent effort, managing energy, pushing through walls. A steady instrumental playlist provides reliable sonic companionship through every mile.",
+    sections: [
+      {
+        heading: "Music for pacing and endurance",
+        body: "Marathon runners often use music tempo to maintain optimal pace. Consistent instrumental tracks help establish and maintain running rhythm through changing terrain and fatigue levels.",
+      },
+      {
+        heading: "Race day considerations",
+        body: "Check race regulations about headphone use. When allowed, keep volume low enough to hear race officials, other runners, and important race information. Consider using just one earbud for safety.",
+      },
+    ],
+  },
+  {
+    slug: "basketball-training-music",
+    searchTerm: "basketball training music",
+    title: "Basketball Training Music",
+    metaTitle: "Basketball Training Music — Court Workout Playlist",
+    metaDescription:
+      "Basketball training music: energetic instrumental tracks for court workouts and skill development. Fresh sports songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "basketball training music",
+      "court workout playlist",
+      "basketball practice songs",
+      "sports training music",
+    ],
+    heroImage: "/images/heroes/climbing.png",
+    heroAlt: "Basketball player training on court",
+    albumId: "trust-the-flow",
+    excerpt:
+      "Energetic instrumental tracks for basketball court workouts and skill training.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Basketball training combines skill work with physical conditioning — shooting drills, ball handling, defensive movements, conditioning. An energetic instrumental playlist provides consistent motivation through repetitive drills and challenging workouts.",
+    sections: [
+      {
+        heading: "Music for skill repetition",
+        body: "Basketball fundamentals require thousands of repetitions. Energetic instrumental music helps maintain focus and intensity through shooting drills, dribbling exercises, and defensive footwork practice.",
+      },
+      {
+        heading: "Court environment considerations",
+        body: "Respect shared court space with other players. Use headphones during individual training, or coordinate with teammates for group workouts. Keep volume at levels that allow communication during team drills.",
+      },
+    ],
+  },
+  {
+    slug: "fresh-instrumental-songs",
+    searchTerm: "fresh instrumental songs",
+    title: "Fresh Instrumental Songs",
+    metaTitle: "Fresh Instrumental Songs — New Music Discovery",
+    metaDescription:
+      "Fresh instrumental songs: discover new instrumental tracks and albums for various activities. Explore fresh music on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "fresh instrumental songs",
+      "new instrumental music",
+      "instrumental tracks discovery",
+      "fresh music songs",
+    ],
+    heroImage: "/images/heroes/oil-painting.png",
+    heroAlt: "Discovering fresh instrumental music",
+    albumId: "giro-fatal",
+    excerpt:
+      "Discover fresh instrumental tracks and albums for various activities and moods.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Keeping your music collection fresh means regularly discovering new instrumental tracks that resonate with your current activities, moods, and creative inspirations.",
+    sections: [
+      {
+        heading: "Building a fresh listening habit",
+        body: "Make instrumental music discovery part of your weekly routine. Explore new albums, create themed playlists, and refresh your listening experience regularly to keep your musical environment vibrant.",
+      },
+      {
+        heading: "Discovering creative inspiration",
+        body: "Fresh instrumental music often sparks creative inspiration for various projects and activities. New sonic perspectives can influence your work, thinking, and creative expression in unexpected ways.",
+      },
+    ],
+  },
+  {
+    slug: "soccer-training-playlist",
+    searchTerm: "soccer training playlist",
+    title: "Soccer Training Playlist",
+    metaTitle: "Soccer Training Playlist — Football Practice Music",
+    metaDescription:
+      "Soccer training playlist: driving instrumental music for football practice and conditioning. Fresh sports songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "soccer training playlist",
+      "football practice music",
+      "soccer workout songs",
+      "sports training playlist",
+    ],
+    heroImage: "/images/heroes/climbing.png",
+    heroAlt: "Soccer player training on field",
+    albumId: "deep-whistle",
+    excerpt:
+      "Driving instrumental music for soccer practice and football training sessions.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Soccer training combines technical skill work with intense physical conditioning — passing drills, shooting practice, agility work, endurance training. A driving instrumental playlist provides consistent energy through demanding practice sessions.",
+    sections: [
+      {
+        heading: "Music for technical repetition",
+        body: "Soccer skills develop through thousands of repetitions. Consistent instrumental music helps maintain focus through ball control drills, passing exercises, and shooting practice, making repetitive work feel more engaging.",
+      },
+      {
+        heading: "Team training considerations",
+        body: "Coordinate with teammates for group training sessions. Consider a portable speaker for team conditioning work, or use individual headphones for skill work while maintaining ability to hear coaching instructions.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-dinner-music",
+    searchTerm: "wedding dinner music",
+    title: "Wedding Dinner Music",
+    metaTitle: "Wedding Dinner Music — Reception Dining Playlist",
+    metaDescription:
+      "Wedding dinner music: elegant instrumental tracks for reception dining and conversation. Beautiful dinner songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "wedding dinner music",
+      "reception dining playlist",
+      "wedding meal music",
+      "dinner conversation music",
+    ],
+    heroImage: "/images/heroes/baking.png",
+    heroAlt: "Elegant wedding dinner setting",
+    albumId: "want-you",
+    excerpt:
+      "Elegant instrumental tracks for wedding reception dining and conversation.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "The wedding dinner is a time for celebration, conversation, and connection — guests sharing meals, telling stories, building memories. Elegant instrumental music creates perfect atmosphere for dining while allowing conversation to flow naturally.",
+    sections: [
+      {
+        heading: "Music for dining atmosphere",
+        body: "Dinner music should enhance the dining experience without overwhelming it. Instrumental tracks at appropriate volume create beautiful background atmosphere that supports conversation rather than competing with it.",
+      },
+      {
+        heading: "Creating dining flow",
+        body: "Work with your venue or DJ to ensure dinner music transitions smoothly from ceremony music and prepares guests for dancing later. The right instrumental playlist creates cohesive musical journey through your entire wedding day.",
+      },
+    ],
+  },
+  {
+    slug: "formula-1-racing-music",
+    searchTerm: "formula 1 racing music",
+    title: "Formula 1 Racing Music",
+    metaTitle: "Formula 1 Racing Music — High-Speed Driving Playlist",
+    metaDescription:
+      "Formula 1 racing music: intense instrumental tracks for racing simulation and high-speed focus. Fresh driving songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "formula 1 racing music",
+      "F1 racing playlist",
+      "racing simulation music",
+      "high-speed driving songs",
+    ],
+    heroImage: "/images/heroes/train.png",
+    heroAlt: "Formula 1 racing action",
+    albumId: "direct-potion",
+    excerpt:
+      "Intense instrumental tracks for Formula 1 racing simulation and high-speed focus.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Formula 1 represents the pinnacle of racing — extreme speed, precision engineering, split-second decisions. Intense instrumental music matches that intensity, providing sonic fuel for racing simulation and high-speed focus training.",
+    sections: [
+      {
+        heading: "Music for racing concentration",
+        body: "F1 racing demands absolute concentration. Instrumental tracks without lyrics help maintain mental clarity for complex racing lines, braking points, and overtaking decisions during simulation training.",
+      },
+      {
+        heading: "Simulation training environment",
+        body: "Create an immersive simulation environment with appropriate music volume. The right instrumental playlist enhances focus during practice sessions, helping develop muscle memory for track layouts and racing strategies.",
+      },
+    ],
+  },
+  {
+    slug: "tennis-training-playlist",
+    searchTerm: "tennis training playlist",
+    title: "Tennis Training Playlist",
+    metaTitle: "Tennis Training Playlist — Court Practice Music",
+    metaDescription:
+      "Tennis training playlist: focused instrumental music for court practice and skill development. Fresh sports songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "tennis training playlist",
+      "court practice music",
+      "tennis workout songs",
+      "sports training music",
+    ],
+    heroImage: "/images/heroes/climbing.png",
+    heroAlt: "Tennis player training on court",
+    albumId: "ivory-beats",
+    excerpt:
+      "Focused instrumental music for tennis court practice and skill development.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Tennis training combines technical precision with physical endurance — stroke repetition, footwork drills, match simulation, conditioning. A focused instrumental playlist helps maintain concentration through demanding practice sessions.",
+    sections: [
+      {
+        heading: "Music for stroke repetition",
+        body: "Tennis strokes develop through thousands of repetitions. Consistent instrumental music helps maintain rhythm and focus through forehand drills, backhand practice, serving work, and volley exercises.",
+      },
+      {
+        heading: "Court training considerations",
+        body: "Respect shared court space with other players. Use wireless headphones during individual drills, keeping volume at levels that allow you to hear ball contact and footwork sounds important for technique development.",
+      },
+    ],
+  },
+  {
+    slug: "new-music-playlist",
+    searchTerm: "new music playlist",
+    title: "New Music Playlist",
+    metaTitle: "New Music Playlist — Fresh Instrumental Discovery",
+    metaDescription:
+      "New music playlist: discover fresh instrumental tracks and albums for your listening rotation. Explore new songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "new music playlist",
+      "fresh music discovery",
+      "instrumental discovery playlist",
+      "new songs playlist",
+    ],
+    heroImage: "/images/heroes/stargazing.png",
+    heroAlt: "Discovering new music for playlist creation",
+    albumId: "future-arrow",
+    excerpt:
+      "Discover fresh instrumental tracks and albums for your music rotation and playlists.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "A regularly updated music playlist keeps your listening experience fresh and engaging. Discovering new instrumental tracks adds variety to your daily routines, workouts, creative sessions, and relaxation time.",
+    sections: [
+      {
+        heading: "Building discovery habits",
+        body: "Make music discovery a regular practice. Set aside time each week to explore new instrumental albums, adding fresh tracks to your playlists and keeping your musical environment dynamic.",
+      },
+      {
+        heading: "Creating themed playlists",
+        body: "Organize your fresh discoveries into themed playlists — workout music, focus tracks, relaxation albums, creative inspiration. This helps match the right music to your current activities and moods.",
+      },
+    ],
+  },
+  {
+    slug: "boxing-training-music",
+    searchTerm: "boxing training music",
+    title: "Boxing Training Music",
+    metaTitle: "Boxing Training Music — Fight Training Playlist",
+    metaDescription:
+      "Boxing training music: intense instrumental tracks for boxing workouts and fight preparation. Fresh workout songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "boxing training music",
+      "fight training playlist",
+      "boxing workout songs",
+      "martial arts music",
+    ],
+    heroImage: "/images/heroes/climbing.png",
+    heroAlt: "Boxing training session",
+    albumId: "future-arrow",
+    excerpt:
+      "Intense instrumental tracks for boxing workouts and fight preparation training.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Boxing training demands explosive power, technical precision, and mental toughness — bag work, pad drills, conditioning, sparring preparation. Intense instrumental music provides the perfect sonic backdrop for pushing through challenging workouts.",
+    sections: [
+      {
+        heading: "Music for training intensity",
+        body: "Boxing workouts require bursts of intense effort followed by active recovery. Instrumental tracks with driving energy help maintain intensity through rounds while providing rhythm for combination work and footwork drills.",
+      },
+      {
+        heading: "Gym training considerations",
+        body: "Respect shared gym space with other athletes. Use secure wireless headphones that stay in place during movement-intensive training. Keep volume at safe levels where you can still hear coaching instructions and training partners.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-cocktail-music",
+    searchTerm: "wedding cocktail music",
+    title: "Wedding Cocktail Music",
+    metaTitle: "Wedding Cocktail Music — Reception Mingling Playlist",
+    metaDescription:
+      "Wedding cocktail music: sophisticated instrumental tracks for reception mingling and drinks. Elegant cocktail songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "wedding cocktail music",
+      "reception mingling playlist",
+      "cocktail hour music",
+      "wedding drinks music",
+    ],
+    heroImage: "/images/heroes/baking.png",
+    heroAlt: "Elegant wedding cocktail hour",
+    albumId: "shiny-star",
+    excerpt:
+      "Sophisticated instrumental tracks for wedding reception mingling and cocktail hour.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "The wedding cocktail hour is a time for celebration, connection, and transition — guests mingling, sharing congratulations, enjoying drinks before dinner. Sophisticated instrumental music creates perfect atmosphere for socializing while setting elegant tone for the evening ahead.",
+    sections: [
+      {
+        heading: "Music for social atmosphere",
+        body: "Cocktail music should encourage conversation and connection. Instrumental tracks at appropriate volume create sophisticated background atmosphere that enhances social interaction without overwhelming it.",
+      },
+      {
+        heading: "Creating reception transitions",
+        body: "Cocktail music serves as important transition between ceremony and reception dinner. The right instrumental playlist helps guests shift from ceremonial atmosphere to celebratory reception mood seamlessly.",
+      },
+    ],
+  },
+  {
+    slug: "motocross-racing-music",
+    searchTerm: "motocross racing music",
+    title: "Motocross Racing Music",
+    metaTitle: "Motocross Racing Music — Dirt Bike Racing Playlist",
+    metaDescription:
+      "Motocross racing music: energetic instrumental tracks for dirt bike racing and off-road competition. Fresh racing songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "motocross racing music",
+      "dirt bike racing playlist",
+      "off-road racing songs",
+      "motorsports music",
+    ],
+    heroImage: "/images/heroes/train.png",
+    heroAlt: "Motocross racing action",
+    albumId: "robokan",
+    excerpt:
+      "Energetic instrumental tracks for motocross racing and off-road competition.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Motocross racing combines extreme athleticism with technical skill — navigating rough terrain, jumps, turns, and competition. Energetic instrumental music provides perfect sonic energy for training focus and competitive mindset.",
+    sections: [
+      {
+        heading: "Music for off-road focus",
+        body: "Dirt bike racing demands intense concentration on changing terrain and race conditions. Instrumental tracks help maintain mental focus during training while providing energy for physical exertion.",
+      },
+      {
+        heading: "Safety considerations",
+        body: "Never use headphones while actually riding. Use music only during pre-race preparation, training visualization, or post-ride recovery. Safety always comes first in motorsports environments.",
+      },
+    ],
+  },
+  {
+    slug: "golf-training-playlist",
+    searchTerm: "golf training playlist",
+    title: "Golf Training Playlist",
+    metaTitle: "Golf Training Playlist — Course Practice Music",
+    metaDescription:
+      "Golf training playlist: focused instrumental music for driving range practice and course preparation. Fresh sports songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "golf training playlist",
+      "driving range music",
+      "golf practice songs",
+      "sports focus music",
+    ],
+    heroImage: "/images/heroes/climbing.png",
+    heroAlt: "Golf practice on driving range",
+    albumId: "beme",
+    excerpt:
+      "Focused instrumental music for golf driving range practice and course preparation.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Golf training combines technical precision with mental focus — swing repetition, putting practice, course strategy, mental preparation. A focused instrumental playlist helps maintain concentration through repetitive practice while creating optimal training mindset.",
+    sections: [
+      {
+        heading: "Music for swing rhythm",
+        body: "Consistent swing rhythm is fundamental to good golf. Instrumental tracks with steady tempo can help establish and maintain proper swing timing during driving range practice and repetition work.",
+      },
+      {
+        heading: "Practice environment considerations",
+        body: "Respect driving range rules about music. When allowed, keep volume at levels that don't disturb other golfers. Consider using just one earbud to maintain awareness of your surroundings and any safety announcements.",
+      },
+    ],
+  },
+  {
+    slug: "fresh-song-discovery",
+    searchTerm: "fresh song discovery",
+    title: "Fresh Song Discovery",
+    metaTitle: "Fresh Song Discovery — New Instrumental Tracks",
+    metaDescription:
+      "Fresh song discovery: explore new instrumental tracks and albums from creative artists. Discover fresh music on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "fresh song discovery",
+      "new song discovery",
+      "instrumental track discovery",
+      "fresh music exploration",
+    ],
+    heroImage: "/images/heroes/oil-painting.png",
+    heroAlt: "Discovering fresh instrumental songs",
+    albumId: "abducted",
+    excerpt:
+      "Explore fresh instrumental tracks and albums from creative independent artists.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Regular song discovery keeps your music experience vibrant and inspiring. Exploring new instrumental tracks exposes you to fresh creative perspectives that can influence your work, thinking, and daily experiences.",
+    sections: [
+      {
+        heading: "Creating discovery routines",
+        body: "Build regular music discovery into your schedule. Dedicate time each week to explore new instrumental albums, creating collections of fresh tracks that match your various activities and moods.",
+      },
+      {
+        heading: "Discovering creative influences",
+        body: "Fresh instrumental music often sparks creative ideas for projects, problem-solving approaches, and new perspectives on familiar activities. Regular discovery keeps your creative influences dynamic and evolving.",
+      },
+    ],
+  },
+  {
+    slug: "swimming-training-playlist",
+    searchTerm: "swimming training playlist",
+    title: "Swimming Training Playlist",
+    metaTitle: "Swimming Training Playlist — Lap Swimming Music",
+    metaDescription:
+      "Swimming training playlist: rhythmic instrumental tracks for lap swimming and pool workouts. Fresh workout songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "swimming training playlist",
+      "lap swimming music",
+      "pool workout songs",
+      "aquatic sports music",
+    ],
+    heroImage: "/images/heroes/climbing.png",
+    heroAlt: "Swimmer training laps in pool",
+    albumId: "future-arrow",
+    excerpt:
+      "Rhythmic instrumental tracks for lap swimming training and pool workouts.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Swimming training requires consistent rhythm and endurance — lap after lap, stroke after stroke, breath after breath. A rhythmic instrumental playlist provides steady sonic companionship through demanding pool sessions.",
+    sections: [
+      {
+        heading: "Music for swimming rhythm",
+        body: "Many swimmers match their stroke tempo to music beat. Consistent instrumental tracks help maintain optimal swimming pace and rhythm through long training sessions and interval work.",
+      },
+      {
+        heading: "Waterproof audio considerations",
+        body: "Only use waterproof audio devices specifically designed for swimming. Follow manufacturer guidelines for proper use and maintenance. Keep volume at safe levels where you can still hear pool whistles and safety announcements.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-first-dance-song",
+    searchTerm: "wedding first dance song",
+    title: "Wedding First Dance Song",
+    metaTitle: "Wedding First Dance Song — Special Moment Music",
+    metaDescription:
+      "Wedding first dance song: beautiful instrumental track for that special first dance as a married couple. Romantic wedding songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "wedding first dance song",
+      "first dance music",
+      "wedding dance songs",
+      "romantic instrumental music",
+    ],
+    heroImage: "/images/heroes/cabin.png",
+    heroAlt: "Couple's first dance at wedding reception",
+    albumId: "reflection-symphony",
+    excerpt:
+      "Beautiful instrumental track for your special first dance as a married couple.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "The first dance as a married couple creates lasting memories — a moment of connection, celebration, and new beginning shared with loved ones. A beautiful instrumental track provides perfect musical backdrop without lyrics that might limit or define your personal moment.",
+    sections: [
+      {
+        heading: "Music for personal significance",
+        body: "An instrumental first dance song allows your personal emotions and connection to take center stage. Its beauty supports your moment without adding specific narrative through lyrics, making it uniquely yours.",
+      },
+      {
+        heading: "Creating dance atmosphere",
+        body: "Work with your DJ or band to ensure smooth transition into your first dance. The right instrumental track creates magical atmosphere that enhances this special moment while allowing your personal connection to shine.",
+      },
+    ],
+  },
+  {
+    slug: "cycling-competition-music",
+    searchTerm: "cycling competition music",
+    title: "Cycling Competition Music",
+    metaTitle: "Cycling Competition Music — Race Preparation Playlist",
+    metaDescription:
+      "Cycling competition music: intense instrumental tracks for race preparation and competitive mindset. Fresh sports songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "cycling competition music",
+      "bike race playlist",
+      "cycling race songs",
+      "competitive sports music",
+    ],
+    heroImage: "/images/heroes/solo-hiking.png",
+    heroAlt: "Cyclist in competitive race",
+    albumId: "skyline-mirror",
+    excerpt:
+      "Intense instrumental tracks for cycling race preparation and competitive mindset.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Cycling competition demands peak physical performance and mental focus — strategy, pacing, tactics, endurance. Intense instrumental music helps create optimal competitive mindset during preparation while providing energy for race simulation training.",
+    sections: [
+      {
+        heading: "Music for race preparation",
+        body: "Pre-race preparation includes mental visualization, strategy review, and physical warm-up. Instrumental tracks help create focused environment for this preparation without distracting lyrics that might interfere with concentration.",
+      },
+      {
+        heading: "Race day considerations",
+        body: "Check race regulations about audio device use. When allowed, keep volume at safe levels where you can still hear race officials, other cyclists, and important race information. Safety always comes first in competitive environments.",
+      },
+    ],
+  },
+  {
+    slug: "fresh-music-songs",
+    searchTerm: "fresh music songs",
+    title: "Fresh Music Songs",
+    metaTitle: "Fresh Music Songs — New Instrumental Discovery",
+    metaDescription:
+      "Fresh music songs: discover new instrumental tracks and albums for your listening rotation. Explore fresh songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "fresh music songs",
+      "new music discovery",
+      "instrumental song discovery",
+      "fresh track playlist",
+    ],
+    heroImage: "/images/heroes/stargazing.png",
+    heroAlt: "Discovering fresh instrumental songs",
+    albumId: "just-dmiles-3",
+    excerpt:
+      "Discover fresh instrumental tracks and albums for your music rotation.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Keeping your music collection fresh means regularly discovering new instrumental tracks that match your current activities, moods, and creative inspirations.",
+    sections: [
+      {
+        heading: "Building discovery habits",
+        body: "Make instrumental music discovery part of your weekly routine. Explore new albums, create themed playlists, and refresh your listening experience regularly to keep your musical environment vibrant.",
+      },
+      {
+        heading: "Matching music to activities",
+        body: "Discover fresh instrumental tracks that match specific activities — workout music, focus tracks, relaxation albums, creative inspiration. This helps create optimal sonic environments for whatever you are doing.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-after-party-playlist",
+    searchTerm: "wedding after party playlist",
+    title: "Wedding After Party Playlist",
+    metaTitle: "Wedding After Party Playlist — Celebration Continuation",
+    metaDescription:
+      "Wedding after party playlist: energetic instrumental tracks for continued celebration after formal events. Fresh party songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "wedding after party playlist",
+      "after party music",
+      "wedding celebration continuation",
+      "party playlist",
+    ],
+    heroImage: "/images/heroes/cabin.png",
+    heroAlt: "Wedding after party celebration",
+    albumId: "just-dmiles-3",
+    excerpt:
+      "Energetic instrumental tracks for wedding after party celebration.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "The wedding after party continues celebration in more relaxed, intimate setting — dancing, talking, enjoying time with closest friends and family. Energetic instrumental music keeps celebration energy high while allowing easy conversation.",
+    sections: [
+      {
+        heading: "Music for relaxed celebration",
+        body: "After party music should feel more relaxed than formal reception music while maintaining celebration energy. Instrumental tracks create perfect atmosphere for continued dancing and socializing.",
+      },
+      {
+        heading: "Creating after party atmosphere",
+        body: "Work with your venue or DJ to ensure smooth transition from reception to after party. The right instrumental playlist helps maintain celebration momentum while shifting to more intimate after party vibe.",
+      },
+    ],
+  },
+  {
+    slug: "triathlon-training-playlist",
+    searchTerm: "triathlon training playlist",
+    title: "Triathlon Training Playlist",
+    metaTitle: "Triathlon Training Playlist — Multi-Sport Music",
+    metaDescription:
+      "Triathlon training playlist: versatile instrumental tracks for swimming, cycling, and running training. Fresh multi-sport songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "triathlon training playlist",
+      "multi-sport training music",
+      "triathlon workout songs",
+      "endurance sports playlist",
+    ],
+    heroImage: "/images/heroes/climbing.png",
+    heroAlt: "Triathlete in training",
+    albumId: "just-dmiles-3",
+    excerpt:
+      "Versatile instrumental tracks for triathlon swimming, cycling, and running training.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Triathlon training combines three different sports — swimming, cycling, running — each with unique physical demands and mental focus requirements. Versatile instrumental music provides consistent sonic support through varied training sessions.",
+    sections: [
+      {
+        heading: "Music for multi-sport training",
+        body: "Triathlon training involves switching between different sports and training modalities. Consistent instrumental music helps create psychological continuity through these transitions, maintaining training momentum.",
+      },
+      {
+        heading: "Training safety considerations",
+        body: "Adjust music use based on training environment — waterproof audio for swimming, safe volume levels for cycling outdoors, situational awareness for running. Safety always comes first in multi-sport training.",
+      },
+    ],
+  },
+  {
+    slug: "new-song-playlist",
+    searchTerm: "new song playlist",
+    title: "New Song Playlist",
+    metaTitle: "New Song Playlist — Fresh Music Collection",
+    metaDescription:
+      "New song playlist: discover fresh instrumental tracks and build your music collection. Explore new songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "new song playlist",
+      "fresh music collection",
+      "instrumental discovery playlist",
+      "new track playlist",
+    ],
+    heroImage: "/images/heroes/oil-painting.png",
+    heroAlt: "Building new music playlist",
+    albumId: "just-dmiles-3",
+    excerpt:
+      "Discover fresh instrumental tracks and build your music collection with new playlists.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Building a new song playlist keeps your music experience fresh and engaging. Discovering instrumental tracks adds variety to your daily routines, workouts, creative sessions, and relaxation time.",
+    sections: [
+      {
+        heading: "Creating discovery routines",
+        body: "Make music discovery a regular practice. Set aside time each week to explore new instrumental albums, adding fresh tracks to your playlists and keeping your musical environment dynamic.",
+      },
+      {
+        heading: "Building themed collections",
+        body: "Organize your fresh discoveries into themed playlists — workout music, focus tracks, relaxation albums, creative inspiration. This helps match the right music to your current activities and moods.",
+      },
+    ],
+  },
+  {
+    slug: "basketball-game-playlist",
+    searchTerm: "basketball game playlist",
+    title: "Basketball Game Playlist",
+    metaTitle: "Basketball Game Playlist — Game Day Music",
+    metaDescription:
+      "Basketball game playlist: intense instrumental tracks for game preparation and focus. Fresh sports songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "basketball game playlist",
+      "game day music",
+      "basketball preparation songs",
+      "sports focus playlist",
+    ],
+    heroImage: "/images/heroes/climbing.png",
+    heroAlt: "Basketball game preparation",
+    albumId: "deep-whistle",
+    excerpt:
+      "Intense instrumental tracks for basketball game preparation and focus.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Basketball game day demands peak mental focus and physical readiness — pre-game preparation, strategy visualization, optimal arousal level. Intense instrumental music helps create game-ready mindset while providing energy for physical preparation.",
+    sections: [
+      {
+        heading: "Music for game preparation",
+        body: "Pre-game rituals often include specific music to establish focus and readiness. Instrumental tracks without lyrics help create mental space for strategy visualization and optimal arousal level management.",
+      },
+      {
+        heading: "Creating game day routine",
+        body: "Develop consistent pre-game music routine. The same instrumental playlist before each game can become powerful psychological trigger for game-ready mindset and performance focus.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-brunch-music",
+    searchTerm: "wedding brunch music",
+    title: "Wedding Brunch Music",
+    metaTitle: "Wedding Brunch Music — Day-After Celebration",
+    metaDescription:
+      "Wedding brunch music: pleasant instrumental tracks for day-after celebration and relaxed gathering. Beautiful brunch songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "wedding brunch music",
+      "day after wedding music",
+      "brunch celebration playlist",
+      "wedding weekend music",
+    ],
+    heroImage: "/images/heroes/baking.png",
+    heroAlt: "Wedding day brunch celebration",
+    albumId: "far-road",
+    excerpt:
+      "Pleasant instrumental tracks for wedding day brunch celebration.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "The wedding brunch brings everyone together for relaxed celebration the day after the wedding — sharing stories, enjoying food, extending the celebration. Pleasant instrumental music creates perfect atmosphere for this relaxed gathering.",
+    sections: [
+      {
+        heading: "Music for relaxed gathering",
+        body: "Brunch music should feel relaxed and pleasant, creating background atmosphere for conversation and connection. Instrumental tracks at appropriate volume enhance the gathering without dominating it.",
+      },
+      {
+        heading: "Creating weekend continuity",
+        body: "Wedding brunch music provides beautiful continuation of wedding celebration atmosphere. The right instrumental playlist helps maintain celebratory mood while shifting to more relaxed, intimate gathering vibe.",
+      },
+    ],
+  },
+  {
+    slug: "skiing-training-playlist",
+    searchTerm: "skiing training playlist",
+    title: "Skiing Training Playlist",
+    metaTitle: "Skiing Training Playlist — Winter Sports Music",
+    metaDescription:
+      "Skiing training playlist: energetic instrumental tracks for ski preparation and winter sports training. Fresh sports songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "skiing training playlist",
+      "winter sports music",
+      "ski preparation songs",
+      "cold weather training playlist",
+    ],
+    heroImage: "/images/heroes/climbing.png",
+    heroAlt: "Ski training preparation",
+    albumId: "trust-the-flow",
+    excerpt:
+      "Energetic instrumental tracks for skiing preparation and winter sports training.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Skiing training combines technical skill with physical conditioning — balance work, strength training, endurance preparation, mental visualization. Energetic instrumental music provides consistent energy through varied training sessions.",
+    sections: [
+      {
+        heading: "Music for winter training",
+        body: "Ski training often happens in cold environments where maintaining energy and focus can be challenging. Energetic instrumental music helps sustain motivation and concentration through demanding winter training sessions.",
+      },
+      {
+        heading: "Cold weather considerations",
+        body: "Use weather-resistant audio equipment for outdoor training. Keep volume at safe levels where you can still hear important environmental sounds and safety information in winter conditions.",
+      },
+    ],
+  },
+  {
+    slug: "instrumental-song-discovery",
+    searchTerm: "instrumental song discovery",
+    title: "Instrumental Song Discovery",
+    metaTitle: "Instrumental Song Discovery — Fresh Music Exploration",
+    metaDescription:
+      "Instrumental song discovery: explore new instrumental tracks and albums for various activities. Discover fresh songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "instrumental song discovery",
+      "music exploration",
+      "fresh track discovery",
+      "instrumental music exploration",
+    ],
+    heroImage: "/images/heroes/stargazing.png",
+    heroAlt: "Exploring new instrumental music",
+    albumId: "heart-dimension",
+    excerpt:
+      "Explore new instrumental tracks and albums for various activities and creative inspiration.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Regular instrumental song discovery keeps your music experience fresh and inspiring. Exploring new tracks exposes you to different creative perspectives that can influence your work, thinking, and daily experiences.",
+    sections: [
+      {
+        heading: "Creating exploration habits",
+        body: "Build regular music exploration into your schedule. Dedicate time each week to discover new instrumental albums, creating collections of fresh tracks that match your various activities and moods.",
+      },
+      {
+        heading: "Discovering creative influences",
+        body: "Fresh instrumental music often sparks creative ideas for projects, problem-solving approaches, and new perspectives on familiar activities. Regular discovery keeps your creative influences dynamic and evolving.",
+      },
+    ],
+  },
+  {
+    slug: "football-training-playlist",
+    searchTerm: "football training playlist",
+    title: "Football Training Playlist",
+    metaTitle: "Football Training Playlist — Team Sports Music",
+    metaDescription:
+      "Football training playlist: intense instrumental tracks for football practice and team training. Fresh sports songs on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "football training playlist",
+      "team sports music",
+      "football practice songs",
+      "sports team training playlist",
+    ],
+    heroImage: "/images/heroes/climbing.png",
+    heroAlt: "Football team training session",
+    albumId: "direct-potion",
+    excerpt:
+      "Intense instrumental tracks for football practice and team training sessions.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Football training combines individual skill development with team coordination — drills, plays, conditioning, strategy work. Intense instrumental music provides consistent energy through demanding practice sessions while supporting team focus.",
+    sections: [
+      {
+        heading: "Music for team training",
+        body: "Team training often involves repetitive drills and intense conditioning work. Instrumental music helps maintain energy and focus through these sessions while allowing clear communication between players and coaches.",
+      },
+      {
+        heading: "Team coordination considerations",
+        body: "Coordinate with teammates for group training sessions. Consider team preferences for music during conditioning work, while using individual headphones for skill development to maintain ability to hear coaching instructions.",
+      },
+    ],
+  },
+  {
+    slug: "fresh-track-playlist",
+    searchTerm: "fresh track playlist",
+    title: "Fresh Track Playlist",
+    metaTitle: "Fresh Track Playlist — New Music Collection",
+    metaDescription:
+      "Fresh track playlist: discover new instrumental tracks and build your music library. Explore fresh music on Spotify, Apple Music, Amazon Music and YouTube.",
+    keywords: [
+      "fresh track playlist",
+      "new music collection",
+      "instrumental discovery",
+      "fresh music library",
+    ],
+    heroImage: "/images/heroes/oil-painting.png",
+    heroAlt: "Building fresh music playlist",
+    albumId: "just-dmiles-3",
+    excerpt:
+      "Discover new instrumental tracks and build your fresh music playlist collection.",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-02-15",
+    intro:
+      "Building fresh track playlists keeps your music experience dynamic and engaging. Discovering instrumental music adds variety to your daily routines, creative sessions, workouts, and relaxation time.",
+    sections: [
+      {
+        heading: "Creating discovery systems",
+        body: "Develop systems for regular music discovery. Follow instrumental artists, explore related recommendations, and dedicate time each week to finding fresh tracks for your various playlists.",
+      },
+      {
+        heading: "Organizing by activity",
+        body: "Create separate playlists for different activities — workout music, focus tracks, relaxation albums, creative inspiration. This helps quickly access the right music for whatever you are doing.",
+      },
+    ],
+  },
+]
+
+/** Look up a single article by slug. Returns undefined if not found. */
+export function getArticleBySlug(slug: string): Article | undefined {
+  return articles.find((article) => article.slug === slug)
+}
+
