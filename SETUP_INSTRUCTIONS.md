@@ -1,16 +1,16 @@
-# Setup Instructions for Google Rankings
+# הוראות הגדרה לדירוגי גוגל
 
-## Phase 1: Set Up Google Tools (Required)
+## שלב 1: הגדרת כלי גוגל (נדרש)
 
-### 1. **Google Search Console Setup**
-1. Go to: https://search.google.com/search-console
-2. Add property (your domain: music.webapp.you)
-3. Verify ownership (add meta tag to layout.tsx or DNS)
-4. Submit sitemap: `https://music.webapp.you/sitemap.xml`
-5. Monitor:
-   - Performance (rankings, CTR, impressions)
-   - Coverage (indexing status)
-   - Enhancements (JSON-LD, structured data)
+### 1. **הגדרת Google Search Console**
+1. עבור ל: https://search.google.com/search-console
+2. הוסף נכס (הדומיין שלך: music.webapp.you)
+3. אימות בעלות (הוסף תגית meta ל-layout.tsx או DNS)
+4. הגש מפת אתר: `https://music.webapp.you/sitemap.xml`
+5. בקרה:
+   - ביצועים (דירוגים, CTR, חשיפות)
+   - כיסוי (סטטוס אינדוקס)
+   - שיפורים (JSON-LD, נתונים מובנים)
 
 **Meta Tag to add to layout.tsx if needed:**
 ```html

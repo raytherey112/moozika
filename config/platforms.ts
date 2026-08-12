@@ -16,9 +16,9 @@ export type Platform = {
 }
 
 export const platforms: Platform[] = [
-  { key: "spotify", label: "Spotify" },
-  { key: "appleMusic", label: "Apple Music" },
-  { key: "amazonMusic", label: "Amazon Music" },
-  { key: "youtubeMusic", label: "YouTube Music" },
-  { key: "youtube", label: "YouTube" },
+  { key: "spotify", label: "ספוטיפיי" },
+  { key: "appleMusic", label: "אפל מיוזיק" },
+  { key: "amazonMusic", label: "אמזון מיוזיק" },
+  { key: "youtubeMusic", label: "יוטיוב מיוזיק" },
+  { key: "youtube", label: "יוטיוב" },
 ]

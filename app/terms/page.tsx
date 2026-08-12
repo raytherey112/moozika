@@ -4,8 +4,8 @@ import LegalLayout from "../layout-legal"
 import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: `Terms of service for ${siteConfig.name}. Read our terms and conditions of use.`,
+  title: "תנאי השימוש",
+  description: `תנאי השימוש עבור ${siteConfig.name}. קרא את התנאים וההגבלות שלנו.`,
 }
 
 export default function TermsPage() {

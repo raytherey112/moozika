@@ -32,19 +32,19 @@ export function SiteHeader() {
             href="/"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Home
+            בית
           </Link>
           <Link
             href="/articles"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Browse All
+            כל המוזיקה
           </Link>
           <Link
             href="/#collection"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
-            Featured
+            מומלצים
           </Link>
         </nav>
       </div>

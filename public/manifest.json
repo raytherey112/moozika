@@ -1,7 +1,7 @@
 {
-  "name": "Soundscapes - Music for Every Moment",
-  "short_name": "Soundscapes",
-  "description": "Curated instrumental albums and playlists for climbing, stargazing, coding and other focused moments.",
+  "name": "Moozika - מוזיקה לכל רגע",
+  "short_name": "Moozika",
+  "description": "אלבומי אינסטרומנטליים מיוחדים לטיפוס, צפייה בכוכבים, תכנות ופעילויות ממוקדות אחרות.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

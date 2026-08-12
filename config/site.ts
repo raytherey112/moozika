@@ -9,14 +9,14 @@
 
 export const siteConfig = {
   /** Brand name shown in the header, footer and page titles. */
-  name: "Soundscapes",
+  name: "Moozika",
 
   /** Short tagline used on the homepage and as a fallback description. */
-  tagline: "Music for the moments that matter",
+  tagline: "מוזיקה לרגעים שחשובים",
 
   /** One-line description used for SEO meta tags on the homepage. */
   description:
-    "Curated instrumental albums and playlists for climbing, stargazing, coding and other focused moments. Listen on Spotify, Apple Music, Amazon Music and YouTube.",
+    "אלבומי אינסטרומנטליים מיוחדים לטיפוס, צפייה בכוכבים, תכנות ופעילויות ממוקדות אחרות. האזינו בספוטיפיי, אפל מיוזיק, אמזון מיוזיק ויוטיוב.",
 
   /**
    * The canonical production URL (no trailing slash).
@@ -41,8 +41,8 @@ export const siteConfig = {
   },
 
   /** Language + locale used in <html lang> and Open Graph locale. */
-  language: "en",
-  locale: "en_US",
+  language: "he",
+  locale: "he_IL",
 } as const
 
 export type SiteConfig = typeof siteConfig

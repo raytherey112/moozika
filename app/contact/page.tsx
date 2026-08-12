@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button"
 import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description: `Get in touch with ${siteConfig.name}. Contact us for questions, suggestions, or feedback about our music recommendations.`,
+  title: "צור קשר",
+  description: `צור קשר עם ${siteConfig.name}. פנה אלינו לשאלות, הצעות או משוב על המלצות המוזיקה שלנו.`,
 }
 
 export default function ContactPage() {
@@ -16,9 +16,9 @@ export default function ContactPage() {
       <SiteHeader />
       <main className="container mx-auto px-4 py-8 md:py-12">
         <div className="mx-auto max-w-4xl">
-          <h1 className="font-serif text-3xl font-bold md:text-4xl">Contact Us</h1>
+          <h1 className="font-serif text-3xl font-bold md:text-4xl">צור קשר</h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            Have questions, suggestions, or feedback about our music recommendations? We'd love to hear from you.
+            יש לך שאלות, הצעות או משוב על המלצות המוזיקה שלנו? נשמח לשמוע ממך.
           </p>
 
           <div className="mt-8 grid gap-8 md:grid-cols-2">

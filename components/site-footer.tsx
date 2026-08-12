@@ -16,7 +16,7 @@ export function SiteFooter() {
         <div>
           <p className="font-serif text-lg font-semibold">{siteConfig.name}</p>
           <p className="mt-1 max-w-sm text-sm text-muted-foreground text-pretty">
-            {siteConfig.tagline}. Music by {siteConfig.artist}.
+            {siteConfig.tagline}. מוזיקה מאת {siteConfig.artist}.
           </p>
         </div>
 
@@ -39,21 +39,20 @@ export function SiteFooter() {
         <div className="mx-auto max-w-6xl px-4 py-5 text-xs text-muted-foreground sm:px-6">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
             <p>
-              &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
-              reserved.
+              &copy; {new Date().getFullYear()} {siteConfig.name}. כל הזכויות שמורות.
             </p>
             <div className="flex gap-4">
               <Link href="/" className="hover:text-foreground">
-                Home
+                בית
               </Link>
               <Link href="/articles" className="hover:text-foreground">
-                Browse All
+                כל המוזיקה
               </Link>
               <Link href="/about" className="hover:text-foreground">
-                About
+                אודות
               </Link>
               <Link href="/contact" className="hover:text-foreground">
-                Contact
+                צור קשר
               </Link>
             </div>
           </div>

@@ -51,7 +51,7 @@ export function SearchBar() {
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search music recommendations..."
+          placeholder="חפש המלצות מוזיקה..."
           className="w-full rounded-lg border border-border bg-background py-2 pl-10 pr-4 text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none"
           onFocus={() => suggestions.length > 0 && setIsOpen(true)}
           onBlur={() => setTimeout(() => setIsOpen(false), 200)}

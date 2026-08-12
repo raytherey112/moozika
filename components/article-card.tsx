@@ -45,7 +45,7 @@ export function ArticleCard({ article, featured = false }: ArticleCardProps) {
           {article.excerpt}
         </p>
         <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-medium text-foreground">
-          Read &amp; listen
+          קרא והאזן
           <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
         </span>
       </div>

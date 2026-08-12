@@ -4,17 +4,17 @@ import LegalLayout from "../layout-legal"
 import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: `Privacy policy for ${siteConfig.name}. Learn how we handle your data and privacy.`,
+  title: "מדיניות פרטיות",
+  description: `מדיניות פרטיות עבור ${siteConfig.name}. למד איך אנחנו מטפלים בנתונים שלך ובפרטיות שלך.`,
 }
 
 export default function PrivacyPage() {
   return (
     <LegalLayout>
       <div className="prose prose-lg dark:prose-invert">
-        <h1 className="font-serif text-3xl font-bold md:text-4xl">Privacy Policy</h1>
+        <h1 className="font-serif text-3xl font-bold md:text-4xl">מדיניות פרטיות</h1>
         <p className="text-muted-foreground">
-          Last updated: {new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+          עודכן לאחרונה: {new Date().toLocaleDateString("he-IL", { month: "long", day: "numeric", year: "numeric" })}
         </p>
 
         <section className="mt-8">

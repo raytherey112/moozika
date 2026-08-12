@@ -1,28 +1,28 @@
-# music-seo-website
+# Moozika - אתר מוזיקה בעברית
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+זהו פרויקט [Next.js](https://nextjs.org) שנבנה עם [v0](https://v0.app).
 
-## Built with v0
+## נבנה עם v0
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+מאגר זה מקושר לפרויקט [v0](https://v0.app). אתה יכול להמשיך בפיתוח על ידי ביקור בקישור למטה — התחל צ'אטים חדשים כדי לבצע שינויים, ו-v0 ידחוף ישירות לפרויקט הזה. כל מיזוג ל-`main` יפורסם אוטומטית.
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_QNt88GgjyYC75nkORGSbV953ipgY)
+[המשך לעבוד עם v0 →](https://v0.app/chat/projects/prj_QNt88GgjyYC75nkORGSbV953ipgY)
 
-## Getting Started
+## התחלה
 
-First, run the development server:
+ראשית, הפעל את שרת הפיתוח:
 
 ```bash
 npm run dev
-# or
+# או
 yarn dev
-# or
+# או
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+פתח [http://localhost:3000](http://localhost:3000) עם הדפדפן שלך כדי לראות את התוצאה.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+אתה יכול להתחיל לערוך את העמוד על ידי שינוי `app/page.tsx`. העמוד מתעדכן אוטומטית כאשר אתה עורך את הקובץ.
 
 ## Learn More
 

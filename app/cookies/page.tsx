@@ -4,17 +4,17 @@ import LegalLayout from "../layout-legal"
 import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
-  title: "Cookie Policy",
-  description: `Cookie policy for ${siteConfig.name}. Learn about the cookies we use and how to manage them.`,
+  title: "מדיניות עוגיות",
+  description: `מדיניות עוגיות עבור ${siteConfig.name}. למד על העוגיות שאנו משתמשים ואיך לנהל אותן.`,
 }
 
 export default function CookiesPage() {
   return (
     <LegalLayout>
       <div className="prose prose-lg dark:prose-invert">
-        <h1 className="font-serif text-3xl font-bold md:text-4xl">Cookie Policy</h1>
+        <h1 className="font-serif text-3xl font-bold md:text-4xl">מדיניות עוגיות</h1>
         <p className="text-muted-foreground">
-          Last updated: {new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+          עודכן לאחרונה: {new Date().toLocaleDateString("he-IL", { month: "long", day: "numeric", year: "numeric" })}
         </p>
 
         <section className="mt-8">

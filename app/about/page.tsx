@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button"
 import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description: `Learn about ${siteConfig.name} — our mission to connect people with the right music for every moment and activity.`,
+  title: "אודותינו",
+  description: `למדו על ${siteConfig.name} — המשימה שלנו לחבר אנשים למוזיקה הנכונה לכל רגע ופעילות.`,
 }
 
 export default function AboutPage() {
@@ -16,33 +16,29 @@ export default function AboutPage() {
       <SiteHeader />
       <main className="container mx-auto px-4 py-8 md:py-12">
         <div className="mx-auto max-w-4xl">
-          <h1 className="font-serif text-3xl font-bold md:text-4xl">About {siteConfig.name}</h1>
+          <h1 className="font-serif text-3xl font-bold md:text-4xl">אודות {siteConfig.name}</h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            Connecting people with the right music for every moment, activity, and mood.
+            מחברים אנשים למוזיקה הנכונה לכל רגע, פעילות ומצב רוח.
           </p>
 
           <div className="mt-8 grid gap-8 md:grid-cols-2">
             <div className="rounded-lg border bg-card p-6">
-              <h2 className="font-serif text-xl font-semibold">Our Mission</h2>
+              <h2 className="font-serif text-xl font-semibold">המשימה שלנו</h2>
               <p className="mt-2 text-muted-foreground">
-                We believe that music should be as specific as the moments it accompanies. Instead of
-                generic playlists, we create targeted recommendations for specific activities, moods,
-                and scenarios — helping you find exactly the right music for whatever you're doing.
+                אנחנו מאמינים שמוזיקה צריכה להיות ספציפית כמו הרגעים שהיא מלווה. במקום פלייליסטים גנריים, אנחנו יוצרים המלצות ממוקדות לפעילויות ספציפיות, מצבי רוח ותרחישים — עוזרים לכם למצוא בדיוק את המוזיקה הנכונה לכל מה שאתם עושים.
               </p>
             </div>
 
             <div className="rounded-lg border bg-card p-6">
-              <h2 className="font-serif text-xl font-semibold">How It Works</h2>
+              <h2 className="font-serif text-xl font-semibold">איך זה עובד</h2>
               <p className="mt-2 text-muted-foreground">
-                Each page on our site targets a specific search term people might type into Google.
-                When someone searches for "music for climbing" or "music for meditation," they find
-                a dedicated page with carefully selected instrumental music for that exact purpose.
+                כל עמוד באתר שלנו מיועד למונח חיפוש ספציפי שאנשים עשויים להקליד בגוגל. כשמישהו מחפש "מוזיקה לטיפוס" או "מוזיקה למדיטציה", הוא מוצא עמוד ייעודי עם מוזיקה אינסטרומנטלית שנבחרה בקפידה למטרה המדויקת הזו.
               </p>
             </div>
           </div>
 
           <div className="mt-8 rounded-lg border bg-card p-6">
-            <h2 className="font-serif text-xl font-semibold">Our Philosophy</h2>
+            <h2 className="font-serif text-xl font-semibold">הפילוסופיה שלנו</h2>
             <div className="mt-4 space-y-4">
               <div>
                 <h3 className="font-medium">Quality Over Quantity</h3>

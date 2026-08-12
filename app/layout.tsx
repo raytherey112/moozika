@@ -83,6 +83,7 @@ export default function RootLayout({
     <html
       lang={siteConfig.language}
       className={`${inter.variable} ${fraunces.variable} bg-background`}
+      dir="rtl"
     >
       <body className="font-sans antialiased">
         {children}

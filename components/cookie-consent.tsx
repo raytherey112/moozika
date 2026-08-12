@@ -33,27 +33,27 @@ export function CookieConsent() {
     <div className="fixed bottom-0 left-0 right-0 z-50 border-t bg-background p-4 shadow-lg md:bottom-4 md:left-4 md:right-auto md:max-w-md md:rounded-lg md:border">
       <div className="space-y-3">
         <div>
-          <h3 className="font-serif text-lg font-semibold">Cookie Preferences</h3>
+          <h3 className="font-serif text-lg font-semibold">העדפות עוגיות</h3>
           <p className="text-sm text-muted-foreground">
-            We use cookies to analyze website traffic and optimize your experience. By accepting,
-            you agree to our use of cookies for analytics purposes.
+            אנחנו משתמשים בעוגיות כדי לנתח תעבורת אתרים ולמטב את החוויה שלך. על ידי קבלתם,
+            אתה מסכים לשימוש שלנו בעוגיות למטרות ניתוח.
           </p>
         </div>
         <div className="flex flex-col gap-2 sm:flex-row">
           <Button onClick={acceptCookies} size="sm" className="flex-1">
-            Accept All
+            קבל הכל
           </Button>
           <Button onClick={rejectCookies} variant="outline" size="sm" className="flex-1">
-            Reject Non-Essential
+            דחה לא חיוניות
           </Button>
           <Button variant="ghost" size="sm">
-            <Link href="/cookies">View our Cookie Policy</Link>
+            <Link href="/cookies">צפה במדיניות העוגיות שלנו</Link>
           </Button>
         </div>
         <p className="text-xs text-muted-foreground">
-          You can change your preferences at any time by visiting our{" "}
+          אתה יכול לשנות את ההעדפות שלך בכל עת על ידי ביקור ב{" "}
           <Link href="/cookies" className="text-primary hover:underline font-medium underline decoration-primary">
-            Cookie Policy
+            מדיניות העוגיות שלנו
           </Link>
           .
         </p>

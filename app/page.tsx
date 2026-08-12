@@ -66,7 +66,7 @@ export default function HomePage() {
         <section className="mx-auto max-w-6xl px-4 pb-8 pt-16 sm:px-6 sm:pt-24">
           <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-primary">
             <Headphones className="size-4" />
-            Curated instrumental music
+            מוזיקה אינסטרומנטלית מיוחדת
           </div>
           <h1 className="mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-6xl">
             {siteConfig.tagline}
@@ -79,7 +79,7 @@ export default function HomePage() {
               href="/#collection"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
             >
-              Browse the collection
+              עיין באוסף
               <ArrowRight className="size-4" />
             </Link>
             <a
@@ -88,7 +88,7 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary"
             >
-              Follow the artist
+              עקוב אחרי האמן
             </a>
           </div>
         </section>
@@ -105,17 +105,17 @@ export default function HomePage() {
                 id="collection-heading"
                 className="font-serif text-2xl font-semibold tracking-tight sm:text-3xl"
               >
-                Music for every moment
+                מוזיקה לכל רגע
               </h2>
               <p className="mt-1 text-sm text-muted-foreground">
-                One album, hand-picked for each occasion.
+                אלבום אחד שנבחר בקפידה לכל אירוע.
               </p>
             </div>
             <Link
               href="/articles"
               className="text-sm font-medium text-primary hover:underline underline decoration-primary"
             >
-              View all {articles.length} recommendations →
+              צפה בכל {articles.length} ההמלצות →
             </Link>
           </div>
 

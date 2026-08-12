@@ -31,7 +31,7 @@ export function AlbumFeature({ album }: AlbumFeatureProps) {
         <div className="flex flex-col justify-center gap-4 p-6">
           <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-primary">
             <Disc3 className="size-4" />
-            Featured album
+            אלבום מומלץ
           </div>
 
           <div>
@@ -45,7 +45,7 @@ export function AlbumFeature({ album }: AlbumFeatureProps) {
 
           <div>
             <p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-              Listen now
+              האזן עכשיו
             </p>
             <PlatformLinks links={album.links} albumTitle={album.title} />
           </div>

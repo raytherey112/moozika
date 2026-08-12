@@ -10,8 +10,8 @@ import { siteConfig } from "@/config/site"
 import ArticlesClient from "./articles-client"
 
 export const metadata: Metadata = {
-  title: "All Music Recommendations",
-  description: `Browse all ${articles.length} curated music recommendations for specific activities, moods, and moments on ${siteConfig.name}.`,
+  title: "כל המלצות המוזיקה",
+  description: `עיין בכל ${articles.length} המלצות המוזיקה המיוחדות לפעילויות ספציפיות, מצבי רוח ורגעים באתר ${siteConfig.name}.`,
 }
 
 export default function AllArticlesPage() {
@@ -21,9 +21,9 @@ export default function AllArticlesPage() {
       <main className="container mx-auto px-4 py-8 md:py-12">
         <div className="mx-auto max-w-6xl">
           <div className="mb-8">
-            <h1 className="font-serif text-3xl font-bold md:text-4xl">All Music Recommendations</h1>
+            <h1 className="font-serif text-3xl font-bold md:text-4xl">כל המלצות המוזיקה</h1>
             <p className="mt-2 text-lg text-muted-foreground">
-              Browse all {articles.length} curated music recommendations for specific activities, moods, and moments.
+              עיין בכל {articles.length} המלצות המוזיקה המיוחדות לפעילויות ספציפיות, מצבי רוח ורגעים.
             </p>
             
             {/* Search Bar */}
