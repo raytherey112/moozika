@@ -5,14 +5,22 @@
 🌐 **כתובת האתר:** [https://moozika.webapp.you](https://moozika.webapp.you)  
 📧 **צור קשר:** dmiles.apps@gmail.com
 
+## 📚 מסמכים חשובים
+
+- **[SITE_INFO.md](./SITE_INFO.md)** - מידע מפורט על האתר והגדרות
+- **[GOOGLE_SEARCH_CONSOLE_SETUP.md](./GOOGLE_SEARCH_CONSOLE_SETUP.md)** - מדריך מלא להגדרת Google Search Console
+- **[SEO_CHECKLIST.md](./SEO_CHECKLIST.md)** - רשימת בדיקה מלאה לSEO
+- **[PRE_LAUNCH_CHECKLIST.md](./PRE_LAUNCH_CHECKLIST.md)** - רשימת בדיקה לפני השקת האתר
+
 ## תכונות עיקריות
 
-- ✅ **234+ כתבות מוזיקה** - המלצות ממוקדות לפעילויות ספציפיות
+- ✅ **236 כתבות מוזיקה** - המלצות ממוקדות לפעילויות ספציפיות
 - ✅ **נגישות מלאה** - תפריט נגישות מתקדם עם WCAG 2.1 AA
 - ✅ **עברית מלאה** - כל האתר בעברית, כולל RTL
 - ✅ **SEO מותאם** - sitemap, robots.txt, structured data
 - ✅ **קישורים לפלטפורמות** - Spotify, Apple Music, Amazon Music, YouTube
 - ✅ **דפים משפטיים** - מדיניות פרטיות, תנאי שימוש, הצהרת נגישות
+- ✅ **באנר הסכמה לעוגיות** - תואם GDPR ודין ישראלי
 
 ## טכנולוגיות
 
